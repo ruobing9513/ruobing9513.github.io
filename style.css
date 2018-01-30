@@ -1,0 +1,16 @@
+style.css
+
+			p {
+			color: blue;
+			font-size:40px;
+				}
+				
+
+			.fonts {
+			font-family: 'Ubuntu', sans-serif;
+			}
+
+			p#redparagraph {
+				color:red;
+				font-size:38;
+			}

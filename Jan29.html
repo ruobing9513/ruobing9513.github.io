@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			My cool website
+		</title>
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+
+		</head>
+			<body bgcolor='lightgrey'>
+	<body>
+		<h1>January 29 Class note</h1>
+
+		<p> Welcome come to my page. Here we will talk about everything.</p>
+
+		<p id="redparagraph"> Here is my paragraph.</p>
+
+		<h2>what should we <i>talk</i> about?</h2>
+
+		<a href="Homework1">Here is the first Assignment </a>
+
+		<script>
+			var myNumber = 42;
+			myNumber = myNumber + 10;
+			console.log(myNumber);
+
+			var myString = "Javascript is hard!";
+			console.log("D3 and " + myString);
+
+			var bigNumber = myNumber > 100
+			console.log(bigNumber);
+			
+
+			var myArray = ["one", bigNumber,myNumber,"Ruobing"];
+			console.log(myArray);
+
+			var myUser = {
+				"name": "Ruobing",
+				"color": "black",
+				"last-login": "1/29/2018"
+			};
+
+			console.log(myUser);
+
+			var sayhello = function(name) {
+				var newnumber = myNumber + 500 ;
+				console.log(newnumber);
+				console.log("Hello " + name + "!");
+			}
+			sayhello("Ruobing");
+			sayhello("Mio");
+
+			var plusTen = function(num){
+				var x = num + 10;
+				return x;
+			}
+			plusTen(40);
+
+			//comments using double slash 
+
+			var thirty = plusTen(20)
+			console.log(thirty);
+
+			if (myNumber > 10) {
+				console.log ("greater than 10!");
+			}
+			else {
+				console.log ("less than 10!");
+			}
+
+			document.getElementById("redparagraph").innerHTML = "Hello " + myUser.name + "!";
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
