@@ -1,63 +1,155 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<meta charset="UTF-">
-	<script>
-    alert('Know more about Ruobing!');
-  	</script>
-  	
-  	<button onclick="{location.href='index.html'}">Back to Homepage</button> 
+<meta charset="UTF-8">
+	</head>
 
-  	<body style="background-image:url(background5.jpg); background-repeat:no-repeat fixed center; background-size: cover;">
+  	<body style="background-image:url(background3.jpg); background-repeat:no-repeat fixed center;">
   	</body>
 
-</head>
 	<h1 align="middle">
-		<font face="Metric">
+		<font face="Metric";>
 		Assignment 2
 		</font>
 	</h1>
 
+  	<button onclick="{location.href='index.html'}">Back to Homepage</button> 
+
+  	<!--Beijing photo -->
+  	<script type="text/javascript">
+			function change1(){
+				var image = document.getElementById("Chicago");
+				image.src = "Chicago.jpg";
+			}
+        	
+		</script>
+
+	<!--Chicago photo -->
+	<script type="text/javascript">
+			function change2(){
+				var image = document.getElementById("Guiyang");
+				image.src = "Guiyang.jpg";
+			}
+        	
+		</script>
+
+	<!--Seoul photo -->
+	<script type="text/javascript">
+			function change3(){
+				var image = document.getElementById("Seoul");
+				image.src = "Seoul1.jpg";
+			}
+        	
+		</script>	
+
+	<!--SD photo -->
+	<script type="text/javascript">
+			function change4(){
+				var image = document.getElementById("SanDiego");
+				image.src = "SD1.jpg";
+			}
+        	
+		</script>	
+
+
+	<!--Qingdao photo -->
+	<script type="text/javascript">
+			function change5(){
+				var image = document.getElementById("Qingdao");
+				image.src = "Qingdao.jpg";
+			}
+        	
+		</script>	
+
+
+	<!--NYC photo -->
+	<script type="text/javascript">
+			function change6(){
+				var image = document.getElementById("Newyork");
+				image.src = "Newyork.jpg";
+			}
+        	
+		</script>	
+
+	<!--Beijing photo -->
+	<script type="text/javascript">
+			function change7(){
+				var image = document.getElementById("Beijing");
+				alert ("SURPRISE! She is a Chinese but she has never been to Beijing!");
+			}
+        	
+		</script>	
+
+	<!--SEA photo -->
+	<script type="text/javascript">
+			function change8(){
+				var image = document.getElementById("Seattle");
+				alert ("Nope! She has only been to Seattle Tacoma Airport!");
+			}
+        	
+		</script>	
+
+	<!--Tokyo photo -->
+	<script type="text/javascript">
+			function change9(){
+				var image = document.getElementById("Tokyo");
+				alert ("Nope! She will be traveling to Tokyo this summer!");
+			}
+        	
+		</script>	
+
 <title>This is the title</title>
+
 
 <body>
 
-<script type="text/javascript">
-document.body.onfocus = function(){
-document.title = 'Boom!';
-};
-document.body.onblur = function(){
- document.title = 'Wwwhaaaat!';
-};
-</script>
+			<script type="text/javascript">
+				document.body.onfocus = function(){
+				document.title = 'Boom!';
+				};
+				document.body.onblur = function(){
+ 				document.title = 'Wwwhaaaat!';
+				};
+			</script>
 
-<h2 align = "middle">
-	<font face = "Metric">
+
+		<h2 align = "middle">
+			<font face = "Metric">
 		Which city of the following have I NOT been to?
-	</font>
-</h2>
+			</font>
+		</h2>
 
 
+	<div align="middle">
+		<img src="Chi.jpg" alt = "Chicago" id="Chicago"  onclick="change1();">
+		<img src="BJ.jpg" alt="Beijing" id="Beijing"  onclick="change7();">
+		<img src="GY.jpg" alt = "Guiyang" id="Guiyang"  onclick="change2();">
+		<br>
+		<img src="Ty.jpg" alt="Tokyo" id="Tokyo"  onclick="change9();">
+		<img src="Seoul.jpg" alt="Seoul" id="Seoul"  onclick="change3();">
+		<img src="SD.jpg" alt="SanDiego" id="SanDiego" onclick="change4();">
+		<br>
+		<img src="QD.jpg" alt="Qingdao" id="Qingdao" onclick="change5();">
+		<img src="NY.jpg" alt="Newyork" id="Newyork" onclick="change6();">
+		<img src="SEA.jpg" alt="Seattle" id="Seattle" onclick="change8();">
+	</div>
+		
+		
 
+		<h2 align = "middle">
+			<font face = "Metric">
+		Get your quote today!
+			</font>
+		</h2>
 
-        
-    
+		<div align = "center" >
+				<div id="getyourquote">	
+				</div>
+			<script src="quotegenerate.js"></script>
+			<button onlick = "newQuote()" >What's your quote today?</button>
+		</div>
+			</script>
 
-
-
-<script>
-function myFunction(name,job)
-{
-alert("Welcome " + name + ", the " + job);
-}
-</script>
-
-<script>
-	var sayhello = function(name) {
-				console.log("Hello " + name + "!");
-			}
-			sayhello("Ruobing");
-			sayhello("Mio");
 
 </body>
 
