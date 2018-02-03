@@ -15,6 +15,15 @@
 
   	<button onclick="{location.href='index.html'}">Back to Homepage</button> 
 
+  	<script type="text/javascript">
+				document.body.onfocus = function(){
+				document.title = 'Boom!';
+				};
+				document.body.onblur = function(){
+ 				document.title = 'Wwwhaaaat!';
+				};
+	</script>
+
   	<!--Beijing photo -->
   	<script type="text/javascript">
 			function change1(){
@@ -103,52 +112,62 @@
 
 <body>
 
-			<script type="text/javascript">
-				document.body.onfocus = function(){
-				document.title = 'Boom!';
-				};
-				document.body.onblur = function(){
- 				document.title = 'Wwwhaaaat!';
-				};
-			</script>
-
-
 		<h2 align = "middle">
 			<font face = "Metric">
 		Which city of the following have I NOT been to?
 			</font>
 		</h2>
+		<p align = "middle">
+			<font face = "Metric"> 
+			click the images for answers!
+			</font>
+		</p>
 
 
-	<div align="middle">
-		<img src="Chi.jpg" alt = "Chicago" id="Chicago"  onclick="change1();">
-		<img src="BJ.jpg" alt="Beijing" id="Beijing"  onclick="change7();">
-		<img src="GY.jpg" alt = "Guiyang" id="Guiyang"  onclick="change2();">
+	<div align="middle";>
+		<img src="Chi.png" alt = "Chicago" id="Chicago"  onclick="change1();">
+		<img src="BJ.png" alt="Beijing" id="Beijing"  onclick="change7();">
+		<img src="GY.png" alt = "Guiyang" id="Guiyang"  onclick="change2();">
 		<br>
-		<img src="Ty.jpg" alt="Tokyo" id="Tokyo"  onclick="change9();">
-		<img src="Seoul.jpg" alt="Seoul" id="Seoul"  onclick="change3();">
-		<img src="SD.jpg" alt="SanDiego" id="SanDiego" onclick="change4();">
+		<img src="Ty.png" alt="Tokyo" id="Tokyo"  onclick="change9();">
+		<img src="Seoul.png" alt="Seoul" id="Seoul"  onclick="change3();">
+		<img src="SD.png" alt="SanDiego" id="SanDiego" onclick="change4();">
 		<br>
-		<img src="QD.jpg" alt="Qingdao" id="Qingdao" onclick="change5();">
-		<img src="NY.jpg" alt="Newyork" id="Newyork" onclick="change6();">
-		<img src="SEA.jpg" alt="Seattle" id="Seattle" onclick="change8();">
+		<img src="QD.png" alt="Qingdao" id="Qingdao" onclick="change5();">
+		<img src="SEA.png" alt="Seattle" id="Seattle" onclick="change8();">
+		<img src="NY.png" alt="Newyork" id="Newyork" onclick="change6();">
 	</div>
+	
 		
 		
 
-		<h2 align = "middle">
-			<font face = "Metric">
-		Get your quote today!
+	<div>
+		<h2 align = "middle";>
+			<font face = "Metric";>
+		Today's Quote
 			</font>
 		</h2>
+	</div>
+	
+	<div align="middle";>
+		<button id = "todaysquote" onclick = "newQuote()" >Click me for your quote today!</button>
+	</div>
 
-		<div align = "center" >
-				<div id="getyourquote">	
-				</div>
-			<script src="quotegenerate.js"></script>
-			<button onlick = "newQuote()" >What's your quote today?</button>
-		</div>
-			</script>
+
+	<div>
+		<h3 id= "quotes" align="middle">
+			<font face= "Metric";>
+			</font>
+		</h3>
+		<script type="text/javascript">
+			function newQuote() {
+				var quote1 = "The fear of death follows from the fear of life. One who lives life fully is prepared to die at any time. - Mark Twin"; 
+				
+				document. getElementById ("quotes").innerHTML = quote1;
+			}
+		</script>
+
+	</div>
 
 
 </body>
