@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS libraries </title>
+	</head>
+	<body id="myBody">
+		<h1>Feb 5 2018 Class Note</h1>
+		<p>Today is a terrible day i forgot my id again</p>
+		<svg id="viz"></svg>
+		
+	</body>
+
+	<script type="text/javascript" src="numbers.js"></script>
+		<script type="text/javascript">
+		var y = numbers.squared(22);
+		console.log(y);
+		var x = numbers.plus10(2);
+		console.log(x);
+	</script>
+		<h1>D3 Basics</h1>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script type="text/javascript">
+			var body = document.getElementById("myBody");
+			body.style.backgroundColor = "black";
+			body.style.fontFamily = "Metric";
+
+
+			//we can do a bunch of changes in styles all at once, by using only one semi-column at the end, and the period before every style change - this saves time
+			var body = d3.select("body")
+			.style("background-color","lightgrey")
+			.style ("font-family","Gill Sans")
+			.attr("id", "myBody");
+
+
+			//now we are trying to make a function that can draw cricles 
+			var myData = [24,50,13,25,5];
+			var newData = [33,4,20];
+
+			var drawCircles = function(dataArray){
+				
+				var svg = d3.select("#viz");
+				//it is asking to select all the dots in the svg and applying them to the array"myData", and it should show up with the exact number/lengeth of the array"myData"	
+
+				// period means class and then apply it to the data in dataArray
+				var dots = svg.selectAll(".dot")
+					.data(dataArray);
+				//append meaning the action/shapes you are gonna draw with D3
+				//NO ENTERING CIRCLES
+				dots.enter().append("circle")
+					.attr("class","dot")
+
+					.attr("r", 0)
+					.attr("fill", "black")
+					//setting up the radius as the data, and "cx" and "cy" meaning the actual position/cordinates of the circles 
+					//setting radius of the circles
+					//if you want to set up the radius as unchanged, just type "r",50;else we need to write a function to have the radius changed by our data points 
+					.attr("cx", "50";)
+					.attr("cy",function(d,i){
+						return i * height;
+					})
+
+					.transition()
+					.duration(1000)
+
+					.attr("r", function(dataPoint){
+						return dataPoint / 2;
+					})
+
+				//IF THERE ARE NEW DATA COMING IN - THEY WILL RUN THIS FUNCTION DOWN THERE
+				//from here,we are updating new dots/update codes the circles running in our html 
+				dots
+					.transition()
+				//1000ms = 1s
+					.duration(1000)
+					.attr("r", function(dataPoint){
+						return dataPoint / 2;
+					})
+					.attr("fill", "green");
+				//make it animated 
+
+				//if we dont put exit button, the old ones will still stay there 
+				dots.exit()
+					.transition()
+					.duration(1000)
+					.attr("r", 0)
+					.remove();
+
+				};
+				
+				// now we can draw circles in the console by using another array of data 
+			
+			drawCircles(myData);
+
+
+		</script>
+	
+
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<body>
+		<p id= "1">The fear of death follows from the fear of life. One who lives life fully is prepared to die at any time. - Mark Twin</p>
+		<p id= "2">When you wake up in the morning you have two choices: go back to sleep, or wake up and chase those dreams</p>
+		<p id= "3">Our greatest weapon against stress is our ability to choose one thought over another. - William James</p>
+
+	<div align="middle";>
+		<button id = "todaysquote" onclick = "randomquotes()" >Click me for your quote today!</button>
+	</div>
+
+	<script type="text/javascript">
+		function randomquotes() {
+			var quotes = Array (1,2,3)
+			var quotes = quotes [Math.floor(Math.random()*quotes.length)];
+			document.getElementById("quotes").innerHTML = quotes;
+		}
+	</script>	
+	</body>
+</head>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<shadow>
+	<head>
+		<body>
+</shadow>
+	<style type="text/css"></style>
+<meta charset="UTF-8">
+<title>Assignment 3</title>
+
+	<head>
+		<link rel = "stylesheet"
+		href="https://fonts.googleapis.com/css?family=Noto+Sans|Quattrocento+Sans" rel="stylesheet">
+
+		<style type="text/css">
+		body{
+			background-image: url(bg6.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed; 
+		}
+		#headline{
+			font-family: 'Quattrocento Sans', "Noto Sans", "Optima", Sans-serif;
+  			color: darkslategray;
+  			text-align: center;
+  			font-size:50px;			
+		}
+		#subtitle {
+			font-family: "Noto Sans", "Optima", Sans-serif;
+			color: darkslategray;
+			text-align: center;
+			font-size: 20px;
+		}
+		#click1{
+			background: white;
+			font-family: "Noto Sans", "Optima", Sans-serif;
+			color:darkslategray;
+			border:grey;
+			text-align: center;
+			font-size:15px;
+			display:inline-block;
+			padding:10px 15px;
+			-webkit-transition-duration: 0.4s; /* Safari */
+    			transition-duration: 0.4s;
+		}
+
+
+		#click1:hover {
+    		background-color: grey; /* Green */
+    		color: white;
+		}
+
+		#source{
+			font-family: "Optima", Sans-serif;
+			color: white;
+			text-align: center;
+			font-size: 13px;
+
+		}
+
+		</style>
+	</head>
+
+	<body id="mybody">
+		
+		<h1 id="headline">Assignment 3</h1>
+		<h2 id="subtitle">NON-RESIDENT ARRIVALS TO THE U.S. (includes stateless records) by world region</h2>
+		<p id="source">Source:  U.S. Department of Commerce and National Travel and Tourism Office.</p>
+
+		<br>
+		<br>
+
+		<svg id=viz width="600" height="600"></svg>
+
+		<div align="middle";>
+			<button id = "click1">Click to see difference</button>
+		</div>
+
+
+	</body>
+
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<script type="text/javascript">
+
+			var tourism17 = [1470895, 80906,1212467,123460,50924,153792,373838,21929,154227];
+			var tourism16 = [1009472,79156,751246,84526,49513,145227,583909,123190,142076]	
+			var height = 20;
+
+			d3.select("#viz")
+				.selectAll(".rect")
+				.data(tourism16)
+				.enter().append("rect")
+				.attr("class","rect")
+
+				//orginal points
+				.attr("width",0)
+				.attr("height",height-5)
+				.attr("x", "100")
+				.attr("y", function(d,index){
+						return index * height * 1.5;
+					})
+				.attr("fill", "black")
+
+				//transition then
+				.transition()
+				.duration(1000)
+
+					.attr("width", function(d,i){
+						return(d / 2000)
+					})
+					.attr("height",height-5)
+					.attr("fill", "black")
+					.attr("x","100")
+					.attr("y", function(d,index){
+						return index * height * 1.5;
+					})
+
+					.attr("fill", "firebrick");
+				
+
+        		d3.select("button") 
+          		.on("click",function(){
+          			d3.select("#viz")
+            		.selectAll("rect")
+           			 	.data(tourism17)
+           			 	.transition()
+           			 	.duration(1000)
+            			.attr("width", function(d,i){
+						return(d / 2000)
+					})
+           			 .attr("fill","navy");})     
+
+
+	</script>
+
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<script type="text/javascript">
+		var myData = [24,50,13,25,5];
+			var newData = [33,4,20];
+
+			var drawCircles = function(dataArray){
+				
+				var svg = d3.select("#viz");
+
+				var dots = svg.selectAll(".dot")
+					.data(dataArray);
+
+				dots.enter().append("circle")
+					.attr("class","dot")
+					.attr("r", 0)
+					.attr("fill", "black")
+					.attr("cx", "400";)
+					.attr("cy",function(d,i){
+						return i * height;
+					})
+
+					.transition()
+					.duration(1000)
+
+					.attr("r", function(dataPoint){
+						return dataPoint / 2;
+					})
+
+				dots
+					.transition()
+
+					.duration(1000)
+					.attr("r", function(dataPoint){
+						return dataPoint / 2;
+					})
+					.attr("fill", "green");
+				
+				dots.exit()
+					.transition()
+					.duration(1000)
+					.attr("r", 0)
+					.remove();
+
+				};
+				
+				// now we can draw circles in the console by using another array of data 
+			
+			drawCircles(myData);
+	</script>
+</html>
