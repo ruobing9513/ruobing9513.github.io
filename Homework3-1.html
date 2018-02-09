@@ -34,11 +34,11 @@
 		#click1{
 			background: white;
 			font-family: "Noto Sans", "Optima", Sans-serif;
-			color:darkslategray;
-			border:grey;
+			color:black;
+			border-color:darkslategray;
+			border-width: thin;
 			text-align: center;
 			font-size:15px;
-			display:inline-block;
 			padding:10px 15px;
 			-webkit-transition-duration: 0.4s; /* Safari */
     			transition-duration: 0.4s;
@@ -46,7 +46,7 @@
 
 
 		#click1:hover {
-    		background-color: grey; /* Green */
+    		background-color: darkslategrey; /* Green */
     		color: white;
 		}
 
@@ -64,18 +64,17 @@
 	<body id="mybody">
 		
 		<h1 id="headline">Assignment 3</h1>
-		<h2 id="subtitle">NON-RESIDENT ARRIVALS TO THE U.S. (includes stateless records) by world region</h2>
+		<h2 id="subtitle">NON-RESIDENT ARRIVALS TO THE U.S. (includes stateless records) by world region 2016 to 2017</h2>
 		<p id="source">Source:  U.S. Department of Commerce and National Travel and Tourism Office.</p>
 
 		<br>
 		<br>
 
-		<svg id=viz width="600" height="600"></svg>
+		<svg id=viz width="600" height="300"></svg>
 
 		<div align="middle";>
 			<button id = "click1">Click to see difference</button>
 		</div>
-
 
 	</body>
 
@@ -116,7 +115,7 @@
 					})
 
 					.attr("fill", "firebrick");
-				
+		
 
         		d3.select("button") 
           		.on("click",function(){
@@ -130,56 +129,5 @@
 					})
            			 .attr("fill","navy");})     
 
-
-	</script>
-
-	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-	<script type="text/javascript">
-		var myData = [24,50,13,25,5];
-			var newData = [33,4,20];
-
-			var drawCircles = function(dataArray){
-				
-				var svg = d3.select("#viz");
-
-				var dots = svg.selectAll(".dot")
-					.data(dataArray);
-
-				dots.enter().append("circle")
-					.attr("class","dot")
-					.attr("r", 0)
-					.attr("fill", "black")
-					.attr("cx", "400";)
-					.attr("cy",function(d,i){
-						return i * height;
-					})
-
-					.transition()
-					.duration(1000)
-
-					.attr("r", function(dataPoint){
-						return dataPoint / 2;
-					})
-
-				dots
-					.transition()
-
-					.duration(1000)
-					.attr("r", function(dataPoint){
-						return dataPoint / 2;
-					})
-					.attr("fill", "green");
-				
-				dots.exit()
-					.transition()
-					.duration(1000)
-					.attr("r", 0)
-					.remove();
-
-				};
-				
-				// now we can draw circles in the console by using another array of data 
-			
-			drawCircles(myData);
 	</script>
 </html>

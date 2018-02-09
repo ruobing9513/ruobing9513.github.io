@@ -31,31 +31,23 @@
 			text-align: center;
 			font-size: 20px;
 		}
-		#click1{
+		button{
 			background: white;
 			font-family: "Noto Sans", "Optima", Sans-serif;
-			color:black;
-			border-color:darkslategray;
-			border-width: thin;
+			color:darkslategray;
+			border:grey;
 			text-align: center;
 			font-size:15px;
+			display:inline-block;
 			padding:10px 15px;
 			-webkit-transition-duration: 0.4s; /* Safari */
     			transition-duration: 0.4s;
 		}
 
 
-		#click1:hover {
-    		background-color: darkslategrey; /* Green */
+		button:hover {
+    		background-color: grey; /* Green */
     		color: white;
-		}
-
-		#source{
-			font-family: "Optima", Sans-serif;
-			color: white;
-			text-align: center;
-			font-size: 13px;
-
 		}
 
 		</style>
@@ -64,16 +56,19 @@
 	<body id="mybody">
 		
 		<h1 id="headline">Assignment 3</h1>
-		<h2 id="subtitle">NON-RESIDENT ARRIVALS TO THE U.S. (includes stateless records) by world region</h2>
-		<p id="source">Source:  U.S. Department of Commerce and National Travel and Tourism Office.</p>
+		<h2 id="subtitle">“Blue Sky” days and attainment days in Beijing</h2>
 
 		<br>
 		<br>
 
-		<svg id=viz width="600" height="300"></svg>
+		<svg id=viz width="1000" height="400"></svg>
 
 		<div align="middle";>
-			<button id = "click1">Click to see difference</button>
+			<button id = "click1" onclick = "bars(bluesky)">Blue sky days</button>
+			<button id = "click2" onclick = "bars(level1)">Level 1 Days</button>
+			<button id = "click3" onclick = "bars(level2)">Level 2 days</button>
+			<button id = "click4" onclick = "bars(level3)">Level 3 days </button>
+			<button id = "click5" onclick = "bars(level4)">Level 4 and 5 days</button>
 		</div>
 
 	</body>
@@ -81,63 +76,70 @@
 	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	<script type="text/javascript">
 
-			var tourism17 = [
-			{"Western Europe":1470895}, 
-			{"Eastern Europe":80906},
-			{"Asia":1212467},
-			{"Middle East":123460},
-			{"Africa":50924},
-			{"Oceania": 153792},
-			{"South America": 373838},
-			{"Central America": 21929},
-			{"Caribbea": 154227}];
-			var tourism16 = [1009472,79156,751246,84526,49513,145227,583909,123190,142076]	
-			var height = 20;
+			var bluesky = [185,203,224,228,234,241,246,274,285,286,286,281,271];
+			var level1 = [12,22,27,33,36,26,32,62,47,53,76,86,58];
+			var level2 = [173,181,197,195,198,215,214,212,238,233,210,196,213];
+			var level3 = [157,143,136,121,122,100,108,84,75,73,74,81,84];
+			var level4 = [23,19,5,17,9,24,11,8,5,6,5,5,7];
 
-			d3.select("#viz")
-				.selectAll(".rect")
-				.data(tourism16)
-				.enter().append("rect")
-				.attr("class","rect")
 
-				//orginal points
-				.attr("width",0)
-				.attr("height",height-5)
-				.attr("x", "100")
-				.attr("y", function(d,index){
-						return index * height * 1.5;
+			var height = 30;	
+
+			var bars = function(dataArray){
+				
+				var svg = d3.select("#viz");
+
+				var dots = svg.selectAll(".rect")
+					.data(dataArray);
+	
+				dots.enter().append("rect")
+					.attr("class","rect")
+
+					.attr("width",0)
+					.attr("height",height)
+					.attr("x", "100")
+					.attr("y", function(d,index){
+						return index * height;
 					})
-				.attr("fill", "black")
+					.attr("fill", "black")
 
-				//transition then
-				.transition()
-				.duration(1000)
+					.transition()
+					.duration (1000)
+					
 
 					.attr("width", function(d,i){
-						return(d / 2000)
+						return(d)
 					})
 					.attr("height",height-5)
 					.attr("fill", "black")
 					.attr("x","100")
 					.attr("y", function(d,index){
-						return index * height * 1.5;
+						return index * height;
 					})
 
 					.attr("fill", "firebrick");
-
 				
-
-        		d3.select("button") 
-          		.on("click",function(){
-          			d3.select("#viz")
-            		.selectAll("rect")
-           			 	.data(tourism17)
-           			 	.transition()
-           			 	.duration(1000)
-            			.attr("width", function(d,i){
-						return(d / 2000)
+				dots
+					.transition()
+			
+					.duration(1000)
+					.attr("width", function(d,i){
+						return(d)
 					})
-           			 .attr("fill","navy");})     
+					.attr("height",height-5)
+					.attr("fill", "steelblue");
+				
+				dots.exit()
+					.transition()
+					.duration(1000)
+					.attr("width", function(d,i){
+						return(d)
+					})
+					.attr("height",height-5)
+					.remove();
 
+				};
+						
+			bars(bluesky);
 	</script>
 </html>
