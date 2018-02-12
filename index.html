@@ -15,8 +15,8 @@
 
 <!--headline-->
 <div>
-	<h1 align="left" >
-		<font face ="Futura" color="black"; size="10px">
+	<h1 align="middle" >
+		<font face ="Futura" color="white"; size="10px">
 			RUOBING SU
 		</font>
 		<style>
@@ -28,31 +28,52 @@
 	</h1>
 </div>
 
-<div>
+<div align = "center" >
 	<ul style="margin:0; padding:0; list-style-type: none;">
-		<font face = "Metric"; color="white"; align="left"; size=4;>
-			<li><a href="Aboutme.html">ABOUT ME</a></li>
+		<font face = "Futura"; color="white"; align="center"; size=4;>
+			<button id="aboutme" onclick="{location.href='Aboutme.html'}">ABOUT ME</button>
 			<br>
-			<li><a href="Homework1.html">ASSIGNMENT 1</a></li>
 			<br>
-			<li><a href="Homework2.html">ASSIGENMENT 2</a></li>
+			<button id="assignment1" onclick="{location.href='Homework1.html'}">ASSIGNMENT 1</button>
 			<br>
-			<li><a href="Homework3.html">ASSIGENMENT 3</a></li>
 			<br>
-			<li><a href="Journalismprotfolio.html">JOURNALISM WORKS</a></li>
+			<button id="assignment2" onclick="{location.href='Homework2.html'}">ASSIGNMENT 2</button>
+			<br>
+			<br>
+			<button id="assignment3" onclick="{location.href='Homework3.html'}">ASSIGNMENT 3</button>
+			<br>
 			<br>
 		</font>	
 	</ul>
 </div>
 
+<style type="text/css">
+	button {
+		font-family: "Noto Sans", "Optima", Sans-serif;
+		color:darkslategray;
+		border:grey;
+		text-align: center;
+		font-size:15px;
+		display:inline-block;
+		padding:10px 15px;
+				-webkit-transition-duration: 0.4s; /* Safari */
+    			transition-duration: 0.4s;
+			}
+	button:hover {
+    		background-color: grey; /* grey */
+    		color: white;
+		}
+
+</style>
+
 
 <!--My photo-->
-<div>
+<div align = "center">
 		<a href="Aboutme.html">
 		<img src="ruobing4.jpg" style="width: 200px; height: 200px;" />	
 		</a>
 		
-	<h2 align="left">
+	<h2 align="middle">
 		<font face="Futura">
 		This is me coding👆
 		</font>

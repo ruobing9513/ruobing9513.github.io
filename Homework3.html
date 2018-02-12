@@ -14,7 +14,7 @@
 
 		<style type="text/css">
 		body{
-			background-image: url(bg6.jpg);
+			background-image: url(bg4.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-attachment: fixed; 
@@ -24,12 +24,6 @@
   			color: darkslategray;
   			text-align: center;
   			font-size:50px;			
-		}
-		#subtitle {
-			font-family: "Noto Sans", "Optima", Sans-serif;
-			color: darkslategray;
-			text-align: center;
-			font-size: 20px;
 		}
 		button{
 			background: white;
@@ -46,29 +40,51 @@
 
 
 		button:hover {
-    		background-color: grey; /* Green */
+    		background-color: grey; 
     		color: white;
 		}
+
+		#hint {
+			font-family: "Noto Sans", "Optima", Sans-serif;
+			color: black;
+			font-style: italic;
+			text-align: center;
+			margin-left: 300px;
+    		margin-right: 310px;
+		}
+		#Homepage{
+  			background: lightgrey;
+  			font-size:14px;
+  			font-family:"Optima";
+  			border: none;
+  			color: white;
+  			text-align: center;
+  			display: inline-block;
+  			padding: 15px 30px
+  		}
 
 		</style>
 	</head>
 
+	<div>
+  	<button id="Homepage" onclick="{location.href='index.html'}">Homepage</button> 
+  	</div>
+
 	<body id="mybody">
 		
 		<h1 id="headline">Assignment 3</h1>
-		<h2 id="subtitle">“Blue Sky” days and attainment days in Beijing</h2>
+		<p id="hint">*The data is fake. 
+			<br>
+				When the button is clicked, the bar chart will change accordingly. The added points are in steelblue. 
+		</p>
 
-		<br>
-		<br>
-
-		<svg id=viz width="1000" height="400"></svg>
+		<svg id=viz width="700" height="500"></svg>
 
 		<div align="middle";>
-			<button id = "click1" onclick = "bars(bluesky)">Blue sky days</button>
-			<button id = "click2" onclick = "bars(level1)">Level 1 Days</button>
-			<button id = "click3" onclick = "bars(level2)">Level 2 days</button>
-			<button id = "click4" onclick = "bars(level3)">Level 3 days </button>
-			<button id = "click5" onclick = "bars(level4)">Level 4 and 5 days</button>
+			<button id = "click1" onclick = "bars(fakedata1)">Fake Data 1</button>
+			<button id = "click2" onclick = "bars(fakedata2)">Fake Data 2</button>
+			<button id = "click3" onclick = "bars(fakedata3)">Fake Data 3</button>
+
 		</div>
 
 	</body>
@@ -76,11 +92,9 @@
 	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	<script type="text/javascript">
 
-			var bluesky = [185,203,224,228,234,241,246,274,285,286,286,281,271];
-			var level1 = [12,22,27,33,36,26,32,62,47,53,76,86,58];
-			var level2 = [173,181,197,195,198,215,214,212,238,233,210,196,213];
-			var level3 = [157,143,136,121,122,100,108,84,75,73,74,81,84];
-			var level4 = [23,19,5,17,9,24,11,8,5,6,5,5,7];
+			var fakedata1 = [40,46,78,23,87,66,50];
+			var fakedata2 = [12,22,27,33,36,26];
+			var fakedata3 = [23,19,50,17,9,24,71,48,45];
 
 
 			var height = 30;	
@@ -96,10 +110,10 @@
 					.attr("class","rect")
 
 					.attr("width",0)
-					.attr("height",height)
-					.attr("x", "100")
+					.attr("height",height+2)
+					.attr("x", "250")
 					.attr("y", function(d,index){
-						return index * height;
+						return index * height * 1.5;
 					})
 					.attr("fill", "black")
 
@@ -108,38 +122,37 @@
 					
 
 					.attr("width", function(d,i){
-						return(d)
+						return(d * 5)
 					})
-					.attr("height",height-5)
+					.attr("height",height+2)
 					.attr("fill", "black")
-					.attr("x","100")
+					.attr("x","250")
 					.attr("y", function(d,index){
-						return index * height;
+						return index * height * 1.5;
 					})
 
-					.attr("fill", "firebrick");
+					.attr("fill", "tomato");
 				
 				dots
 					.transition()
 			
 					.duration(1000)
 					.attr("width", function(d,i){
-						return(d)
+						return(d * 5)
 					})
-					.attr("height",height-5)
-					.attr("fill", "steelblue");
+					.attr("height",height+2)
+					.attr("fill", "indigo");
 				
 				dots.exit()
 					.transition()
 					.duration(1000)
-					.attr("width", function(d,i){
-						return(d)
-					})
-					.attr("height",height-5)
+					.attr("width",0)
+					.attr("height",height+2)
 					.remove();
 
 				};
 						
-			bars(bluesky);
+			bars(fakedata1);
 	</script>
+
 </html>
