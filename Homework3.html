@@ -10,7 +10,7 @@
 
 	<head>
 		<link rel = "stylesheet"
-		href="https://fonts.googleapis.com/css?family=Noto+Sans|Quattrocento+Sans" rel="stylesheet">
+		href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
 		<style type="text/css">
 		body{
@@ -20,14 +20,14 @@
 			background-attachment: fixed; 
 		}
 		#headline{
-			font-family: 'Quattrocento Sans', "Noto Sans", "Optima", Sans-serif;
+			font-family: "Optima","Noto Sans", Sans-serif;
   			color: darkslategray;
   			text-align: center;
   			font-size:50px;			
 		}
 		button{
 			background: white;
-			font-family: "Noto Sans", "Optima", Sans-serif;
+			font-family: "Optima","Noto Sans", Sans-serif;
 			color:darkslategray;
 			border:grey;
 			text-align: center;
@@ -75,10 +75,10 @@
 		<h1 id="headline">Assignment 3</h1>
 		<p id="hint">*The data is fake. 
 			<br>
-				When the button is clicked, the bar chart will change accordingly. The added points are in steelblue. 
+				When the button is clicked, the bars will change accordingly. 
 		</p>
 
-		<svg id=viz width="700" height="500"></svg>
+		<svg id=viz width="700" height="400"></svg>
 
 		<div align="middle";>
 			<button id = "click1" onclick = "bars(fakedata1)">Fake Data 1</button>
@@ -97,7 +97,7 @@
 			var fakedata3 = [23,19,50,17,9,24,71,48,45];
 
 
-			var height = 30;	
+			var height = 20;	
 
 			var bars = function(dataArray){
 				
@@ -118,7 +118,7 @@
 					.attr("fill", "black")
 
 					.transition()
-					.duration (1000)
+					.duration (850)
 					
 
 					.attr("width", function(d,i){
