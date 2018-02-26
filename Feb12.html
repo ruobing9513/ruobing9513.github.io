@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<title>Feb12</title>
+<meta charset="UTF-8">
+Data file formats 
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+<body id="mybody">
+	<svg id="viz"></svg>
+</body>
+	<script type="text/javascript">
+
+		d3.text("textData.txt", function(error,data){
+			if (error){
+			console.log("Error!"); 
+			}     //if no error, it should be "null" in console. 
+			else {
+			console.log("Text array");
+			console.log(data) // the data in the txt file should be shown in console 
+			}
+		});
+
+		d3.csv ("dataTable.csv", function(error,data){
+			if (error){
+			console.log("Error!"); 
+			}     
+			else {
+			console.log(data);
+			console.log("CSV string");  
+			data.forEach(function(d){
+				d.value = parseFloat(d.value) // make the object/string to numbers 
+			})
+			}
+		});
+
+		d3.json("dataObject.json", function(error,data){
+			if (error){
+			console.log("Error!"); 
+			}     
+			else {
+			console.log("Json string");
+			console.log(data);  
+			}
+		});
+
+		var url = "https://api.datausa.io/api/?required=income&show=geo&sumlevel=state";
+		d3.json(url, function(error, data){
+			if (error){
+				console.log("Error!");
+			}
+			else {
+				console.log(data);
+			}
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+
+</html>

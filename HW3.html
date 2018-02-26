@@ -14,7 +14,7 @@
 
 		<style type="text/css">
 		body{
-			background-image: url(bg6.jpg);
+			background-image: url(bg1.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-attachment: fixed; 
@@ -97,25 +97,38 @@
 
 		<div align="middle";>
 			<button id = "click1" onclick = "bars(bluesky)">Blue sky days</button>
-			<button id = "click2" onclick = "bars(level1)">Level 1 Days</button>
-			<button id = "click3" onclick = "bars(level2)">Level 2 days</button>
-			<button id = "click4" onclick = "bars(level3)">Level 3 days </button>
-			<button id = "click5" onclick = "bars(level4)">Level 4 and 5 days</button>
+			<button id = "click2" onclick = "bars(generateRandomArray)">Level 1 Days</button>
+			<button id = "click3" onclick = "bars(generateRandomArray)">Level 2 days</button>
+	
 		</div>
 
 	</body>
 
 	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	<script type="text/javascript">
+			// RANDOM DATA ARRAY HERE 
 
-			var bluesky = [185,203,224,228,234,241,246,274,285,286,286,281,271];
-			var level1 = [12,22,27,33,36,26,32,62,47,53,76,86,58];
-			var level2 = [173,181,197,195,198,215,214,212,238,233,210,196,213];
-			var level3 = [157,143,136,121,122,100,108,84,75,73,74,81,84];
-			var level4 = [23,19,5,17,9,24,11,8,5,6,5,5,7];
+			function generateRandomArray() {
+        		var random = [];
+					for (i = 0; i < Math.floor(Math.random() * 100); i++) {
+            		random.push(Math.floor(Math.random() * 40));
+       		 }
+        			return random;
+    		}
 
+    		// RANDOM COLOR GENERATOR 
+    		function generateRandomcolor(){
+    			var color = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F'];
+      			var randomColor = "#";
+        		for (i = 1; i <= 6; i++) {
+            // generate a random number from the valid characters
+            randomColor += color[Math.floor(Math.random() * color.length)];
+        	}
+        			return randomColor;
+    			}
 
-			var height = 30;	
+			var height = 20;	
 
 			var bars = function(dataArray){
 				
@@ -140,7 +153,7 @@
 					
 
 					.attr("width", function(d,i){
-						return(d)
+						return(d*5)
 					})
 					.attr("height",height-5)
 					.attr("fill", "black")
@@ -149,30 +162,30 @@
 						return index * height;
 					})
 
-					.attr("fill", "firebrick");
+					.attr("fill", generateRandomcolor);
 				
 				dots
 					.transition()
 			
 					.duration(1000)
 					.attr("width", function(d,i){
-						return(d)
+						return(d*5)
 					})
 					.attr("height",height-5)
-					.attr("fill", "steelblue");
+					.attr("fill", generateRandomcolor);
 				
 				dots.exit()
 					.transition()
 					.duration(1000)
 					.attr("width", function(d,i){
-						return(d)
+						return(d*5)
 					})
 					.attr("height",height-5)
 					.remove();
 
 				};
 						
-			bars(bluesky);
+			bars(generateRandomArray);
 	</script>
 	<p id="explanation">
 			In the NAAQS-1996, days with level 1 (API less than or equal to 50) is considered as "Blue Sky days". Air quality is considered satisfactory, and air pollution poses little or no risk.

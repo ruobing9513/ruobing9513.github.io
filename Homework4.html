@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta charset="UTF-8">
+<title>Assignment 4</title>
+	</head>
+
+	<style type="text/css">
+		body{
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed; 
+		}
+		#headline{
+			font-family: "Optima","Noto Sans", Sans-serif;
+  			color: darkslategray;
+  			text-align: center;
+  			font-size:50px;
+  		}
+  		#pitch{
+  			font-family: "Optima",Sans-serif;
+  			color: black;
+  			text-align:center;
+  			font-size:35px;
+  		}		
+  		#title{
+  			font-family: "Optima",Sans-serif;
+  			color: darkslategray;
+  			text-align:center;
+  			font-size:25px;
+  		}	
+  		#text{
+  			font-family: "Optima",Sans-serif;
+  			color: darkslategray;
+  			text-align:left;
+  		}	
+  		#mybody{
+  			font-family: "Optima",Sans-serif;
+  			color: darkslategray;
+  			text-align:center;
+  		}
+
+	</style>
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+<body id="mybody">
+	<h1 id="headline">Assignment 4</h1>
+	<h2 id="pitch"> Final Project pitch</h2>
+	<h2 id="title"> Which Starbucks drink is best for you?</h2>
+
+		<div align="middle" style="display:inline;">
+		<img src="images.jpeg">
+		</div>
+
+	<svg id=viz width="1000" height="300"></svg>
+	<div id="text" style="display: inline;">
+			<p>Classic Espresso Drinks</p>
+			<p>Coffee</p>
+			<p>Frappuccino</p>
+			<p>Shaken iced beverages</p>
+			<p>Signature Espresso drinks</p>
+			<p>Smoothie</p>
+			<p>Tazo Tea drinks</p>	
+	</div>
+
+	<p>
+<img src="screenshot.png" alt="my picture" height=50 width=100 style="float: right;">
+This is the paragraph from which you want the image to be floated to the
+right. This is a test. It is only a test. Lorem ipsum dolor sit amet,
+consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+dolore magna aliqua.
+</p>
+
+	
+	<div align="middle";>
+			<button id = "click1" onclick = "bars(avecal)">Average Calories</button>
+			<button id = "click2" onclick = "bars(avesugar)">Average Sugar</button>
+			<button id = "click3" onclick = "bars(avecaff)">Average Caffine</button>
+
+		</div>
+	<img src="screenshot.png" align="middle">
+</body>
+<script type="text/javascript">
+
+			var avecal = [140.172,4.25,276.944,233.077,114.444,250,282.222,177.3076];
+			var avesugar = [16.97,0,57.083,26,38.6,36.78,30.31];
+			var avecaff = [122.068,293.75,101.806,139.583,73.875,5.625,50.42];
+
+			var height = 20;	
+
+			var bars = function(dataArray){
+			var svg = d3.select("#viz");
+
+				var dots = svg.selectAll(".rect")
+					.data(dataArray);
+	
+				dots.enter().append("rect")
+					.attr("class","rect")
+
+					.attr("width",0)
+					.attr("height",height)
+					.attr("x", "0")
+					.attr("y", function(d,index){
+						return index * height*1.5  ;
+					})
+					.attr("fill", "black")
+
+					.transition()
+					.duration (1000)
+					
+
+					.attr("width", function(d,i){
+						return(d)
+					})
+					.attr("height",height)
+					.attr("fill", "black")
+					.attr("x","0")
+					.attr("y", function(d,index){
+						return index * height*1.5 ;
+					})
+
+					.attr("fill", "tomato");
+
+					
+				
+				dots
+					.transition()
+			
+					.duration(1000)
+					.attr("width", function(d,i){
+						return(d)
+					})
+					.attr("height",height)
+					.attr("fill", "indigo");
+				
+				dots.exit()
+					.transition()
+					.duration(1000)
+					.attr("width",0)
+					.attr("height",height)
+					.remove();
+
+				};
+
+		bars(avecal)
+	</script>
+<script type="text/javascript">
+	d3.csv ("Starbucks.csv", function(error,data){
+			if (error){
+			console.log("Error!"); 
+			}     
+			else {
+			console.log(data);
+			console.log("CSV string");  
+			data.forEach(function(d){
+				d.value = parseFloat(d.value)  
+			})
+			}
+		});
+</script>
+
+</html>
