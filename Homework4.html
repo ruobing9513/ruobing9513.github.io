@@ -34,12 +34,41 @@
   			color: darkslategray;
   			text-align:left;
   			float: left;
+  			margin-left: 300px;
+			margin-right: 280px;
   		}	
   		#mybody{
   			font-family: "Optima",Sans-serif;
   			color: darkslategray;
   			text-align:center;
   		}
+  		#mythoughts{
+  			font-family: "Optima",Sans-serif;
+  			color: darkslategray;
+  			text-align:left;
+  			margin-left: 300px;
+			margin-right: 280px;
+  		}
+  		button{
+			background: white;
+			font-family: "Optima","Noto Sans", Sans-serif;
+			color:darkslategray;
+			border:grey;
+			text-align: center;
+			font-size:15px;
+			display:inline-block;
+			padding:10px 15px;
+			-webkit-transition-duration: 0.4s; /* Safari */
+    			transition-duration: 0.4s;
+		}
+
+		button:hover {
+    		background-color: grey; 
+    		color: white;
+		}
+		#viz{
+			align-items: center;
+		}
 
 	</style>
 <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
@@ -51,8 +80,35 @@
 		<div align="middle" style="display:inline;">
 		<img src="images.jpeg">
 		</div>
-
-	<svg id=viz width="1000" height="300" ></svg>
+	<br>
+	<img src="screenshot.png" align="middle">
+	<br>
+	<p id="mythoughts" style="font-weight: bold;">
+		My thoughts about the visualization		
+	</p>
+	<p id="mythoughts";>
+		I would like to do a visualization on Starbucks drinks of different sizes and types categorized by calories, sugar level, and caffine and other affecting variables in order for people to get a better sense of the calories and sugar level contained in drinks before they make a purchase. 
+	</p>
+	<p id='mythoughts' style="font-weight:bold;" >
+		Variables
+	</p>
+	<p id="mythoughts">
+		Sizes,drinks, milk, calories, sugar, caffine.
+	</p>
+	<p id='mythoughts' style="font-weight:bold;" >
+		How to visualize
+	</p>
+	<p id='mythoughts'>
+		A bubble chart of all the drinks catorized by sizes shown in their calories, sugar level and caffine. And also people could create a bubble of their own choice by clicking different types, sizes and milk they would like to choose for their drinks to look at calories,sugar level and caffine. 
+		<br>
+		Also if it's available, I want to do a popular coffee shop locations throughout the U.S. by the top one popular coffee shops in different regions of the U.S. That's a bonus for the map practice. 
+		<br>
+		Suggestion: it would be a great comparison if i can compare calories and sugar level for the non-fat milk or sugar-free drinks
+	</p>
+	<p id='mythoughts' style="font-weight:bold;" >
+		Mock viz
+	</p>
+	<svg id=viz width="400" height="300" ></svg>
 	<div id="text">
 			<p>Classic Espresso Drinks</p>
 			<p>Coffee</p>
@@ -69,7 +125,7 @@
 			<button id = "click3" onclick = "bars(avecaff)">Average Caffine</button>
 
 		</div>
-	<img src="screenshot.png" align="middle">
+	
 </body>
 <script type="text/javascript">
 
@@ -136,9 +192,7 @@
 		bars(avecal)
 	</script>
 
-	<p id="text" width="300" height="500";>
-		I would like to do a visualization on Starbucks drinks of different sizes and types categorized by calories, sugar level, and caffine and other affecting variables in order for people to get a better sense of the calories and sugar level contained in drinks before they make a purchase. 
-	</p>
+	
 
 <script type="text/javascript">
 	d3.csv ("Starbucks.csv", function(error,data){

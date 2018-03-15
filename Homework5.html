@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<title>Starbucks drinks grande calories</title>
+<meta charset="UTF-8">
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<style type="text/css">
+			body {
+				margin:0;
+			}
+			#h {
+				font-family: Optima, sans-serif;
+				text-align: center;
+				font-size:40px;
+			}
+
+			#p {
+				font-family: Optima, sans-serif;
+				float: left;
+  				margin-left: 300px;
+				margin-right: 280px;
+				text-align: left;
+				font-size: 20px;
+			}
+			#viz{
+			align-items: center;
+		}
+		</style>
+
+	<body id="mybody">
+	<h1 id="h">U.S. major mass shooting </h1>
+	<p id="p">One strict definition used in the past by the federal government says at least four victims must be killed. Much broader criteria requires at least four victims be injured, though not necessarily killed. Other definitions land somewhere in the middle. The visualization below shows all the shooting incidents that fall in the criteria from 2016 to 2018.</p>
+	<br>
+
+	<script>
+	var margin = {top: 20, right: 180, bottom: 30, left: 40},
+    	width = +svg.attr("width") - margin.left - margin.right,
+   		height = +svg.attr("height") - margin.top - margin.bottom,
+    	g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	// set up svg 
+	var svg = d3. select ("mybody")
+		.append ("svg")
+		.append("g")
+      	.attr("transform","translate(" + margin.left + "," + margin.right + ")")
+      	.style("fill", "lightblue")
+
+     //X and Y axis 
+     var xScale = d3.scaleBand()
+     	.rangeRound([0,width])
+     	.padding(0.3)
+     	.align(0.3);
+
+     var yScale = d3. scaleLinear()
+     	.rangeRound([height,0]);
+
+     var zScale = d3.scaleOrdinal(d3.schemeCategory20);
+
+     var stack = d3.stack()
+     	 d3.csv("sample.csv", function(error,data){
+     		if(error) 
+     			console.log("error!");
+
+    xScale.domain(data.map(function(d) { return d.ethnicity; }));
+  	yScale.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+  	zScale.domain(data.columns.slice(1));
+
+  	g.selectAll(".serie")
+  		.data(stack.keys(data.columns.slice(1))(data))
+  		.enter()
+  		.append("g")
+  			.attr("class","serie")
+  			.attr("fill", function(d){
+  			z(d.key);
+  		})
+  		.selectAll("rect")
+  		.data(function(d){
+  			return d;
+  		})
+  		.enter()
+  		.append("rect")
+  			.attr("x",function(d){
+  				x(d.data.ethnicity);
+  			})
+  			.attr("y", function(d){
+  				y(d[0]) - y(d[1]);
+  			})
+  			.attr("width",x.bandwidth());
+  	g.append("g")
+  		.attr("class", "axis axis--x")
+      	.attr("transform", "translate(0," + height + ")")
+      	.call(d3.axisBottom(x));
+
+			
+
+	</script>
+
+</html>

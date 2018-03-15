@@ -38,7 +38,7 @@
 			var newData = [33,4,20];
 
 			var drawCircles = function(dataArray){
-				
+			var height = 20;
 				var svg = d3.select("#viz");
 				//it is asking to select all the dots in the svg and applying them to the array"myData", and it should show up with the exact number/lengeth of the array"myData"	
 
@@ -55,7 +55,7 @@
 					//setting up the radius as the data, and "cx" and "cy" meaning the actual position/cordinates of the circles 
 					//setting radius of the circles
 					//if you want to set up the radius as unchanged, just type "r",50;else we need to write a function to have the radius changed by our data points 
-					.attr("cx", "50";)
+					.attr("cx", "50")
 					.attr("cy",function(d,i){
 						return i * height;
 					})
