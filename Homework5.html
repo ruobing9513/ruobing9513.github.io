@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Starbucks drinks grande calories</title>
+<title>U.S. Mass Shooting data</title>
 <meta charset="UTF-8">
 	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	<style type="text/css">
@@ -32,66 +32,102 @@
 	<br>
 
 	<script>
-	var margin = {top: 20, right: 180, bottom: 30, left: 40},
-    	width = +svg.attr("width") - margin.left - margin.right,
-   		height = +svg.attr("height") - margin.top - margin.bottom,
-    	g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	
-	// set up svg 
-	var svg = d3. select ("mybody")
-		.append ("svg")
-		.append("g")
-      	.attr("transform","translate(" + margin.left + "," + margin.right + ")")
-      	.style("fill", "lightblue")
+		d3.csv("Massshooting.csv", function(error,data){
+			if (error){
+			console.log("Error!"); 
+			}     
+			else {
+			console.log(data);
+			console.log("CSV string");  
+			data.forEach(function(d){
+				d.Fatalities = parseFloat(d.Fatalities) 
+				d. Injured = parseFloat(d.Injured)// make the object/string to numbers 
+			})
+			}
+		});
 
-     //X and Y axis 
-     var xScale = d3.scaleBand()
-     	.rangeRound([0,width])
-     	.padding(0.3)
-     	.align(0.3);
+    var weapon = d3.csv("weapon.csv", function(error,data){
+      if (error){
+      console.log("Error!"); 
+      }     
+      else {
+      console.log(data);
+      console.log("CSV string");  
+      data.forEach(function(d){
+        d.Cases = parseFloat(d.Cases),
+        d.Amount = parseFloat (d.Amount)
+         // make the object/string to numbers 
+       })
+      }
+    });
 
-     var yScale = d3. scaleLinear()
-     	.rangeRound([height,0]);
+    var diameter = 400;
 
-     var zScale = d3.scaleOrdinal(d3.schemeCategory20);
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-     var stack = d3.stack()
-     	 d3.csv("sample.csv", function(error,data){
-     		if(error) 
-     			console.log("error!");
+	var bubble = d3.pack(weapon)
+            .size([diameter, diameter])
+            .padding(1.5);
 
-    xScale.domain(data.map(function(d) { return d.ethnicity; }));
-  	yScale.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
-  	zScale.domain(data.columns.slice(1));
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .attr("class", "bubble");
 
-  	g.selectAll(".serie")
-  		.data(stack.keys(data.columns.slice(1))(data))
-  		.enter()
-  		.append("g")
-  			.attr("class","serie")
-  			.attr("fill", function(d){
-  			z(d.key);
-  		})
-  		.selectAll("rect")
-  		.data(function(d){
-  			return d;
-  		})
-  		.enter()
-  		.append("rect")
-  			.attr("x",function(d){
-  				x(d.data.ethnicity);
-  			})
-  			.attr("y", function(d){
-  				y(d[0]) - y(d[1]);
-  			})
-  			.attr("width",x.bandwidth());
-  	g.append("g")
-  		.attr("class", "axis axis--x")
-      	.attr("transform", "translate(0," + height + ")")
-      	.call(d3.axisBottom(x));
+    var nodes = d3.hierarchy(weapon)
+            .sum(function(d) { return d.Cases; });
 
-			
+    var node = svg.selectAll("body")
+            .data(bubble(nodes).descendants())
+            .enter()
+            .filter(function(d){
+                return  !d.children
+            })
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
 
+    node.append("title")
+            .text(function(d) {
+                return d.Name + ": " + d.Cases;
+            });
+
+    node.append("circle")
+            .attr("r", function(d) {
+                return d.r;
+            })
+            .style("fill", function(d,i) {
+                return color(i);
+            });
+    node.append("text")
+            .attr("dy", ".2em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Name.substring(0, d.r / 3);
+            })
+            .attr("font-family", "Futura")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+        node.append("text")
+            .attr("dy", "1.3em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Cases;
+            })
+            .attr("font-family",  "Gill Sans", "Gill Sans MT")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+        d3.select(self.frameElement)
+            .style("height", diameter + "px");
 	</script>
 
 </html>

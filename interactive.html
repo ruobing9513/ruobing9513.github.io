@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <script src="../lib/d3.v3.min.js"></script>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+        }
+        
+        .bar {
+            fill: blue;
+        }
+        .bar:hover {
+            fill: orange;
+        }
+        .axis {
+            font-size: 13px;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: grey;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+        }
+        
+        .label {
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="graphic"></div>
+    <script>
+        var data = d3.csv (Massshotingbyyear.csv)
+        if (error){
+            console.log("Error!"); 
+      }     
+        else {
+            console.log(data);
+            console.log("CSV string");  
+        data.forEach(function(d){
+        d.1 = parseFloat(d.1),
+        d.2 = parseFloat (d.2)
+        d.3 = parseFloat (d.3)
+        d.4 = parseFloat (d.4)
+        d.5 = parseFloat (d.5)
+        d.6 = parseFloat (d.6)
+        d.7 = parseFloat (d.7)
+        d.8 = parseFloat (d.8)
+        d.9 = parseFloat (d.9)
+        d.10 = parseFloat (d.10)
+        d.11 = parseFloat (d.11)
+        d.12 = parseFloat (d.12)
+         // make the object/string to numbers 
+       })
+      }
+    };
+
+        //set up svg using margin conventions - we'll need plenty of room on the left for labels
+        var margin = {
+            top: 15,
+            right: 45,
+            bottom: 15,
+            left: 150
+        };
+
+        for(var i=0; i<data.length; i++){
+            data[i].total = 0;
+            console.log(data[i].Year);
+            for (var case in data[i].) {
+                data[i].total += data[i].revenue[rev];
+                console.log(data[i].revenue[rev]);
+            }
+        }
+
+        var width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var svg = d3.select("#graphic").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var x = d3.scale.linear()
+            .range([0, width - 250])
+            .domain([0, d3.max(data, function (d) {
+                return d.total;
+            })]);
+
+        var y = d3.scale.ordinal()
+            .rangeRoundBands([height, 0], .1)
+            .domain(data.map(function (d) {
+                return d.franchise;
+            }));
+
+        //make y axis to show bar names
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            //no tick marks
+            .tickSize(0)
+            .orient("left");
+
+        var gy = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+
+        var bars = svg.selectAll(".bar")
+            .data(data)
+            .enter()
+            .append("g")
+
+        //append rects
+        bars.append("rect")
+            .attr("class", "bar")
+            .attr("y", function (d) {
+                return y(d.franchise);
+            })
+            .attr("height", y.rangeBand())
+            .attr("x", 0)
+            .attr("width", function (d) {
+                return x(d.total);
+            })
+            .on("mouseover", function(d){
+                //*************************
+                //Line chart
+                //**************************
+                var chosen_movie = []
+
+                for (var rev in d.revenue) {
+                    chosen_movie[rev - 1] = d.revenue[rev];
+                }
+                console.log(chosen_movie);
+                var m = [80, 600, 80, 80]; // margins
+                var w = 180; // width
+                var h = 140; // height
+
+                var x = d3.scale.linear().domain([0, chosen_movie.length]).range([0, w]);
+                var y = d3.scale.linear().domain([0, d3.max(chosen_movie, function(d){
+                    return d;
+                })]).range([h, 0]);
+
+                var line = d3.svg.line()
+                    // assign the X function to plot our line as we wish
+                    .x(function(d,i) { 
+                        return x(i) + m[1]; 
+                    })
+                    .y(function(d,i) { 
+                        console.log(d)
+                        return y(d); 
+                    })
+
+
+                    // Define the axes
+                    var xAxis_small = d3.svg.axis().scale(x)
+                        .orient("bottom").ticks(5);
+
+                    var yAxis_small = d3.svg.axis().scale(y)
+                        .orient("left").ticks(5);
+                    
+                    plot = svg.append("path")
+                        .attr("id","line")
+                        .attr("d", line(chosen_movie))
+                        .attr("stroke", "red")
+                        .attr("fill", "none");
+
+                    // Add the X Axis
+                    svg.append("g")
+                        .attr("id", "xaxis")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(600,"+h+")")
+                        .call(xAxis_small);
+
+                    // Add the Y Axis
+                    svg.append("g")
+                        .attr("id", "yaxis")
+                        .attr("class", "y axis")
+                        .attr("transform", "translate(600,0)")
+                        .call(yAxis_small);
+
+                    svg.append("text")
+                        .attr("id","xlabel")
+                        .attr("class", "x label")
+                        .attr("text-anchor", "end")
+                        .attr("x", 700)
+                        .attr("y", h + 30)
+                        .text("Movie");
+
+                    svg.append("text")
+                        .attr("id","ylabel")
+                        .attr("class", "y label")
+                        .attr("text-anchor", "end")
+                        .attr("y", 550)
+                        .attr("x", -60)
+                        .attr("dy", ".75em")
+                        .attr("transform", "rotate(-90)")
+                        .text("Revenue");
+
+
+                })
+        .on("mouseout", function(d){
+            d3.select("#line").remove();
+            d3.select("#xaxis").remove();
+            d3.select("#yaxis").remove();
+            d3.select("#ylabel").remove();
+            d3.select("#xlabel").remove();
+        });
+
+        //add a value label to the right of each bar
+        bars.append("text")
+            .attr("class", "label")
+            //y position of the label is halfway down the bar
+            .attr("y", function (d) {
+                return y(d.franchise) + y.rangeBand() / 2 + 4;
+            })
+            //x position is 3 pixels to the right of the bar
+            .attr("x", function (d) {
+                return 4;
+            })
+            .text(function (d) {
+                return "$"+d.total;
+            })
+            .style("fill", "white");
+        
+    </script>
+
+</body>
+
+</html>

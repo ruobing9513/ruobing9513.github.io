@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<title>Starbucks drinks grande calories</title>
+<meta charset="UTF-8">
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<style type="text/css">
+			body {
+				margin:0;
+			}
+			#h {
+				font-family: Optima, sans-serif;
+				text-align: center;
+				font-size:40px;
+			}
+
+			#p {
+				font-family: Optima, sans-serif;
+				float: left;
+  				margin-left: 300px;
+				margin-right: 280px;
+				text-align: left;
+				font-size: 20px;
+			}
+			#viz{
+			align-items: center;
+		}
+		</style>
+
+	<body id="mybody">
+	<h1 id="h">Ten Starbucks drinks</h1>
+	<p id="p">This is for fun - think about it before you make a purchase.</p>
+	<br>
+  
+    <div id="stacked">
+    <svg id="viz" width="600" height="500">
+      <g id="xAxis"></g>
+    </svg>
+    </div>
+  </body>
+
+	<script>
+  //setting up svg 
+  var svg = d3.select("#viz"),
+    margin = {top: 20, right: 180, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var x = d3.scaleBand()
+      .rangeRound([0, width])
+      .padding(0.3)
+      .align(0.3);
+
+  var y = d3.scaleLinear()
+      .rangeRound([height, 0]);
+
+  var z = d3.scaleOrdinal(d3.schemeCategory20)
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+    //convert string to numbers 
+  d3.csv ("Starbucks1.csv", function(error,data){
+      if (error){
+      console.log("Error!"); 
+      }     
+      else {
+      console.log(data);
+      console.log("CSV string");  
+      data.forEach(function(d){
+        d.Calories = parseFloat(d.Calories),
+        d.TotalFat = parseFloat (d.TotalFat),
+        d.Transfat = parseFloat(d.Transfat),
+        d.Carbohydrates = parseFloat(d.Carbohydrates),
+        d.Sugar = parseFloat(d.Sugar),
+        d.Protein = parseFloat(d.Protein) // make the object/string to numbers 
+      })
+      }
+    });
+
+    //setting up domains 
+  var stack = d3.stack();
+  
+      data.sort(function(a, b) { return b.total - a.total; });
+
+      x.domain(data.map(function(d) { return d.Beverages; }));
+      y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+      z.domain(data.columns.slice(1));
+
+    // setting up slices 
+  g.selectAll(".serie")
+    .data(stack.keys(data.columns.slice(1))(data))
+    .enter().append("g")
+      .attr("class", "serie")
+      .attr("fill", function(d) { return z(d.key); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      .attr("x", function(d) { return x(d.data.Beverages); })
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      .attr("width", x.bandwidth());
+
+    //axises
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(30, "s"))
+    .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks(10).pop()))
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "start")
+      .attr("fill", "#000")
+      .text("in g");
+
+
+     
+
+	</script>
+
+</html>
