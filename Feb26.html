@@ -51,6 +51,7 @@
 			.domain([0,maxDistance])
 			.range([padding,window.innerWidth - padding * 2]);
 
+
 		var svg = d3.select("#viz")
 			.attr("width", window.innerWidth)
 			.attr("height", window.innerHeight);
@@ -85,6 +86,7 @@
 			d3.select("g#xAxis")
 			.attr("transform","translate(0,150)")
 			.call(xAxis);
+
 
 
 	</script>

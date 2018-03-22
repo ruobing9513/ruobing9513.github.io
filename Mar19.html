@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>How to make maps</title>
+<meta charset="UTF-8">
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+	</head>
+
+	<style type="text/css"></style>
+
+	<body>
+		<svg id="map" width=800 height=800 >
+			<rect width=800 height=800 fill="lightgrey"></rect>
+		</svg>
+
+	</body>
+	<script type="text/javascript">
+		d3.queue()
+			.defer(d3.json, "USA.json")
+			.defer(d3.csv, "Massshooting.csv")
+			.awaitAll(function(error,dataArray){
+				var data = dataArray[0];
+				var shooting = dataArray[1];
+				console.log(dataArray);
+			//loading multiple data at the same time 
+			
+			var geoJSON = topojson.feature(data,data.objects.states);
+			
+
+			//setting up a projection 
+			var proj = d3.geoAlbersUsa()
+				.fitSize([800,800],geoJSON); //pass rhe geoJSON data to a SVG
+
+			var path = d3.geoPath()
+			.projection(proj); // creating a path
+
+			//geoJSON.features = geoJSON.features.filter(function(feature){
+				//return feature.id != "NV";
+				//});
+
+			var states = d3.select("#map").selectAll("path")
+				.data(geoJSON.features);
+
+			states.enter().append("path") //passing the path to svg and setting up the "d" value to draw a path 
+				.attr("fill",function(feature){
+					if (feature.id == "MA"){
+						return "red";
+					}
+					else{
+						return "green";
+					}
+					
+				})
+				.attr("stroke","white")
+				.attr("stroke-width",1)
+				.attr("d",function(feature){
+					return path(feature);
+				});
+
+			//load my data into the file, make sure you create a new data array and variable accordingly
+			var dots = d3.select("#map").selectAll("circle")
+			.data(shooting);
+
+			dots.enter().append("circle")
+				.attr("transform",function(point){
+					return "translate(" + proj([point.longitude,point.latitude]) + ")"
+				})
+				.attr("fill", function(point){
+					if (point.Type == "Spree"){
+						return "red";
+					}
+					else{
+						return "black";
+					}
+				}) //if you want to use data in csv, make sure have point.before the column name 
+				.attr("stroke","white")
+				.attr("stroke-width",.5)
+				.attr("r", function(point){
+					return point.Fatalities / 2;
+				});
+
+
+		});
+	</script>
+</html>
+
+	

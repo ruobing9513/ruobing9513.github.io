@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-<title>U.S. Mass Shooting data</title>
+<title>Explore U.S. Mass Shooting - More guns,more violence?</title>
 <meta charset="UTF-8">
 	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<link href= "animate.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Hammersmith+One|PT+Sans+Narrow" rel="stylesheet">
 	<style type="text/css">
-			body {
-				margin:0;
-			}
-			#h {
-				font-family: Optima, sans-serif;
+			#h1 {
+				font-family: Anton, sans-serif;
 				text-align: center;
-				font-size:40px;
+				font-size:60px;
+				color: white;
+				position: absolute;
+ 				top: 40%;
+  				left: 40%;
+			}
+
+			#h2 {
+				font-family: PT Sans Narrow, sans-serif;
+				text-align: center;
+				font-size:20px;
+				color: white;
+				position: absolute;
+ 				top: 60%;
+  				left: 60%;
+			}
+
+			#byline{
+				font-family: PT Sans Narrow, sans-serif;
+				text-align: right;
+				font-size:15px;
+				color: white;
+				position: absolute;
+ 				top: 65%;
+  				left: 65%;
 			}
 
 			#p {
@@ -19,115 +42,99 @@
   				margin-left: 300px;
 				margin-right: 280px;
 				text-align: left;
-				font-size: 20px;
+				font-size: 15px;
 			}
-			#viz{
-			align-items: center;
-		}
+
+			#coverpage{
+				width:100%;
+			}
+
+			#container{
+				text-align: center;
+				animation-duration: 2s;
+			}
+			
 		</style>
 
-	<body id="mybody">
-	<h1 id="h">U.S. major mass shooting </h1>
-	<p id="p">One strict definition used in the past by the federal government says at least four victims must be killed. Much broader criteria requires at least four victims be injured, though not necessarily killed. Other definitions land somewhere in the middle. The visualization below shows all the shooting incidents that fall in the criteria from 2016 to 2018.</p>
-	<br>
+<body>
+	<div id="container" class="item animated fadeIn";>
+		<img src="finalbg1.png" id="coverpage">
+	<h1 id="h1">More Guns, More Violence?</h1>
+	<h2 id="h2">Explore U.S. major mass shooting since 1982</h2>
+	<p id="byline">By Ruobing Su</p>
+	</div>
+</body>
 
-	<script>
-		d3.csv("Massshooting.csv", function(error,data){
-			if (error){
-			console.log("Error!"); 
-			}     
-			else {
-			console.log(data);
-			console.log("CSV string");  
-			data.forEach(function(d){
-				d.Fatalities = parseFloat(d.Fatalities) 
-				d. Injured = parseFloat(d.Injured)// make the object/string to numbers 
-			})
-			}
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+	</head>
+
+	<body>
+		<div align="center">
+			<svg id="map" width="1200" height="800" align="center">
+				<rect width=1200 height=800 fill="white" opacity="0" align="center"></rect>
+			</svg>
+		</div>
+
+	</body>
+	<div id="map">
+	<script type="text/javascript">
+		d3.queue()
+			.defer(d3.json, "USA.json")
+			.defer(d3.csv, "Massshooting.csv")
+			.awaitAll(function(error,dataArray){
+				var data = dataArray[0];
+				var shooting = dataArray[1];
+				console.log(dataArray);
+			
+			var geoJSON = topojson.feature(data,data.objects.states);
+			
+			var proj = d3.geoAlbersUsa()
+				.fitSize([1200,800],geoJSON); 
+
+			var path = d3.geoPath()
+			.projection(proj); 
+
+			var states = d3.select("#map").selectAll("path")
+				.data(geoJSON.features);
+
+			states.enter().append("path") //passing the path to svg and setting up the "d" value to draw a path 
+				.attr("fill","gainsboro")
+				.attr("stroke","white")
+				.attr("stroke-width",1.5)
+				.attr("d",function(feature){
+					return path(feature);
+				});
+
+			//load my data into the file, make sure you create a new data array and variable accordingly
+			var dots = d3.select("#map").selectAll("circle")
+			.data(shooting);
+
+			dots.enter().append("circle")
+				.attr("transform",function(point){
+					return "translate(" + proj([point.longitude,point.latitude]) + ")"
+				})
+				.attr("fill", function(point){
+					if (point.Type == "Spree"){
+						return "crimson";
+					}
+					else{
+						return "black";
+					}
+				}) //if you want to use data in csv, make sure have point.before the column name 
+				.attr("stroke-width",.5)
+				.attr("opacity",.8)
+				.attr("r", function(point){
+					return point.Fatalities / 2;
+				});
+
+
 		});
-
-    var weapon = d3.csv("weapon.csv", function(error,data){
-      if (error){
-      console.log("Error!"); 
-      }     
-      else {
-      console.log(data);
-      console.log("CSV string");  
-      data.forEach(function(d){
-        d.Cases = parseFloat(d.Cases),
-        d.Amount = parseFloat (d.Amount)
-         // make the object/string to numbers 
-       })
-      }
-    });
-
-    var diameter = 400;
-
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-	var bubble = d3.pack(weapon)
-            .size([diameter, diameter])
-            .padding(1.5);
-
-    var svg = d3.select("body")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .attr("class", "bubble");
-
-    var nodes = d3.hierarchy(weapon)
-            .sum(function(d) { return d.Cases; });
-
-    var node = svg.selectAll("body")
-            .data(bubble(nodes).descendants())
-            .enter()
-            .filter(function(d){
-                return  !d.children
-            })
-            .append("g")
-            .attr("class", "node")
-            .attr("transform", function(d) {
-                return "translate(" + d.x + "," + d.y + ")";
-            });
-
-    node.append("title")
-            .text(function(d) {
-                return d.Name + ": " + d.Cases;
-            });
-
-    node.append("circle")
-            .attr("r", function(d) {
-                return d.r;
-            })
-            .style("fill", function(d,i) {
-                return color(i);
-            });
-    node.append("text")
-            .attr("dy", ".2em")
-            .style("text-anchor", "middle")
-            .text(function(d) {
-                return d.data.Name.substring(0, d.r / 3);
-            })
-            .attr("font-family", "Futura")
-            .attr("font-size", function(d){
-                return d.r/5;
-            })
-            .attr("fill", "white");
-
-        node.append("text")
-            .attr("dy", "1.3em")
-            .style("text-anchor", "middle")
-            .text(function(d) {
-                return d.data.Cases;
-            })
-            .attr("font-family",  "Gill Sans", "Gill Sans MT")
-            .attr("font-size", function(d){
-                return d.r/5;
-            })
-            .attr("fill", "white");
-
-        d3.select(self.frameElement)
-            .style("height", diameter + "px");
 	</script>
+	</div>
+
+	<p id="p">One strict definition used in the past by the federal government says at least four victims must be killed. Much broader criteria requires at least four victims be injured, though not necessarily killed. Other definitions land somewhere in the middle. The visualization below shows all the shooting incidents that fall in the criteria from 2016 to 2018.</p>
+
 
 </html>

@@ -1,0 +1,2630 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-FAj/oBu5ZPipk/rx+ettz6IRH1VLrwGnnFiEhrgGv7RkwvrhtkxJOzhN3ALrJfRihdGAVIqb5xrowkLpSw6SqA==" rel="stylesheet" href="https://assets-cdn.github.com/assets/frameworks-0b6eee1f89d4460d83bdbee0a4cb0020.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-10kcctO8aIQaIV96pvdbnSF/NKsMQoRXQzn0Kdnx7nUufnPUDMGp1xp57ilQnZjZVbF9NZu74pHIf0knSEha7Q==" rel="stylesheet" href="https://assets-cdn.github.com/assets/github-c4d5af25254cfc8bb30ae5cb6f074c97.css" />
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>dataworld_us_mass_shootings_data/mass_shootings_main.csv at master · billglennon/dataworld_us_mass_shootings_data</title>
+    <meta name="description" content="GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.">
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1130086?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="billglennon/dataworld_us_mass_shootings_data" /><meta property="og:url" content="https://github.com/billglennon/dataworld_us_mass_shootings_data" /><meta property="og:description" content="dataworld_us_mass_shootings_data - From data.world set - Data exploration and visualization" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MjQ0MTI3Mzg4OjIzOGUxY2YxMGIzZDJlODg2YmUwZThmODZmNWY4ODAwNjViOGMxMjdjZTA1ZjQwYzI4MDcyMzU0NjY4ZjVlZmQ=--2a1775290792af472f012a0f930a3c213bcde159">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="DCD4:698F:A98988:13725B1:5AB097A6" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="DCD4:698F:A98988:13725B1:5AB097A6" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="35242652" /><meta name="octolytics-actor-login" content="ruobing9513" /><meta name="octolytics-actor-hash" content="4ce01c28750660f0c5f575282429c87399202c5f1eb5de8c8af721af1c63a9d3" />
+<meta name="hydro-events-url" content="https://github.com/hydro_browser_events" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="ruobing9513">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="ODQzN2VlNDhhNWE0MzI2MzllZDk0NjRiZjQ0NjViNWRlYTM5NDFiZjYwODExOTcxNTJmOTFlNmNmNmU1OWRmMHx7InJlbW90ZV9hZGRyZXNzIjoiNjYuMzAuMjQ5LjI0MyIsInJlcXVlc3RfaWQiOiJEQ0Q0OjY5OEY6QTk4OTg4OjEzNzI1QjE6NUFCMDk3QTYiLCJ0aW1lc3RhbXAiOjE1MjE1MjI2MDIsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_INSIGHTS,MARKETPLACE_INSIGHTS_CONVERSION_PERCENTAGES">
+
+  <meta name="html-safe-nonce" content="1e04e6c496ae44aed77a28682c90cd2199c59a6c">
+
+  <meta http-equiv="x-pjax-version" content="a1fd1fdfcc03af70c07616869492aaf5">
+  
+
+      <link href="https://github.com/billglennon/dataworld_us_mass_shootings_data/commits/master.atom" rel="alternate" title="Recent Commits to dataworld_us_mass_shootings_data:master" type="application/atom+xml">
+
+  <meta name="description" content="dataworld_us_mass_shootings_data - From data.world set - Data exploration and visualization">
+  <meta name="go-import" content="github.com/billglennon/dataworld_us_mass_shootings_data git https://github.com/billglennon/dataworld_us_mass_shootings_data.git">
+
+  <meta name="octolytics-dimension-user_id" content="1130086" /><meta name="octolytics-dimension-user_login" content="billglennon" /><meta name="octolytics-dimension-repository_id" content="77573527" /><meta name="octolytics-dimension-repository_nwo" content="billglennon/dataworld_us_mass_shootings_data" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="77573527" /><meta name="octolytics-dimension-repository_network_root_nwo" content="billglennon/dataworld_us_mass_shootings_data" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+
+
+    <link rel="canonical" href="https://github.com/billglennon/dataworld_us_mass_shootings_data/blob/master/mass_shootings_main.csv" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production emoji-size-boost page-blob">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        
+<header class="Header  f5" role="banner">
+  <div class="d-flex flex-justify-between px-3 container-lg">
+    <div class="d-flex flex-justify-between ">
+      <div class="">
+        <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+      </div>
+
+    </div>
+
+    <div class="HeaderMenu d-flex flex-justify-between flex-auto">
+      <div class="d-flex">
+            <div class="">
+              <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scoped-search-url="/billglennon/dataworld_us_mass_shootings_data/search" data-unscoped-search-url="/search" action="/billglennon/dataworld_us_mass_shootings_data/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a class="header-search-scope no-underline" href="/billglennon/dataworld_us_mass_shootings_data/blob/master/mass_shootings_main.csv">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+            </div>
+
+          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation">
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+                Pull requests
+</a>            </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
+                Issues
+</a>            </li>
+                <li>
+                  <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-selected-links=" /marketplace" href="/marketplace">
+                    Marketplace
+</a>                </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
+                Explore
+</a>            </li>
+          </ul>
+      </div>
+
+      <div class="d-flex">
+        
+<ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
+  <li class="dropdown js-menu-container">
+    <span class="d-inline-block  px-2">
+      
+    <a aria-label="You have no unread notifications" class="notification-indicator tooltipped tooltipped-s  js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:35242652" href="/notifications">
+        <span class="mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
+</a>
+    </span>
+  </li>
+
+  <li class="dropdown js-menu-container">
+    <details class="dropdown-details details-reset js-dropdown-details d-flex px-2 flex-items-center">
+      <summary class="HeaderNavlink"
+         aria-label="Create new…"
+         data-ga-click="Header, create new, icon:add">
+        <svg class="octicon octicon-plus float-left mr-1 mt-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg>
+        <span class="dropdown-caret mt-1"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="billglennon/dataworld_us_mass_shootings_data">This repository</span>
+  </div>
+    <a class="dropdown-item" href="/billglennon/dataworld_us_mass_shootings_data/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </details>
+  </li>
+
+  <li class="dropdown js-menu-container">
+
+    <details class="dropdown-details details-reset js-dropdown-details d-flex pl-2 flex-items-center">
+      <summary class="HeaderNavlink name mt-1"
+        aria-label="View profile and more"
+        data-ga-click="Header, show menu, icon:avatar">
+        <img alt="@ruobing9513" class="avatar float-left mr-1" src="https://avatars1.githubusercontent.com/u/35242652?s=40&amp;v=4" height="20" width="20">
+        <span class="dropdown-caret"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        <li class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">ruobing9513</strong>
+        </li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="/ruobing9513" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a></li>
+        <li><a class="dropdown-item" href="/ruobing9513?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a></li>
+          <li><a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists">Your gists</a></li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a></li>
+
+        <li><a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a></li>
+
+        <li><!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="J2Dmo7lhx6M3MNQcXBxTk+qiS2xQ4pgz7fJs0cqVveV5F5tc0wlMOBgWRXMjZMMYtgtLRgiWqxff4OvoHeeTfA==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+        </form></li>
+      </ul>
+    </details>
+  </li>
+</ul>
+
+
+
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zn3TLSJ6xV1z/X4kqdDE+B0z+Il8lxN/2Wv9ktDYlPCQCq7SSBJOxlzb70vWqFRzQZr4oyTjIFvreXqrB6q6aQ==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </div>
+</header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main"
+      class="application-main "
+      >
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container >
+      
+
+
+
+
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-autosubmit="true" data-remote="true" class="js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="e6Wqc2iodqz73zjYzZgNzwypgLZfjxWdYu2FjtkTD7BNhPKr16lS6hYhzdlGBkbJMlk10dNzrAEXC5syPaaw+g==" />      <input type="hidden" name="repository_id" id="repository_id" value="77573527" class="form-control" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/billglennon/dataworld_us_mass_shootings_data/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Toggle repository notifications menu"
+            data-ga-click="Repository, click Watch settings, action:blob#show">
+            <span class="js-select-button">
+                <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count"
+            href="/billglennon/dataworld_us_mass_shootings_data/watchers"
+            aria-label="1 user is watching this repository">
+            1
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_included" value="included" checked="checked" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_subscribed" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                        Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_ignore" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-mute" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                        Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/billglennon/dataworld_us_mass_shootings_data/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="LFHxzEIngzDL7LC7WazfKP+UodpqAj0YFRktX8rTbKfj8XMZk6OCYjoFs8OZRKfqIhUjJhcdm4yeRUhdEkMKKg==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar billglennon/dataworld_us_mass_shootings_data"
+        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/billglennon/dataworld_us_mass_shootings_data/stargazers"
+           aria-label="0 users starred this repository">
+          0
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/billglennon/dataworld_us_mass_shootings_data/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="aJfMNK19ghy6CIslbEtLVhUfIOm08OONJmuJ16bzxqg+O8Rz2YNm3jF0xYoc9l1cXludtcJXWRoLHxekUI9x0w==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star billglennon/dataworld_us_mass_shootings_data"
+        data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/billglennon/dataworld_us_mass_shootings_data/stargazers"
+           aria-label="0 users starred this repository">
+          0
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/billglennon/dataworld_us_mass_shootings_data/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="rtzxThSjtArmXaBl1ONMRPyo0876tV13KlEIqKSqrWc9DvO+QHm3VD1homBBRvnoFv96xSBZOmJbh02sFZBiYg==" />
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
+                title="Fork your own copy of billglennon/dataworld_us_mass_shootings_data to your account"
+                aria-label="Fork your own copy of billglennon/dataworld_us_mass_shootings_data to your account">
+              <svg class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              Fork
+            </button>
+</form>
+    <a href="/billglennon/dataworld_us_mass_shootings_data/network" class="social-count"
+       aria-label="0 users forked this repository">
+      0
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" href="/billglennon">billglennon</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/billglennon/dataworld_us_mass_shootings_data">dataworld_us_mass_shootings_data</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /billglennon/dataworld_us_mass_shootings_data" href="/billglennon/dataworld_us_mass_shootings_data">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /billglennon/dataworld_us_mass_shootings_data/issues" href="/billglennon/dataworld_us_mass_shootings_data/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">0</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /billglennon/dataworld_us_mass_shootings_data/pulls" href="/billglennon/dataworld_us_mass_shootings_data/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /billglennon/dataworld_us_mass_shootings_data/projects" href="/billglennon/dataworld_us_mass_shootings_data/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /billglennon/dataworld_us_mass_shootings_data/wiki" href="/billglennon/dataworld_us_mass_shootings_data/wiki">
+      <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /billglennon/dataworld_us_mass_shootings_data/pulse" href="/billglennon/dataworld_us_mass_shootings_data/pulse">
+    <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+
+</nav>
+
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/billglennon/dataworld_us_mass_shootings_data/blob/533e07cdc5241bc41f634cea49d3dab1547d3848/mass_shootings_main.csv">Permalink</a>
+
+  <!-- blob contrib key: blob_contributors:v21:2b2142a239ded6442bf1440901dabfea -->
+
+  <div class="file-navigation">
+    
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/billglennon/dataworld_us_mass_shootings_data/blob/master/mass_shootings_main.csv"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="BtnGroup float-right">
+      <a href="/billglennon/dataworld_us_mass_shootings_data/find/master"
+            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+            data-pjax
+            data-hotkey="t">
+        Find file
+      </a>
+      <clipboard-copy
+            for="blob-path"
+            aria-label="Copy file path to clipboard"
+            class="btn btn-sm BtnGroup-item tooltipped tooltipped-s"
+            data-copied-hint="Copied!">
+        Copy path
+      </clipboard-copy>
+    </div>
+    <div id="blob-path" class="breadcrumb">
+      <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/billglennon/dataworld_us_mass_shootings_data"><span>dataworld_us_mass_shootings_data</span></a></span></span><span class="separator">/</span><strong class="final-path">mass_shootings_main.csv</strong>
+    </div>
+  </div>
+
+
+  <include-fragment src="/billglennon/dataworld_us_mass_shootings_data/contributors/master/mass_shootings_main.csv" class="commit-tease">
+    <div>
+      Fetching contributors&hellip;
+    </div>
+
+    <div class="commit-tease-contributors">
+      <img alt="" class="loader-loading float-left" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" height="16" />
+      <span class="loader-error">Cannot retrieve contributors at this time</span>
+    </div>
+</include-fragment>
+
+  <div class="file">
+    <div class="file-header">
+  <div class="file-actions">
+
+    <div class="BtnGroup">
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/billglennon/dataworld_us_mass_shootings_data/raw/master/mass_shootings_main.csv">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/billglennon/dataworld_us_mass_shootings_data/blame/master/mass_shootings_main.csv">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/billglennon/dataworld_us_mass_shootings_data/commits/master/mass_shootings_main.csv">History</a>
+    </div>
+
+        <a class="btn-octicon tooltipped tooltipped-nw"
+           href="x-github-client://openRepo/https://github.com/billglennon/dataworld_us_mass_shootings_data?branch=master&amp;filepath=mass_shootings_main.csv"
+           aria-label="Open this file in GitHub Desktop"
+           data-ga-click="Repository, open with desktop, type:mac">
+            <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
+        </a>
+
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/billglennon/dataworld_us_mass_shootings_data/edit/master/mass_shootings_main.csv" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="U7oQ/YMt4bxaGWAj+I2ZUSNgaLBmhBqZwdIuZJCjJklxdrBRWVFyGjCb6UZ5MTNXSCbELC6IRu9Kb87+/4uHaA==" />
+            <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+              aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
+              <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+            </button>
+</form>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/billglennon/dataworld_us_mass_shootings_data/delete/master/mass_shootings_main.csv" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="faQKaSRtNGAgmxQEYwS5GIopkDUS3ckgDTshEnOw5pvP/A4uPcWS3zlOZUH0RtXPm2mieAmKoYgC5QC0lp1s0w==" />
+          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
+            aria-label="Fork this project and delete the file" data-disable-with>
+            <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+          </button>
+</form>  </div>
+
+  <div class="file-info">
+      79 lines (78 sloc)
+      <span class="file-info-divider"></span>
+    64.6 KB
+  </div>
+</div>
+
+    
+
+  <div itemprop="text" class="blob-wrapper data type-csv">
+      <div class="blob-interaction-bar">
+  <svg class="octicon octicon-search" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
+  <input type="text" name="filter" class="form-control js-csv-filter-field blob-filter" autocapitalize="off"
+         placeholder="Search this file…" aria-label="Search this file…">
+</div>
+
+<div class="markdown-body">
+  <table class="js-csv-data csv-data js-file-line-container">
+    <thead>
+      <tr id="LC1" class="js-file-line">
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <th>Case</th>
+        <th>Shooting type</th>
+        <th>Shooter name</th>
+        <th>Gender</th>
+        <th>Race</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Year</th>
+        <th>Summary</th>
+        <th>Fatalities</th>
+        <th>Wounded</th>
+        <th>Total victims</th>
+        <th>Location type</th>
+        <th>Prior signs of mental illness?</th>
+        <th>Mental health notes</th>
+        <th>Weapons obtained legally</th>
+        <th>Where weapon obtained</th>
+        <th>Type of weapons</th>
+        <th>Weapon details</th>
+        <th>Sources</th>
+        <th>Mental Health Sources</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="LC2" class="js-file-line">
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td>Chattanooga military recruitment center</td>
+        <td>Mass</td>
+        <td>Mohammod Youssuf Abdulazeez</td>
+        <td>Male</td>
+        <td>Middle Eastern</td>
+        <td>Chattanooga</td>
+        <td> Tennessee</td>
+        <td>2015</td>
+        <td>Kuwaiti-born Mohammod Youssuf Abdulazeez, 24, a naturalized US citizen, opened fire at a Naval reserve center, and then drove to a military recruitment office where he shot and killed four Marines and a Navy service member, and wounded a police officer and another military service member. He was then fatally shot in an exchange of gunfire with law enforcement officers responding to the attack.</td>
+        <td>5</td>
+        <td>2</td>
+        <td>7</td>
+        <td>Military</td>
+        <td>Yes</td>
+        <td>Abdulazeez &quot;had suffered for years from depression and possibly from bipolar disorder,&quot; according to a representative of the family. (NYT, July 20 2015)</td>
+        <td>Yes</td>
+        <td>On the internet, via Armslist.com</td>
+        <td>2 assault rifles; semiautomatic handgun
+</td>
+        <td>AK-47, AR-15, and 30-round magazines; 9mm handgun</td>
+        <td>http://www.reuters.com/article/2015/07/16/us-usa-shooting-tennessee-idUSKCN0PQ1WY20150716; http://www.nytimes.com/2015/07/18/us/chattanooga-gunmans-past-scoured-for-extremist-ties.html; http://www.wsj.com/articles/chattanooga-shooting-highlights-online-gun-sales-1437435518http://www.nytimes.com/2015/07/19/us/chattanooga-attacks-claim-a-5th-military-service-members-life.html; http://www.cnn.com/2015/07/17/us/tennessee-naval-reserve-shooting/; https://twitter.com/markfollman/status/622105627473477632; http://www.nytimes.com/2015/07/21/us/chattanooga-gunman-wrote-of-suicide-and-martyrdom-official-says.html</td>
+        <td></td>
+        <td>35.047157</td>
+        <td>-85.311819</td>
+      </tr>
+      <tr id="LC3" class="js-file-line">
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td>Charleston Church Shooting</td>
+        <td>Mass</td>
+        <td>Dylann Storm Roof</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Charleston</td>
+        <td> South Carolina</td>
+        <td>2015</td>
+        <td>Dylann Storm Roof, 21, shot and killed 9 people after opening fire at the Emanuel AME Church in Charleston, South Carolina. According to a roommate, he had allegedly been ‰ÛÏplanning something like that for six months.&quot;</td>
+        <td>9</td>
+        <td>1</td>
+        <td>10</td>
+        <td>Religious</td>
+        <td>No</td>
+        <td></td>
+        <td>Yes</td>
+        <td>Shooter&#39;s Choice gun store in West Columbia, South Carolina</td>
+        <td>Handgun</td>
+        <td>.45-caliber Glock (model 41, with 13-round capacity magazine)</td>
+        <td>http://www.motherjones.com/politics/2015/06/dylann-roofs-attorney; http://www.newsweek.com/report-nine-shot-charleston-south-carolina-church-shooting-344235; http://www.cnn.com/2015/06/19/us/charleston-church-shooting-suspect/; http://www.motherjones.com/politics/2015/06/9-people-dead-mass-shooting-south-carolina-church; http://www.nbcnews.com/storyline/charleston-church-shooting/fbi-says-dyann-roof-should-not-have-been-sold-gun-n390056 </td>
+        <td></td>
+        <td>32.788387</td>
+        <td>-79.933143</td>
+      </tr>
+      <tr id="LC4" class="js-file-line">
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td>Marysville-Pilchuck High School shooting</td>
+        <td>Mass</td>
+        <td>Jaylen Fryberg</td>
+        <td>Male</td>
+        <td>Native American</td>
+        <td>Marysville</td>
+        <td> Washington</td>
+        <td>2014</td>
+        <td>Jaylen Fryberg, 15, using a .40-caliber Berretta, shot five 
+students at Marysville High School, including two of his cousins and three friends, killing all but one. Fryberg arranged to meet them for lunch in the school cafeteria by text. Fryberg was reportedly well-liked at the school and there was not believed to be any ill-will between him and his victims. He committed suicide at the scene.</td>
+        <td>5</td>
+        <td>1</td>
+        <td>6</td>
+        <td>School</td>
+        <td>No</td>
+        <td>Fryberg was well-liked and allegedly happy, but was also upset about a girl and had posted emotional social media messages. No definitive signs of mental health problems.</td>
+        <td>No</td>
+        <td>Gun was his father&#39;s.</td>
+        <td>Handgun</td>
+        <td>Beretta .40-caliber handgun</td>
+        <td>http://www.seattletimes.com/seattle-news/fourth-marysville-shooting-victim-dies-as-another-is-laid-to-rest/ http://www.mercurynews.com/crime-courts/ci_26814211/jaylen-fryberg-included-tributes-washington-school-shooting-victims</td>
+        <td>http://www.newyorker.com/science/maria-konnikova/almost-link-mental-health-gun-violence</td>
+        <td>48.050824</td>
+        <td>-122.176918</td>
+      </tr>
+      <tr id="LC5" class="js-file-line">
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td>Alturas tribal shooting</td>
+        <td>Mass</td>
+        <td>Cherie Lash Rhoades</td>
+        <td>Female</td>
+        <td>Native American</td>
+        <td>Alturas</td>
+        <td> California</td>
+        <td>2014</td>
+        <td>Cherie Lash Rhoades, 44, opened fire at the Cedarville Rancheria Tribal Office and Community Center, killing four and wounding two. After running out of ammunition, Rhoades grabbed a butcher knife and stabbed another person.</td>
+        <td>4</td>
+        <td>2</td>
+        <td>6</td>
+        <td>Other</td>
+        <td>No</td>
+        <td></td>
+        <td>Unknown</td>
+        <td>Unknown</td>
+        <td>Two handguns and a butcher knife</td>
+        <td>9mm semi-automatic handgun</td>
+        <td>http://www.sacbee.com/news/local/crime/article2603350.html; http://www.csmonitor.com/USA/2014/0223/Alturas-tribal-shooting-Was-embezzlement-eviction-behind-family-revenge-video; http://www.cbsnews.com/news/4-dead-2-injured-at-american-indian-tribal-office-in-northern-california/; http://nativenewsonline.net/currents/former-tribal-chairperson-custody-mass-murder-cedarville-rancheria-tribal-headquarters/</td>
+        <td></td>
+        <td>41.487104</td>
+        <td>-120.542237</td>
+      </tr>
+      <tr id="LC6" class="js-file-line">
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td>Washington Navy Yard shooting</td>
+        <td>Mass</td>
+        <td>Aaron Alexis</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Washington</td>
+        <td> D.C.</td>
+        <td>2013</td>
+        <td>Aaron Alexis, 34, a military veteran and contractor from Texas, opened fire in the Navy installation, killing 12 people and wounding 8 before being shot dead by police.</td>
+        <td>12</td>
+        <td>8</td>
+        <td>20</td>
+        <td>Military</td>
+        <td>Yes</td>
+        <td>Had told Rhode Island police the prior month that he&#39;d &quot;heard voices&quot;; had been undergoing mental health treatment with Veterans Affairs since August 2013.</td>
+        <td>Yes</td>
+        <td>Sharpshooters Small Arms Range</td>
+        <td>Sawed-off shotgun, 2 boxes of shells; also a .45-caliber handgun taken from a security guard he shot at the scene.</td>
+        <td>Remington 870 Express 12-gauge shotgun; Beretta handgun</td>
+        <td>http://www.nytimes.com/2013/09/18/us/state-law-stopped-gunman-from-buying-rifle-officials-say.html; http://edition.cnn.com/2013/09/17/us/navy-yard-shooting-military-contractors; http://www.fbi.gov/washingtondc/press-releases/2013/law-enforcement-shares-findings-of-the-investigation-into-the-washington-navy-yard-shootings/index.html</td>
+        <td>http://bigstory.ap.org/article/13-killed-washington-navy-yard-shooting-rampage</td>
+        <td>38.874981</td>
+        <td>-76.99453</td>
+      </tr>
+      <tr id="LC7" class="js-file-line">
+        <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td>Hialeah apartment shooting</td>
+        <td>Mass</td>
+        <td>Pedro Vargas</td>
+        <td>Male</td>
+        <td>Latino</td>
+        <td>Hialeah</td>
+        <td> Florida</td>
+        <td>2013</td>
+        <td>Pedro Vargas, 42, set fire to his apartment, killed six people in the complex, and held another two hostages at gunpoint before a SWAT team stormed the building and fatally shot him.</td>
+        <td>7</td>
+        <td>0</td>
+        <td>7</td>
+        <td>Other
+</td>
+        <td>Yes</td>
+        <td>His mother told authorities her son had been acting strangely and needed a psychiatric evaluation.</td>
+        <td>Yes</td>
+        <td>Florida Gun Center</td>
+        <td>9mm semi-automatic handgun</td>
+        <td>Glock 17</td>
+        <td>http://www.miamiherald.com/2013/07/27/v-print/3526078/a-look-at-the-victims-in-the-hialeah.html  http://www.cbsnews.com/8301-201_162-57595796/pedro-vargas-idd-as-gunman-behind-deadly-rampage-in-hialeah-florida/    http://www.miamiherald.com/2013/07/28/3528362/little-about-pedro-vargas-life.html</td>
+        <td>http://www.miamiherald.com/2013/08/03/v-print/3539629/hialeah-killer-showed-signs-of.html</td>
+        <td>25.8670105</td>
+        <td>-80.29146268</td>
+      </tr>
+      <tr id="LC8" class="js-file-line">
+        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td>Santa Monica rampage</td>
+        <td>Spree</td>
+        <td>John Zawahri</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Santa Monica</td>
+        <td> California</td>
+        <td>2013</td>
+        <td>John Zawahri, 23, armed with a homemade assault rifle and high-capacity magazines, killed his brother and father at home and then headed to Santa Monica College, where he was eventually killed by police.</td>
+        <td>6</td>
+        <td>3</td>
+        <td>9</td>
+        <td>Other
+</td>
+        <td>Yes</td>
+        <td>He was known as a solitary teen who regularly ditched class and had an interest in assault weapons; he had been admitted to UCLA&#39;s psychiatric ward for a brief period.</td>
+        <td>Yes </td>
+        <td>Assembled a rifle out of component parts.</td>
+        <td>Assault rifle, high capacity magazines, antique handgun
+</td>
+        <td>.223-caliber semi-automatic assault rifle, about 40 high capacity magazines,&quot;black powder&quot; handgun (likely antique)</td>
+        <td>http://www.cbsnews.com/8301-504083_162-57589327-504083/john-zawahri-suspected-gunman-in-deadly-santa-monica-shooting-left-farewell-note-police-say/</td>
+        <td>http://www.cbsnews.com/8301-504083_162-57589327-504083/john-zawahri-suspected-gunman-in-deadly-santa-monica-shooting-left-farewell-note-police-say/   http://www.latimes.com/news/local/la-me-0611-santa-monica-shooting-20130611,0,1490078.story</td>
+        <td>34.008617</td>
+        <td>-118.494754</td>
+      </tr>
+      <tr id="LC9" class="js-file-line">
+        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td>Pinewood Village Apartment shooting</td>
+        <td>Mass</td>
+        <td>Dennis Clark III</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Federal Way</td>
+        <td> Washington</td>
+        <td>2013</td>
+        <td>Dennis Clark III, 27, shot and killed his girlfriend in their shared apartment, and then shot two witnesses in the building&#39;s parking lot and a third victim in another apartment, before being killed by police.</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
+        <td>Other
+</td>
+        <td>No</td>
+        <td></td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>Semiautomatic handgun, shotgun</td>
+        <td>.40 caliber semi-automatic handgun, pistol grip shotgun</td>
+        <td>http://seattletimes.com/html/localnews/2020836119_federalwayshootingxml.html  </td>
+        <td></td>
+        <td>47.3129607</td>
+        <td>-122.3393665</td>
+      </tr>
+      <tr id="LC10" class="js-file-line">
+        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td>Mohawk Valley shootings</td>
+        <td>Spree</td>
+        <td>Kurt Myers</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Herkimer County</td>
+        <td> New York</td>
+        <td>2013</td>
+        <td>Kurt Myers, 64, shot six people in neighboring towns, killing two in a barbershop and two at a car care business, before being killed by officers in a shootout after a nearly 19-hour standoff.</td>
+        <td>5</td>
+        <td>2</td>
+        <td>7</td>
+        <td>Other</td>
+        <td>No</td>
+        <td></td>
+        <td>Yes</td>
+        <td>Frank&#39;s Guns in Marcy, NY</td>
+        <td>Shotgun</td>
+        <td>Unknown</td>
+        <td>https://www.nyspnews.com/article_display.cfm?article_id=29584</td>
+        <td>http://poststar.com/news/local/state-and-regional/cops-kill-suspect-in-deadly-mohawk-valley-shooting-rampage/article_15260208-8bf5-11e2-b2d9-0019bb2963f4.html</td>
+        <td>43.045601</td>
+        <td>-74.984891</td>
+      </tr>
+      <tr id="LC11" class="js-file-line">
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td>Newtown school shooting</td>
+        <td>Mass</td>
+        <td>Adam Lanza</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Newtown</td>
+        <td> Connecticut</td>
+        <td>2012</td>
+        <td>Adam Lanza, 20, shot his mother dead at their home then drove to Sandy Hook Elementary school. He forced his way inside and opened fire, killing 20 children and six adults before committing suicide.</td>
+        <td>28</td>
+        <td>2</td>
+        <td>30</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>Lanza had a history of serious mental health problems that were known to his family and others, as detailed in a post-massacre investigation by Connecticut authorities.</td>
+        <td>No</td>
+        <td>Stolen from mother</td>
+        <td>Two semiautomatic handguns, one rifle (assault), one shotgun (assault)</td>
+        <td>10mm Glock, 9mm SIG Sauer P226 semiautomatic handguns; .223 Bushmaster XM15-E2S semiautomatic rifle; Izhmash Saiga-12 12-gauge semiautomatic shotgun</td>
+        <td>http://usnews.nbcnews.com/_news/2012/12/14/15911025-authorities-id-gunman-who-killed-27-in-elementary-school-massacre?lite; http://articles.washingtonpost.com/2012-12-14/local/35846977_1_law-enforcement-lanza-brothers-kid</td>
+        <td>http://usnews.nbcnews.com/_news/2012/12/14/15911025-authorities-id-gunman-who-killed-27-in-elementary-school-massacre?lite; http://articles.washingtonpost.com/2012-12-14/local/35846977_1_law-enforcement-lanza-brothers-kid</td>
+        <td>41.4123225</td>
+        <td>-73.31142358</td>
+      </tr>
+      <tr id="LC12" class="js-file-line">
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td>Accent Signage Systems shooting</td>
+        <td>Mass</td>
+        <td>Andrew Engeldinger</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Minneapolis</td>
+        <td> Minnesota</td>
+        <td>2012</td>
+        <td>Andrew Engeldinger, 36, upon learning he was being fired, went on a shooting rampage, killing the business owner, three fellow employees, and a UPS driver. He then killed himself.</td>
+        <td>7</td>
+        <td>1</td>
+        <td>8</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>His family worried about his &quot;paranoia and delusions&quot; for at least two years prior, and tried to get him to seek treatment.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Glock semiautomatic handgun</td>
+        <td>http://www.startribune.com/local/171774461.html?refer=y</td>
+        <td>http://www.startribune.com/local/171774461.html?refer=y</td>
+        <td>44.9772995</td>
+        <td>-93.2654692</td>
+      </tr>
+      <tr id="LC13" class="js-file-line">
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td>Sikh temple shooting</td>
+        <td>Mass</td>
+        <td>Wade Michael Page</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Oak Creek</td>
+        <td> Wisconsin</td>
+        <td>2012</td>
+        <td>U.S. Army veteran Wade Michael Page, 40, opened fire in a Sikh gurdwara before he died from a self-inflicted gunshot would during a shootout with police.</td>
+        <td>7</td>
+        <td>3</td>
+        <td>10</td>
+        <td>Religious</td>
+        <td>Yes</td>
+        <td>His Army friends once broke into his apartment, fearing he&#39;d commit suicide in the &#39;90s. A psychiatric nurse who lived downstairs from Page said it was &quot;obvious&quot; he had a mental illness.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Springfield Armory XDM semiautomatic handgun</td>
+        <td>http://www.jsonline.com/news/milwaukee/friend-of-page-feared-what-he-might-do-426edmg-165668826.html; http://usnews.nbcnews.com/_news/2012/09/10/13785426-officer-arriving-at-sikh-temple-shooting-time-to-use-deadly-force?lite; http://articles.latimes.com/2012/aug/08/nation/la-na-nn-sikh-shooting-guns-20120807; http://www.bbc.co.uk/news/world-us-canada-19183359</td>
+        <td>http://www.jsonline.com/news/milwaukee/friend-of-page-feared-what-he-might-do-426edmg-165668826.html</td>
+        <td>42.8858503</td>
+        <td>-87.8631362</td>
+      </tr>
+      <tr id="LC14" class="js-file-line">
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td>Aurora theater shooting</td>
+        <td>Mass</td>
+        <td>James Holmes</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Aurora</td>
+        <td> Colorado</td>
+        <td>2012</td>
+        <td>James Holmes, 24, opened fire in a movie theater during the opening night of &quot;The Dark Night Rises&quot; and was later arrested outside.</td>
+        <td>12</td>
+        <td>58</td>
+        <td>70</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He saw at least three mental health professionals before dropping out of his university.</td>
+        <td>Yes</td>
+        <td>Gander Mountain stores in Thornton and Aurora, Colo.; Bass Pro Shop in Denver, Colo.; BulkAmmo.com</td>
+        <td>Two semiautomatic handguns, one rifle (assault), one shotgun</td>
+        <td>Two .40-caliber Glock semiautomatic handguns; .223-caliber Smith &amp; Wesson M&amp;P15 semiautomatic rifle; 12-gauge Remington 870 pump-action shotgun</td>
+        <td>http://www.cbsnews.com/8301-201_162-57497820/james-holmes-saw-three-mental-health-professionals-before-shooting/; http://www.9news.com/news/article/283503/188/Aurora-shooting-prompts-gun-bills-in-big-states-; http://www.nytimes.com/2012/07/21/us/shooting-at-colorado-theater-showing-batman-movie.html; http://www.motherjones.com/politics/2012/07/batman-theater-shooting-updates-dark-knight-rises</td>
+        <td>http://www.cbsnews.com/8301-201_162-57497820/james-holmes-saw-three-mental-health-professionals-before-shooting/</td>
+        <td>39.709283</td>
+        <td>-104.823488</td>
+      </tr>
+      <tr id="LC15" class="js-file-line">
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td>Seattle cafe shooting</td>
+        <td>Spree</td>
+        <td>Ian Stawicki</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Seattle</td>
+        <td> Washington</td>
+        <td>2012</td>
+        <td>Ian Stawicki, 40, gunned down four patrons at a cafe, and another person during a carjacking nearby, then shot himself as police closed in. (He died later that day in a Seattle hospital.)</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>His family said he was mentally ill</td>
+        <td>Yes</td>
+        <td>Bull&#39;s Eye Shooter Supply in Tacoma, Wash.</td>
+        <td>Two semiautomatic handguns</td>
+        <td>Two .45-caliber semiautomatic handguns</td>
+        <td>http://usnews.nbcnews.com/_news/2012/05/30/11959312-six-killed-in-seattle-shootings-including-suspect?lite; http://www.cbsnews.com/8301-201_162-57445177/seattle-shooting-hero-hurled-stools-at-gunman-ian-stawicki-saved-three-lives/?pageNum=2&amp;tag=contentMain;contentBody; http://content.usatoday.com/communities/ondeadline/post/2012/05/seattle-killer-had-concealed-carry-permit-owned-6-guns/1#.UFI9shhgspQ</td>
+        <td>http://usnews.nbcnews.com/_news/2012/05/30/11959312-six-killed-in-seattle-shootings-including-suspect?lite</td>
+        <td>47.6038321</td>
+        <td>-122.3300624</td>
+      </tr>
+      <tr id="LC16" class="js-file-line">
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td>Oikos University killings</td>
+        <td>Mass</td>
+        <td>One L. Goh</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Oakland</td>
+        <td> California</td>
+        <td>2012</td>
+        <td>One L. Goh, 43, a former student, opened fire in a nursing classroom. He fled the scene by car and was arrested nearby a few hours later.</td>
+        <td>7</td>
+        <td>3</td>
+        <td>10</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>A former instructor at Oikos described him as &quot;mentally unstable&quot; and &quot;paranoid.&quot;</td>
+        <td>Yes</td>
+        <td>Bullseye in Castro Valley, Calif.</td>
+        <td>One semiautomatic handgun</td>
+        <td>.45-caliber semiautomatic handgun</td>
+        <td>http://blog.sfgate.com/eguillermo/2012/04/05/something-still-doesnt-compute-in-the-one-goh-nightmare/; http://www.mercurynews.com/top-stories/ci_20308252/police-respond-shooting-east-oakland; http://www.cbsnews.com/8301-504083_162-57408732-504083/gun-used-in-oikos-university-shooting-rampage-was-bought-legally-police-say/; http://berkeley.patch.com/articles/one-l-goh-showed-violent-tendencies-before-the-oikos-university-shooting-oikos-university-shooting</td>
+        <td>http://berkeley.patch.com/articles/one-l-goh-showed-violent-tendencies-before-the-oikos-university-shooting-oikos-university-shooting; http://blog.sfgate.com/eguillermo/2012/04/05/something-still-doesnt-compute-in-the-one-goh-nightmare/</td>
+        <td>37.8043808</td>
+        <td>-122.2708166</td>
+      </tr>
+      <tr id="LC17" class="js-file-line">
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td>Su Jung Health Sauna shooting</td>
+        <td>Mass</td>
+        <td>Jeong Soo Paek</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Norcross</td>
+        <td> Georgia</td>
+        <td>2012</td>
+        <td>Jeong Soo Paek, 59, returned to a Korean spa from which he&#39;d been kicked out after an altercation. He gunned down two of his sisters and their husbands before committing suicide.</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>His sister worried about his homicidal tendencies; she said his mental health had been deteriorating and that he had threatened to commit suicide with his gun.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>.45-caliber semiautomatic handgun</td>
+        <td>http://www.gwinnettdailypost.com/news/2012/feb/23/police-id-4-victims-shooter-in-spa-killing/; http://www.cbsnews.com/8301-504083_162-57479989-504083/shooting-sprees-in-2012-crimesider-reports-on-some-of-the-countrys-worst-public-shootings-this-year/; http://chronicle.augusta.com/news/metro/2012-02-22/victims-korean-spa-shooting-near-atlanta-were-2-married-couples-gunman-was; http://onlineathens.com/local-news/2012-02-23/mass-shooting-spa-shocks-ga-korean-community</td>
+        <td>http://www.gwinnettdailypost.com/news/2012/feb/23/police-id-4-victims-shooter-in-spa-killing/</td>
+        <td>33.9412127</td>
+        <td>-84.2135309</td>
+      </tr>
+      <tr id="LC18" class="js-file-line">
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td>Seal Beach shooting</td>
+        <td>Mass</td>
+        <td>Scott Evans Dekraai</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Seal Beach</td>
+        <td> California</td>
+        <td>2011</td>
+        <td>Scott Evans Dekraai, 42, opened fire inside a hair salon and was later arrested.</td>
+        <td>8</td>
+        <td>1</td>
+        <td>9</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He suffered from bipolar disorder, mood swings, and PTSD.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>Two semiautomatic handguns, one revolver</td>
+        <td>.45-caliber Heckler &amp; Koch, 9mm Springfield semiautomatic handguns; .44 Magnum Smith &amp; Wesson revolver</td>
+        <td>http://laist.com/2011/10/13/seal_beach_shooter_suffered_from_ptsd.php; http://blogs.ocweekly.com/navelgazing/2011/10/hair_salon_seal_beach_shooting.php; http://latimesblogs.latimes.com/lanow/2011/10/seal-beach-shooting-suspect-had-been-ordered-not-to-carry-guns-.html</td>
+        <td>http://laist.com/2011/10/13/seal_beach_shooter_suffered_from_ptsd.php</td>
+        <td>33.741176</td>
+        <td>-118.1046356</td>
+      </tr>
+      <tr id="LC19" class="js-file-line">
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td>IHOP shooting</td>
+        <td>Mass</td>
+        <td>Eduardo Sencion</td>
+        <td>Male</td>
+        <td>Latino</td>
+        <td>Carson City</td>
+        <td> Nevada</td>
+        <td>2011</td>
+        <td>Eduardo Sencion, 32, opened fire at an International House of Pancakes restaurant and later died from a self-inflicted gunshot wound.</td>
+        <td>5</td>
+        <td>7</td>
+        <td>12</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He was diagnosed with paranoid schizophrenia as a teenager and feared demons were out to get him.</td>
+        <td>Yes</td>
+        <td>Purchased from an individual</td>
+        <td>Two rifles (both assault), one revolver</td>
+        <td>AK-47 Norinco Arms variant, AK-47 Romarm Cugir variant automatic rifles; .38-caliber Colt revolver</td>
+        <td>http://www.huffingtonpost.com/2011/11/03/eduardo-sencion-ihop-shooter_n_1073677.html; http://www.lasvegassun.com/news/2011/sep/06/report-seven-shot-inside-carson-city-ihop/; http://www.lasvegassun.com/news/2011/oct/23/nv-gun-laws-rampage-2nd-ld-writethru/</td>
+        <td>http://www.huffingtonpost.com/2011/11/03/eduardo-sencion-ihop-shooter_n_1073677.html</td>
+        <td>39.1637984</td>
+        <td>-119.7674034</td>
+      </tr>
+      <tr id="LC20" class="js-file-line">
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td>Tucson shooting</td>
+        <td>Mass</td>
+        <td>Jared Loughner</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Tucson</td>
+        <td> Arizona</td>
+        <td>2011</td>
+        <td>Jared Loughner, 22, opened fire outside a Safeway during a constituent meeting with Congresswoman Gabrielle Giffords (D-Ariz.) before he was subdued by bystanders and arrested.</td>
+        <td>6</td>
+        <td>13</td>
+        <td>19</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>His symptoms pointed to various possible mental illness diagnoses, such as schizophrenia and delusional disorder. He also experimented with pot and hallucinogens.</td>
+        <td>Yes</td>
+        <td>Sportsmen&#39;s Warehouse in Tucson, Ariz.</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Glock 19 semiautomatic handgun</td>
+        <td>http://www.time.com/time/magazine/article/0,9171,2042358,00.html; http://www.csmonitor.com/USA/Politics/2011/0110/Why-Jared-Loughner-was-allowed-to-buy-a-gun; http://www.nytimes.com/2011/01/09/us/politics/09giffords.html?ref=jaredleeloughner</td>
+        <td>http://www.time.com/time/magazine/article/0,9171,2042358,00.html</td>
+        <td>32.2217429</td>
+        <td>-110.926479</td>
+      </tr>
+      <tr id="LC21" class="js-file-line">
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td>Hartford Beer Distributor shooting</td>
+        <td>Mass</td>
+        <td>Omar S. Thornton</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Manchester</td>
+        <td> Connecticut</td>
+        <td>2010</td>
+        <td>Omar S. Thornton, 34, shot up his Hartford Beer Distributor workplace after facing disciplinary issues, then committed suicide.</td>
+        <td>9</td>
+        <td>2</td>
+        <td>11</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>He apparently was driven over the edge by unaddressed, ongoing racism against him at work</td>
+        <td>Yes</td>
+        <td>Gun dealer in East Windsor, Conn.</td>
+        <td>Two semiautomatic handguns</td>
+        <td>Two 9mm Ruger SR9 semiautomatic handguns</td>
+        <td>http://www.cbsnews.com/8301-504083_162-20012557-504083.html; http://www.msnbc.msn.com/id/38535909/ns/us_news-crime_and_courts/t/dead-shooting-conn-beer-distributor/#.UFGJAqRrND4; http://www.foxnews.com/us/2010/08/03/dead-wounded-conn-workplace-shooting/</td>
+        <td>http://www.cbsnews.com/8301-504083_162-20012557-504083.html</td>
+        <td>41.7759324</td>
+        <td>-72.5214755</td>
+      </tr>
+      <tr id="LC22" class="js-file-line">
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td>Coffee shop police killings</td>
+        <td>Mass</td>
+        <td>Maurice Clemmons</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Parkland</td>
+        <td> Washington</td>
+        <td>2009</td>
+        <td>Maurice Clemmons, 37, a felon who was out on bail for child-rape charges, entered a coffee shop on a Sunday morning and shot four police officers who had gone there to use their laptops before their shifts. Clemmons, who was wounded fleeing the scene, was later shot dead by a police officer in Seattle after a two-day manhunt.</td>
+        <td>4</td>
+        <td>1</td>
+        <td>5</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He had a history of erratic, bizarre behavior. He once asked his family to get naked for 5 minutes on Sunday; he said he thought the world would end and that he was Jesus.</td>
+        <td>No</td>
+        <td>Stolen from an individual in Seattle.</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Glock 17 semiautomatic handgun; .38-caliber Smith &amp; Wesson revolver</td>
+        <td>http://seattletimes.com/html/localnews/2010385617_webmansought29.html; http://www.nytimes.com/2009/11/30/us/30tacoma.html?_r=1; http://seattletimes.com/html/localnews/2014155225_clemmons08m.html</td>
+        <td>http://seattletimes.com/html/localnews/2010385617_webmansought29.html</td>
+        <td>47.155846</td>
+        <td>-122.437031</td>
+      </tr>
+      <tr id="LC23" class="js-file-line">
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td>Fort Hood massacre</td>
+        <td>Mass</td>
+        <td>Nidal Malik Hasan</td>
+        <td>Male</td>
+        <td>Other</td>
+        <td>Fort Hood</td>
+        <td> Texas</td>
+        <td>2009</td>
+        <td>Army psychiatrist Nidal Malik Hasan, 39, opened fire on an Army base in an attack linked to Islamist extremism. Hasan was injured during the attack and later arrested.</td>
+        <td>13</td>
+        <td>30</td>
+        <td>43</td>
+        <td>Military</td>
+        <td>Yes</td>
+        <td>Medical officials at Walter Reed Army Medical Center and the Uniformed Services University of the Health Sciences raised concerns prior to the shooting regarding Hasan&#39;s aloof and erratic behavior and extremist Islamic views.</td>
+        <td>Yes</td>
+        <td>Guns Galore in Kileen, Texas</td>
+        <td>One semiautomatic handgun</td>
+        <td>FN Five-seven semiautomatic handgun</td>
+        <td>http://seattletimes.com/html/nationworld/2010232219_apusforthoodshooting.html; http://articles.latimes.com/2010/oct/21/nation/la-na-fort-hood-20101022; http://thelede.blogs.nytimes.com/2009/11/05/reports-of-mass-shooting-at-fort-hood/; http://www.usatoday.com/news/military/story/2012-08-14/fort-hood-rampage-trial/57050394/1</td>
+        <td>http://www.npr.org/templates/story/story.php?storyId=120313570</td>
+        <td>31.2011305</td>
+        <td>-97.77156996</td>
+      </tr>
+      <tr id="LC24" class="js-file-line">
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td>Binghamton shootings</td>
+        <td>Mass</td>
+        <td>Jiverly Wong</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Binghamton</td>
+        <td> New York</td>
+        <td>2009</td>
+        <td>Jiverly Wong, 41, opened fire at an American Civic Association center for immigrants before committing suicide.</td>
+        <td>14</td>
+        <td>4</td>
+        <td>18</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He apparently harbored growing paranoia toward cops. He also sent a delusional letter to a local TV station right before the shooting.</td>
+        <td>Yes</td>
+        <td>Gander Mountain in Johnson City, N.Y.</td>
+        <td>Two semiautomatic handguns</td>
+        <td>9mm Beretta, .45-caliber Springfield semiautomatic handguns</td>
+        <td>http://www.nytimes.com/2009/04/12/nyregion/12binghamton.html?pagewanted=all&amp;_r=0; http://www.nytimes.com/2009/04/04/nyregion/04hostage.html?pagewanted=all</td>
+        <td>http://www.nytimes.com/2009/04/12/nyregion/12binghamton.html?pagewanted=all&amp;_r=1&amp;</td>
+        <td>42.0986867</td>
+        <td>-75.9179738</td>
+      </tr>
+      <tr id="LC25" class="js-file-line">
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td>Carthage nursing home shooting</td>
+        <td>Mass</td>
+        <td>Robert Stewart</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Carthage</td>
+        <td> North Carolina</td>
+        <td>2009</td>
+        <td>Robert Stewart, 45, opened fire at a nursing home where his estranged wife worked before he was shot and arrested by a police officer.</td>
+        <td>8</td>
+        <td>3</td>
+        <td>11</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>His estranged wife told her workplace that her husband had an &quot;unstable mental state or (was) mentally ill.&quot;</td>
+        <td>Yes</td>
+        <td>Local sporting goods stores and individuals</td>
+        <td>One revolver, one shotgun</td>
+        <td>Winchester 1300 pump-action shotgun; .357 Magnum revolver</td>
+        <td>http://www.wral.com/news/local/story/9845639/; http://www.wral.com/news/local/story/4837676/</td>
+        <td>http://www.wral.com/news/local/story/9845639/</td>
+        <td>35.345802</td>
+        <td>-79.4170543</td>
+      </tr>
+      <tr id="LC26" class="js-file-line">
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td>Atlantis Plastics shooting</td>
+        <td>Mass</td>
+        <td>Wesley Neal Higdon</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Henderson</td>
+        <td> Kentucky</td>
+        <td>2008</td>
+        <td>Disgruntled employee Wesley Neal Higdon, 25, shot up an Atlantis Plastics factory after he was escorted out of his workplace for an argument with a supervisor. Higdon shot the supervisor outside the factory before opening fire on coworkers inside. He then committed suicide.</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>He called his girlfriend two hours before the shooting to say he was going to kill his boss.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>.45-caliber Hi-Point semiautomatic handgun</td>
+        <td>http://www.foxnews.com/story/0,2933,371242,00.html; http://www.msnbc.msn.com/id/25393695/ns/us_news-crime_and_courts/t/witnesses-describe-chaotic-scene-ky-plant/#.UFEbHhhgspQ</td>
+        <td>http://www.foxnews.com/story/0,2933,371242,00.html</td>
+        <td>37.76721</td>
+        <td>-87.5573742</td>
+      </tr>
+      <tr id="LC27" class="js-file-line">
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td>Northern Illinois University shooting</td>
+        <td>Mass</td>
+        <td>Steven Kazmierczak</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>DeKalb</td>
+        <td> Illinois</td>
+        <td>2008</td>
+        <td>Steven Kazmierczak, 27, opened fire in a lecture hall, then shot and killed himself before police arrived.</td>
+        <td>6</td>
+        <td>21</td>
+        <td>27</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>After high school, his parents placed him at a psychiatric treatment center. He told friends he left the Army after six months due to a psychological discharge. </td>
+        <td>Yes</td>
+        <td>Online and gun retailers in Champaign, Ill. </td>
+        <td>Three semiautomatic handguns, one shotgun</td>
+        <td>9mm Glock 19, Hi-Point CF380, 9mm Kurz SIG Sauer P232 semiautomatic handguns; 12-gauge Remington Sportsman 48 sawed-off shotgun</td>
+        <td>http://www.huffingtonpost.com/jonathan-fast/steve-kazmierczak-the-sec_b_87031.html; http://www.msnbc.msn.com/id/23171567/ns/us_news-crime_and_courts/t/college-shooters-deadly-rampage-baffles-friends/#.UFEZnhhgspQ; http://www.nytimes.com/slideshow/2008/02/14/us/0214-SHOOTING_index.html?ref=schoolshooting&amp;gwh=B62598A5487B946A532C5846B4A85156; www.niu.edu/feb14report/Feb14report.pdf</td>
+        <td>http://www.cbsnews.com/stories/2008/02/16/national/main3840072.shtml</td>
+        <td>41.9294736</td>
+        <td>-88.7503647</td>
+      </tr>
+      <tr id="LC28" class="js-file-line">
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td>Kirkwood City Council shooting</td>
+        <td>Mass</td>
+        <td>Charles &quot;Cookie&quot; Lee Thornton</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Kirkwood</td>
+        <td> Missouri</td>
+        <td>2008</td>
+        <td>Charles &quot;Cookie&quot; Lee Thornton, 52, went on a rampage at the city hall before being shot and killed by police.</td>
+        <td>6</td>
+        <td>2</td>
+        <td>8</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>He was known for histrionics and disruptions at city council meetings. His mounting debt was a stressor.</td>
+        <td>No</td>
+        <td>Taken in burglary and from fallen police officer</td>
+        <td>One semiautomatic handgun, one revolver</td>
+        <td>.40-caliber Smith &amp; Wesson semiautomatic handgun; .44 Magnum Smith &amp; Wesson Model 29 revolver</td>
+        <td>http://www.stltoday.com/news/local/crime-and-courts/charles-lee-cookie-thornton-behind-the-smile/article_be96f13c-78b9-11df-bfdc-0017a4a78c22.html; http://www.nytimes.com/2008/02/08/us/08missouri.html; http://nl.newsbank.com/nl-search/we/Archives?p_product=SL&amp;p_theme=sl&amp;p_action=search&amp;p_maxdocs=200&amp;p_topdoc=1&amp;p_text_direct-0=11F1CADA291472F0&amp;p_field_direct-0=document_id&amp;p_perpage=10&amp;p_sort=YMD_date:D&amp;s_trackval=GooglePM</td>
+        <td>http://www.stltoday.com/news/local/crime-and-courts/charles-lee-cookie-thornton-behind-the-smile/article_be96f13c-78b9-11df-bfdc-0017a4a78c22.html</td>
+        <td>38.5833862</td>
+        <td>-90.406785</td>
+      </tr>
+      <tr id="LC29" class="js-file-line">
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td>Westroads Mall shooting</td>
+        <td>Mass</td>
+        <td>Robert A. Hawkins</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Omaha</td>
+        <td> Nebraska</td>
+        <td>2007</td>
+        <td>Robert A. Hawkins, 19, opened fire inside Westroads Mall before committing suicide.</td>
+        <td>9</td>
+        <td>4</td>
+        <td>13</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He had been treated in the past for depression and ADHD. </td>
+        <td>No</td>
+        <td>Stolen from grandfather</td>
+        <td>One rifle (assault)</td>
+        <td>WASR-10 Century Arms semiautomatic rifle</td>
+        <td>http://www.guardian.co.uk/world/2007/dec/06/usa.usgunviolence2; http://www.npr.org/templates/story/story.php?storyId=16962485; http://www.independentmail.com/news/2007/dec/08/officials-say-assault-rifles-cause-roughly-same-am/; http://www.latimes.com/news/nationworld/nation/la-na-mall7dec07,0,882178.story</td>
+        <td>http://www.guardian.co.uk/world/2007/dec/06/usa.usgunviolence2</td>
+        <td>41.2587317</td>
+        <td>-95.9378732</td>
+      </tr>
+      <tr id="LC30" class="js-file-line">
+        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td>Crandon shooting</td>
+        <td>Mass</td>
+        <td>Tyler Peterson</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Crandon</td>
+        <td> Wisconsin</td>
+        <td>2007</td>
+        <td>Off-duty sheriff&#39;s deputy Tyler Peterson, 20, opened fire inside an apartment after an argument at a homecoming party. He fled the scene and later committed suicide.</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>The families of victims filed a wrongful death lawsuit against the county arguing that the police department should have evaluated the gunman&#39;s mental health before hiring him.</td>
+        <td>Yes</td>
+        <td>Issued by Forest County Sheriff&#39;s Department</td>
+        <td>One rifle (assault)</td>
+        <td>AR-15 SWAT semiautomatic rifle</td>
+        <td>http://www.rivernewsonline.com/main.asp?SectionID=6&amp;SubSectionID=47&amp;ArticleID=368; http://news.google.com/newspapers?id=O-MqAAAAIBAJ&amp;sjid=u0UEAAAAIBAJ&amp;pg=6724,5434155&amp;dq=crandon+shooting&amp;hl=en</td>
+        <td>http://www.rivernewsonline.com/main.asp?SectionID=6&amp;SubSectionID=47&amp;ArticleID=368</td>
+        <td>45.5719072</td>
+        <td>-88.9028922</td>
+      </tr>
+      <tr id="LC31" class="js-file-line">
+        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td>Virginia Tech massacre</td>
+        <td>Mass</td>
+        <td>Seung-Hui Cho</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Blacksburg</td>
+        <td> Virginia</td>
+        <td>2007</td>
+        <td>Virginia Tech student Seung-Hui Cho, 23, opened fire on his school&#39;s campus before committing suicide.</td>
+        <td>33</td>
+        <td>23</td>
+        <td>56</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>A district court ruled Cho was &quot;an imminent danger&quot; to himself and others as a result of mental illness two years earlier, and directed Cho to seek treatment. </td>
+        <td>Yes</td>
+        <td>Purchased variously online and from Roanoke Firearms in Roanoke, Va.</td>
+        <td>Two semiautomatic handguns</td>
+        <td>9mm Glock 19, .22-caliber Walther P22 semiautomatic handguns</td>
+        <td>http://www.nytimes.com/2007/04/24/us/24virginia.html; http://www.thestandard.com.hk/news_detail.asp?we_cat=9&amp;art_id=42489&amp;sid=13196711&amp;con_type=1&amp;d_str=20070419&amp;fc=10; http://smartgunlaws.org/mental-health-reporting-policy-summary/</td>
+        <td>http://abcnews.go.com/US/story?id=3052278&amp;page=1</td>
+        <td>37.2295733</td>
+        <td>-80.4139393</td>
+      </tr>
+      <tr id="LC32" class="js-file-line">
+        <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td>Trolley Square shooting</td>
+        <td>Mass</td>
+        <td>Sulejman Talovic</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Salt Lake City</td>
+        <td> Utah</td>
+        <td>2007</td>
+        <td>Sulejman Talovi€àåà, 18, rampaged through the shopping center until he was shot dead by police.</td>
+        <td>6</td>
+        <td>4</td>
+        <td>10</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>According to one relative, he was violent and had the mental capacity of a child. (But accounts from others did not indicate this about the shooter.)</td>
+        <td>No</td>
+        <td>Purchased variously from Sportsman&#39;s Fast Cash in West Valley City, Utah and individuals </td>
+        <td>One revolver, one shotgun</td>
+        <td>Mossberg Maverick 88 Field shotgun; .38-caliber Smith &amp; Wesson M36 revolver</td>
+        <td>http://www.deseretnews.com/article/660205647/Ex-relative-calls-Talovic-vicious-troubled.html?pg=all; http://www.cbsnews.com/stories/2007/02/15/national/main2480419.shtml; http://www.cbsnews.com/8301-201_162-2823327.html</td>
+        <td>http://www.deseretnews.com/article/660205647/Ex-relative-calls-Talovic-vicious-troubled.html?pg=all</td>
+        <td>40.7606467</td>
+        <td>-111.89109</td>
+      </tr>
+      <tr id="LC33" class="js-file-line">
+        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td>Amish school shooting</td>
+        <td>Mass</td>
+        <td>Charles Carl Roberts</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Lancaster County</td>
+        <td> Pennsylvania</td>
+        <td>2006</td>
+        <td>Charles Carl Roberts, 32, shot 10 young girls in a one-room schoolhouse in Bart Township, killing 5, before taking his own life.</td>
+        <td>6</td>
+        <td>5</td>
+        <td>11</td>
+        <td>School</td>
+        <td>No</td>
+        <td>He told his wife that he&#39;d molested two young relatives 20 years ago. </td>
+        <td>Yes</td>
+        <td>Local stores in Nickel Mines, Penn. </td>
+        <td>One semiautomatic handgun, one rifle, one shotgun</td>
+        <td>Springfield semiautomatic handgun; .30-06 Ruger bolt-action rifle; 12-gauge Browning pump-action shotgun</td>
+        <td>http://news.google.com/newspapers?id=O8oyAAAAIBAJ&amp;sjid=YSUEAAAAIBAJ&amp;pg=6143,1260138&amp;dq=charles+carl+roberts+mentally+ill&amp;hl=en;http://www.msnbc.msn.com/id/15105305/ns/us_news-crime_and_courts/t/th-girl-dies-after-amish-schoolhouse-shooting/#.UFD4SxhgspQ; http://www.foxnews.com/story/0,2933,217170,00.html</td>
+        <td>http://www.cnn.com/2006/US/10/03/amish.shooting/index.html</td>
+        <td>39.9589</td>
+        <td>-76.0806</td>
+      </tr>
+      <tr id="LC34" class="js-file-line">
+        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td>Capitol Hill massacre</td>
+        <td>Mass</td>
+        <td>Kyle Aaron Huff</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Seattle</td>
+        <td> Washington</td>
+        <td>2006</td>
+        <td>Kyle Aaron Huff, 28, opened fire at a rave afterparty in the Capitol Hill neighborhood of Seattle before committing suicide.</td>
+        <td>7</td>
+        <td>2</td>
+        <td>9</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>Police were unable to find any record that he had been treated for mental illness or was on psychiatric medication.</td>
+        <td>Yes</td>
+        <td>Various sporting goods stores in Kalispell, Mont.</td>
+        <td>Two semiautomatic handguns, one rifle (assault), one shotgun</td>
+        <td>.40-caliber Ruger, one other semiautomatic handgun; Bushmaster XM15 E2S semiautomatic rifle; 12-gauge Winchester Defender pump-action shotgun with extended tube and pistol grip</td>
+        <td>http://seattletimes.com/html/localnews/2002892043_shooter27m.html; http://seattletimes.com/html/localnews/2002898900_huff30m.html</td>
+        <td>http://seattletimes.com/html/localnews/2002898900_huff30m.html</td>
+        <td>47.6229</td>
+        <td>-122.3165</td>
+      </tr>
+      <tr id="LC35" class="js-file-line">
+        <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td>Goleta postal shootings</td>
+        <td>Spree</td>
+        <td>Jennifer Sanmarco</td>
+        <td>Female</td>
+        <td>White</td>
+        <td>Goleta</td>
+        <td> California</td>
+        <td>2006</td>
+        <td>Former postal worker Jennifer Sanmarco, 44, shot dead a former neighbor then drove to the mail processing plant where she used to work. Inside, she opened fire, killing six employees before committing suicide.</td>
+        <td>8</td>
+        <td>0</td>
+        <td>8</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>She was placed on retirement disability for psychological reasons. Fellow employees described her behavior as increasingly bizarre. She believed the Postal Service employees were conspiring against her.</td>
+        <td>Yes</td>
+        <td>Pawn shops in Grants and Gallup, N.M.</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Smith &amp; Wesson 915 semiautomatic handgun</td>
+        <td>http://www.msnbc.msn.com/id/11167920/ns/us_news-crime_and_courts/t/postal-killer-believed-she-was-target-plot/#.UIxy7kzLwTE; http://www.cbsnews.com/stories/2006/02/02/national/main1272077.shtml; </td>
+        <td>http://www.msnbc.msn.com/id/11167920/ns/us_news-crime_and_courts/t/postal-killer-believed-she-was-target-plot/#.UNyN5cXhe75</td>
+        <td>34.436283</td>
+        <td>-119.8714406</td>
+      </tr>
+      <tr id="LC36" class="js-file-line">
+        <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td>Red Lake massacre</td>
+        <td>Spree</td>
+        <td>Jeffrey Weise</td>
+        <td>Male</td>
+        <td>Native American</td>
+        <td>Red Lake</td>
+        <td> Minnesota</td>
+        <td>2005</td>
+        <td>Jeffrey Weise, 16, murdered his grandfather, who was a police officer, and grandfather&#39;s girlfriend. Weise then drove his grandfather&#39;s squad car to Red Lake Senior High School and opened fire on the reservation campus, killing another seven people before committing suicide.</td>
+        <td>10</td>
+        <td>5</td>
+        <td>15</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>He voluntarily visited a a psychiatric ward. He was hospitalized at least once for suicidal tendencies and was taking Prozac.</td>
+        <td>No</td>
+        <td>Glock and Remington stolen from grandfather</td>
+        <td>Two semiautomatic handguns, one shotgun</td>
+        <td>.40-caliber Glock 23, .22-caliber Ruger semiautomatic handguns; 12-gauge Remington 870 shotgun</td>
+        <td>http://news.google.com/newspapers?id=c4dIAAAAIBAJ&amp;sjid=_XEDAAAAIBAJ&amp;pg=5163,1527281&amp;dq=jeffrey+weise+mental+ill&amp;hl=en; http://www.cbsnews.com/stories/2005/03/24/national/main682915.shtml?source=search_story; http://www.usnews.com/usnews/news/articles/050404/4redlake.htm; http://www.foxnews.com/story/0,2933,151116,00.html</td>
+        <td>http://www.cbsnews.com/stories/2005/03/24/national/main682915.shtml?source=search_story</td>
+        <td>47.876346</td>
+        <td>-95.0169401</td>
+      </tr>
+      <tr id="LC37" class="js-file-line">
+        <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td>Living Church of God shooting</td>
+        <td>Mass</td>
+        <td>Terry Michael Ratzmann</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Brookfield</td>
+        <td> Wisconsin</td>
+        <td>2005</td>
+        <td>Living Church of God member Terry Michael Ratzmann, 44, opened fire at a church meeting at a Sheraton hotel before committing suicide.</td>
+        <td>7</td>
+        <td>4</td>
+        <td>11</td>
+        <td>Religious</td>
+        <td>Yes</td>
+        <td>Neighbors said he suffered from depression and had a drinking problem.</td>
+        <td>Yes</td>
+        <td>Gun dealer in Waukesha, Wis.</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Beretta semiautomatic handgun</td>
+        <td>http://www.cbsnews.com/2100-201_162-679761.html; http://www.foxnews.com/story/0,2933,150255,00.html; http://www.msnbc.msn.com/id/7167861/ns/us_news-crime_and_courts/t/relatives-struggle-answers-after-shooting/#.UN3Scko6JT4</td>
+        <td>http://www.cbsnews.com/2100-201_162-679761.html</td>
+        <td>43.0605671</td>
+        <td>-88.1064787</td>
+      </tr>
+      <tr id="LC38" class="js-file-line">
+        <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td>Damageplan show shooting</td>
+        <td>Mass</td>
+        <td>Nathan Gale</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Columbus</td>
+        <td> Ohio</td>
+        <td>2004</td>
+        <td>Nathan Gale, 25, possibly upset about the breakup of Pantera, gunned down former Pantera guitarist Dimebag Darrell and three others at a Damageplan show before a police officer fatally shot Gale.</td>
+        <td>5</td>
+        <td>7</td>
+        <td>12</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He was discharged from the military because he was a paranoid schizophrenic.</td>
+        <td>Yes</td>
+        <td>Received as a gift from mother</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Beretta 92FS semiautomatic handgun</td>
+        <td>http://www.cbsnews.com/2100-201_162-659983.html; http://www.knac.com/article.asp?ArticleID=3417; http://www.blabbermouth.net/news.aspx?mode=Article&amp;newsitemID=86362</td>
+        <td>http://www.cbsnews.com/2100-201_162-659983.html</td>
+        <td>39.9622601</td>
+        <td>-83.0007065</td>
+      </tr>
+      <tr id="LC39" class="js-file-line">
+        <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td>Lockheed Martin shooting</td>
+        <td>Mass</td>
+        <td>Doug Williams</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Meridian</td>
+        <td> Mississippi</td>
+        <td>2003</td>
+        <td>Assembly line worker Douglas Williams, 48, opened fire at his Lockheed Martin workplace in a racially motivated attack before committing suicide.</td>
+        <td>7</td>
+        <td>8</td>
+        <td>15</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>His cousin said he was depressed and &quot;going through a lot of things.&quot;</td>
+        <td>Yes</td>
+        <td>Purchased from an individual</td>
+        <td>One semiautomatic handgun, two rifles, one derringer, one shotgun</td>
+        <td>.45-caliber Ruger P90 semiautomatic handgun; .22-caliber rifle with scope, .223-caliber Ruger Mini-14 rifle; 12-gauge Winchester 1300 shotgun; .22 Magnum derringer</td>
+        <td>http://usatoday30.usatoday.com/news/nation/2003-07-08-miss-shooting-main_x.htm; http://www.nytimes.com/2003/07/09/us/man-kills-5-co-workers-at-plant-and-himself.html; http://www.nytimes.com/2003/07/16/us/national-briefing-south-mississippi-death-toll-rises-in-plant-shooting.html</td>
+        <td>http://usatoday30.usatoday.com/news/nation/2003-07-08-miss-shooting-main_x.htm</td>
+        <td>32.376081</td>
+        <td>-88.68978002</td>
+      </tr>
+      <tr id="LC40" class="js-file-line">
+        <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td>Navistar shooting</td>
+        <td>Mass</td>
+        <td>William D. Baker</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Melrose Park</td>
+        <td> Illinois</td>
+        <td>2001</td>
+        <td>Fired employee William D. Baker, 66, opened fire at his former Navistar workplace before committing suicide.</td>
+        <td>5</td>
+        <td>4</td>
+        <td>9</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>He had a criminal past, including a sexual assault conviction.</td>
+        <td>Yes</td>
+        <td>Some purchased from Pepper Sports in Glen Ellyn, Ill. </td>
+        <td>Two rifles, one revolver, one shotgun</td>
+        <td>SKS 1954R, .30-caliber Winchester rifles; 12-gauge Remington pump-action shotgun; .38-caliber revolver</td>
+        <td>http://articles.chicagotribune.com/2001-02-07/news/0102070122_1_navistar-gun-law-hunting-rifle; http://www.vpc.org/studies/wgun010205.htm</td>
+        <td>http://articles.chicagotribune.com/2001-02-07/news/0102070122_1_navistar-gun-law-hunting-rifle</td>
+        <td>41.9005865</td>
+        <td>-87.8567277</td>
+      </tr>
+      <tr id="LC41" class="js-file-line">
+        <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td>Wakefield massacre</td>
+        <td>Mass</td>
+        <td>Michael McDermott</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Wakefield</td>
+        <td> Massachusetts</td>
+        <td>2000</td>
+        <td>Michael McDermott, 42, opened fire on co-workers at Edgewater Technology and was later arrested.</td>
+        <td>7</td>
+        <td>0</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>Psychiatrist guessed he had schizophrenia, but McDermott had researched how to fake a mental illness on the internet. Defense lawyer described history of suicide attempts and mental illness dating back to teen years. Jury rejected his insanity defense. </td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun, one rifle (assault), one shotgun</td>
+        <td>.32-caliber Retolaza semiautomatic handgun; AK-47 variant semiautomatic rifle; 12-gauge Winchester 1300 pump-action shotgun</td>
+        <td>http://www.time.com/time/magazine/article/0,9171,93313,00.html; http://articles.cnn.com/2002-04-22/justice/ctv.mcdermott.trial_1_michael-mcdermott-jury-deliberates-fate-mental-illness?_s=PM:LAW; http://www.nytimes.com/2000/12/27/us/7-die-in-rampage-at-company-co-worker-of-victims-arrested.html; http://www.vpc.org/studies/wgun001226.htm</td>
+        <td>http://articles.cnn.com/2002-04-22/justice/ctv.mcdermott.trial_1_michael-mcdermott-jury-deliberates-fate-mental-illness?_s=PM:LAW; http://www.boston.com/news/daily/24/mcdermott_verdict.htm</td>
+        <td>42.506484</td>
+        <td>-71.0728306</td>
+      </tr>
+      <tr id="LC42" class="js-file-line">
+        <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td>Hotel shooting</td>
+        <td>Mass</td>
+        <td>Silvio Levya</td>
+        <td>Male</td>
+        <td>Latino</td>
+        <td>Tampa</td>
+        <td> Florida</td>
+        <td>1999</td>
+        <td>Hotel employee Silvio Leyva, 36, gunned down four coworkers at the Radisson Bay Harbor Inn before killing a woman outside who refused to give him her car. He was arrested shortly after the shootings.</td>
+        <td>5</td>
+        <td>3</td>
+        <td>8</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>His brother called him &quot;unbalanced&quot; and mentally ill.</td>
+        <td>Yes</td>
+        <td>One purchased from Big E&#39;s in Tampa, Fla.</td>
+        <td>One semiautomatic handgun, one revolver</td>
+        <td>9mm Lorcin semiautomatic handgun; .38-caliber Charter Arms revolver</td>
+        <td>http://www.sptimes.com/News/123000/news_pf/TampaBay/A_year_later__the_str.shtml; http://www.vpc.org/studies/wgun991230.htm; http://news.google.com/newspapers?id=CSUdAAAAIBAJ&amp;sjid=ZaYEAAAAIBAJ&amp;pg=2043,2634069&amp;dq=silvio+leyva+shooting&amp;hl=en</td>
+        <td>http://www.sptimes.com/News/123000/news_pf/TampaBay/A_year_later__the_str.shtml</td>
+        <td>27.9477595</td>
+        <td>-82.458444</td>
+      </tr>
+      <tr id="LC43" class="js-file-line">
+        <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td>Xerox killings</td>
+        <td>Mass</td>
+        <td>Byran Koji Uyesugi</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Honolulu</td>
+        <td> Hawaii</td>
+        <td>1999</td>
+        <td>Byran Koji Uyesugi, 40, a Xerox service technician, opened fire inside the building with a 9mm Glock. He fled and was later apprehended by police.</td>
+        <td>7</td>
+        <td>0</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>A psychiatrist, testifying for the prosecution,said he suffered from schizophrenia.</td>
+        <td>Yes</td>
+        <td>Hunting Supplies of Hawaii (The Armory) in Honolulu, Hawaii</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Glock 17 semiautomatic handgun</td>
+        <td>http://archives.starbulletin.com/2000/06/02/news/story2.html; http://www.vpc.org/studies/wgun991102.htm</td>
+        <td>http://archives.starbulletin.com/2000/06/02/news/story2.html</td>
+        <td>21.3255125</td>
+        <td>-157.8473055</td>
+      </tr>
+      <tr id="LC44" class="js-file-line">
+        <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td>Wedgwood Baptist Church shooting</td>
+        <td>Mass</td>
+        <td>Larry Gene Ashbrook</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Fort Worth</td>
+        <td> Texas</td>
+        <td>1999</td>
+        <td>Larry Gene Ashbrook, 47, opened fire inside the Wedgwood Baptist Church during a prayer rally before committing suicide.</td>
+        <td>8</td>
+        <td>7</td>
+        <td>15</td>
+        <td>Religious</td>
+        <td>Yes</td>
+        <td>His siblings decribed him as a paranoid schizophrenic. </td>
+        <td>Yes</td>
+        <td>Trader&#39;s Village flea market in Grand Prairie, Texas</td>
+        <td>Two semiautomatic handguns</td>
+        <td>.380-caliber, 9mm Ruger P85 semiautomatic handguns</td>
+        <td>http://www.nytimes.com/1999/09/20/us/fort-worth-remembers-those-killed-at-church.html?pagewanted=all&amp;src=pm; http://www.nytimes.com/1999/09/18/us/death-in-a-church-the-overview-with-question-of-why-unanswered-fort-worth-mourns.html; http://www.vpc.org/studies/wgun990915.htm</td>
+        <td>http://www.nytimes.com/1999/09/18/us/death-in-a-church-the-overview-with-question-of-why-unanswered-fort-worth-mourns.html</td>
+        <td>32.693397</td>
+        <td>-97.47067092</td>
+      </tr>
+      <tr id="LC45" class="js-file-line">
+        <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td>Atlanta day trading spree killings</td>
+        <td>Spree</td>
+        <td>Mark O. Barton</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Atlanta</td>
+        <td> Georgia</td>
+        <td>1999</td>
+        <td>Day trader Mark O. Barton, 44, who had recently lost a substantial sum of money, went on a shooting spree through two day-trading firms. He started at the All-Tech Investment Group, where he worked, then went on to Momentum Securities. He fled and hours later, after being cornered by police outside a gas station, committed suicide. (Two days before the spree, he killed his wife and two children with a hammer.)</td>
+        <td>9</td>
+        <td>13</td>
+        <td>22</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>In letters, he details his deep depression and downward spiral. </td>
+        <td>Yes</td>
+        <td>Glock purchased from gun store in Warner Robins, Ga. </td>
+        <td>Three semiautomatic handguns, one revolver</td>
+        <td>.45-caliber Colt 1911-A1, 9mm Glock 17, .25-caliber Raven Arms MP-25 semiautomatic handguns; .22-caliber Harrington &amp; Richardson revolver</td>
+        <td>http://www.independent.co.uk/news/i-dont-plan-to-live-much-longer-just-long-enough-to-kill-the-people-that-greedily-sought-my-destruction-1109610.html; http://articles.cnn.com/1999-07-30/us/9907_30_atlanta.shooting.06_1_gladys-barton-debra-spivey-barton-note?_s=PM:US; http://www.vpc.org/studies/wgun990729.htm</td>
+        <td>http://www.independent.co.uk/news/i-dont-plan-to-live-much-longer-just-long-enough-to-kill-the-people-that-greedily-sought-my-destruction-1109610.html</td>
+        <td>33.7490987</td>
+        <td>-84.3901849</td>
+      </tr>
+      <tr id="LC46" class="js-file-line">
+        <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td>Columbine High School massacre</td>
+        <td>Mass</td>
+        <td>Eric Harris &amp; Dylan Klebold</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Littleton</td>
+        <td> Colorado</td>
+        <td>1999</td>
+        <td>Eric Harris, 18, and Dylan Klebold, 17, opened fire throughout Columbine High School before committing suicide.</td>
+        <td>15</td>
+        <td>24</td>
+        <td>39</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>Harris was an alleged psychopath; Klebold was depressed and suicidal.</td>
+        <td>No</td>
+        <td>Purchased variously at Tanner Gun Show in Denver, Colo. and from an individual</td>
+        <td>One semiautomatic handgun (assault), one rifle (assault), two shotguns</td>
+        <td>9mm Intratec DC-9 semiautomatic handgun; 9mm Hi-Point 995 carbine rifle; 12-gauge sawed-off Savage Stevens 311D, 12-gauge sawed-off Savage Springfield 67H pump-action shotguns</td>
+        <td>http://www.usatoday.com/news/nation/2009-04-13-columbine-myths_N.htm; http://www.vpc.org/studies/wgun990420.htm; http://www.slate.com/articles/news_and_politics/assessment/2004/04/the_depressive_and_the_psychopath.html</td>
+        <td>http://www.slate.com/articles/news_and_politics/assessment/2004/04/the_depressive_and_the_psychopath.html</td>
+        <td>39.6021065</td>
+        <td>-104.9877273</td>
+      </tr>
+      <tr id="LC47" class="js-file-line">
+        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td>Thurston High School shooting</td>
+        <td>Spree</td>
+        <td>Kipland P. Kinkel</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Springfield</td>
+        <td> Oregon</td>
+        <td>1998</td>
+        <td>After he was expelled for having a gun in his locker, Kipland P. Kinkel, 15, a freshman at Thurston High, went on a shooting spree, killing his parents at home and two students at school. Five classmates wrestled Kipland to the ground before he was arrested.   </td>
+        <td>4</td>
+        <td>25</td>
+        <td>29</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>Doctors testified that he was a paranoid schizophrenic who suffered from hallucinations</td>
+        <td>No</td>
+        <td>Purchased variously from friend and father, and stolen from father</td>
+        <td>Two semiautomatic handguns, one rifle</td>
+        <td>9mm Glock, .22-caliber Ruger semiautomatic handguns, .22-caliber Ruger rifle</td>
+        <td>http://www.katu.com/news/local/8082147.html; http://www.pbs.org/wgbh/pages/frontline/shows/kinkel/kip/cron.html; http://www.oregonlive.com/special/index.ssf/2008/05/the_suspect_kipland_kinkels_da.html; http://articles.cnn.com/2000-01-21/us/kinkel.revisited_1_kip-kinkel-thurston-high-school-oregon-school-shooting?_s=PM:US</td>
+        <td>http://articles.cnn.com/2000-01-21/us/kinkel.revisited_1_kip-kinkel-thurston-high-school-oregon-school-shooting?_s=PM:US</td>
+        <td>44.0462362</td>
+        <td>-123.0220289</td>
+      </tr>
+      <tr id="LC48" class="js-file-line">
+        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td>Westside Middle School killings</td>
+        <td>Mass</td>
+        <td>Mitchell Scott Johnson &amp; Andrew Douglas Golden</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Jonesboro</td>
+        <td> Arkansas</td>
+        <td>1998</td>
+        <td>Mitchell Scott Johnson, 13, and Andrew Douglas Golden, 11, two juveniles, ambushed students and teachers as they left the school; they were apprehended by police at the scene.</td>
+        <td>5</td>
+        <td>10</td>
+        <td>15</td>
+        <td>School</td>
+        <td>No</td>
+        <td>Boys displayed unruly and aggressive behavior. They picked on kids and made threats about killing people. </td>
+        <td>No</td>
+        <td>Stolen from grandfather and father</td>
+        <td>Two semiautomatic handguns, two rifles, three revolvers, two derringers</td>
+        <td>FIE 380, .380-caliber Star semiautomatic handguns; .44 Magnum Ruger, .30-06 Remington 742, .30-caliber Universal M-1 carbine replica rifles; .38-caliber Charter Arms, .357-caliber Ruger Security Six, .38-caliber Smith &amp; Wesson revolvers; .22-caliber Double Deuce Buddie two-shot, .38-caliber Davis Industries two-shot derringers</td>
+        <td>http://www.vpc.org/studies/wgun980324.htm</td>
+        <td>http://www.nytimes.com/1998/03/29/us/from-wild-talk-and-friendship-to-five-deaths-in-a-schoolyard.html?sec=&amp;spon=&amp;pagewanted=all</td>
+        <td>35.8209895</td>
+        <td>-90.6682606</td>
+      </tr>
+      <tr id="LC49" class="js-file-line">
+        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td>Connecticut Lottery shooting</td>
+        <td>Mass</td>
+        <td>Matthew Beck</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Newington</td>
+        <td> Connecticut</td>
+        <td>1998</td>
+        <td>Lottery worker Matthew Beck, 35, gunned down four bosses over a salary dispute before committing suicide.</td>
+        <td>5</td>
+        <td>1</td>
+        <td>6</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>He had been hospitalized for psychiatric reasons and had a history of depression</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm semiautomatic handgun</td>
+        <td>http://www.nytimes.com/1998/03/07/nyregion/rampage-connecticut-overview-connecticut-lottery-worker-kills-4-bosses-then.html?pagewanted=all&amp;src=pm; http://www.nytimes.com/2000/04/11/us/hole-in-gun-control-law-lets-mentally-ill-through.html?pagewanted=all&amp;src=pm</td>
+        <td>http://www.nytimes.com/2000/04/11/us/hole-in-gun-control-law-lets-mentally-ill-through.html?pagewanted=all&amp;src=pm</td>
+        <td>41.6856325</td>
+        <td>-72.72983827</td>
+      </tr>
+      <tr id="LC50" class="js-file-line">
+        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td>Caltrans maintenance yard shooting</td>
+        <td>Mass</td>
+        <td>Arturo Reyes Torres</td>
+        <td>Male</td>
+        <td>Latino</td>
+        <td>Orange</td>
+        <td> California</td>
+        <td>1997</td>
+        <td>Former Caltrans employee Arturo Reyes Torres, 41, opened fire at a maintenance yard after he was fired for allegedly selling government materials he&#39;d stolen from work. He was shot dead by police.</td>
+        <td>5</td>
+        <td>2</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>He was disgruntled after being fired. </td>
+        <td>Yes</td>
+        <td>B&amp;B Gun Sales in Orange County, Calif.</td>
+        <td>One rifle (assault)</td>
+        <td>7.62mm AK-47 Chinese variant semiautomatic rifle</td>
+        <td>http://articles.latimes.com/1997/dec/20/news/mn-431; http://articles.latimes.com/1997/dec/22/local/me-1156; http://www.vpc.org/studies/wgun971218.htm; http://news.google.com/newspapers?id=DitZAAAAIBAJ&amp;sjid=LEcNAAAAIBAJ&amp;pg=6705,2243998&amp;dq=arturo+reyes+torres+caltrans&amp;hl=en</td>
+        <td>http://articles.latimes.com/1997/dec/20/news/mn-431</td>
+        <td>33.7877944</td>
+        <td>-117.8531119</td>
+      </tr>
+      <tr id="LC51" class="js-file-line">
+        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td>R.E. Phelon Company shooting</td>
+        <td>Mass</td>
+        <td>Arthur Wise</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Aiken</td>
+        <td> South Carolina</td>
+        <td>1997</td>
+        <td>Ex-con Hastings Arthur Wise, 43, opened fire at the R.E. Phelon Company in retaliation for being fired after an argument with a supervisor. He attempted suicide by ingesting insecticide, failed, and was executed by the state of South Carolina eight years later.</td>
+        <td>4</td>
+        <td>3</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>An ex-con, he had been freed from prison, although he displayed violent tendencies.</td>
+        <td>No</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm semiautomatic handgun</td>
+        <td>http://www.vpc.org/studies/wgun970915.htm; http://chronicle.augusta.com/stories/1997/09/18/met_214833.shtml</td>
+        <td>http://chronicle.augusta.com/stories/1997/09/18/met_214833.shtml</td>
+        <td>33.5598586</td>
+        <td>-81.721952</td>
+      </tr>
+      <tr id="LC52" class="js-file-line">
+        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td>Fort Lauderdale revenge shooting</td>
+        <td>Mass</td>
+        <td>Clifton McCree</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Fort Lauderdale</td>
+        <td> Florida</td>
+        <td>1996</td>
+        <td>Fired city park employee Clifton McCree, 41, opened fire on former coworkers he called &quot;racist devils&quot; inside their municipal trailer in an act of revenge after failing a drug test. He then committed suicide.</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>Co-workers complained about his threats and verbal abuse. His supervisors asked him to get a psychiatric evaluation. He lost his job, which relatives said drove his depression.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun, one revolver</td>
+        <td>9mm Glock semiautomatic handgun; .32-caliber revolver</td>
+        <td>http://www.nytimes.com/1996/02/11/us/florida-killer-said-victims-were-racists-police-say.html; http://articles.sun-sentinel.com/1996-02-10/news/9602090635_1_million-firearms-multiple-guns-reloading</td>
+        <td>http://articles.sun-sentinel.com/1996-02-11/news/9602110026_1_beach-crew-maintenance-fort-lauderdale</td>
+        <td>26.1223084</td>
+        <td>-80.1433786</td>
+      </tr>
+      <tr id="LC53" class="js-file-line">
+        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td>Walter Rossler Company massacre</td>
+        <td>Mass</td>
+        <td>James Daniel Simpson</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Corpus Christi</td>
+        <td> Texas</td>
+        <td>1995</td>
+        <td>Disgruntled former metallurgist James Daniel Simpson, 28, opened fire throughout the Walter Rossler Company where he had worked before exiting the building and committing suicide.</td>
+        <td>6</td>
+        <td>0</td>
+        <td>6</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>He was likely angry because he was given an assignment at work he didn&#39;t like. But acquaintances didn&#39;t know why he&#39;d come back and kill.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun, one revolver</td>
+        <td>9mm Ruger semiautomatic handgun; .32-caliber revolver</td>
+        <td>http://web.caller.com/2000/april/03/today/local_ne/4127.html</td>
+        <td>http://web.caller.com/2000/april/03/today/local_ne/4127.html</td>
+        <td>27.823713</td>
+        <td>-97.41739794</td>
+      </tr>
+      <tr id="LC54" class="js-file-line">
+        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td>Air Force base shooting</td>
+        <td>Mass</td>
+        <td>Dean Allen Mellberg</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Fairchild Air Force Base</td>
+        <td> Washington</td>
+        <td>1994</td>
+        <td>Former airman Dean Allen Mellberg, 20, opened fire inside a hospital at the Fairchild Air Force Base before he was shot dead by a military police officer outside.</td>
+        <td>5</td>
+        <td>23</td>
+        <td>28</td>
+        <td>Military</td>
+        <td>Yes</td>
+        <td>He was repeatedly diagnosed with emotional problems during his two years of service.</td>
+        <td>Yes</td>
+        <td>Gun dealer in Spokane, Wash.</td>
+        <td>One rifle (assault)</td>
+        <td>MAK-90 semiautomatic rifle</td>
+        <td>http://articles.latimes.com/1994-06-22/news/mn-7137_1_air-force; http://www.nytimes.com/1994/06/22/us/an-airman-s-revenge-5-minutes-of-terror.html</td>
+        <td>http://articles.latimes.com/1994-06-22/news/mn-7137_1_air-force</td>
+        <td>47.61864486</td>
+        <td>-117.6483587</td>
+      </tr>
+      <tr id="LC55" class="js-file-line">
+        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td>Chuck E. Cheese&#39;s killings</td>
+        <td>Mass</td>
+        <td>Nathan Dunlap</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Aurora</td>
+        <td> Colorado</td>
+        <td>1993</td>
+        <td>Nathan Dunlap, 19, a recently fired Chuck E. Cheese&#39;s employee, went on a rampage through his former workplace and was arrested the following day. He now awaits execution on death row.</td>
+        <td>4</td>
+        <td>1</td>
+        <td>5</td>
+        <td>Workplace</td>
+        <td>No</td>
+        <td>While he was in prison awaiting trial, he started acting bizarre by stripping naked and playing with his feces, apparently to avoid the death penalty. A state doctor testified that Dunlap was was faking his mental illness. </td>
+        <td>Unknown</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun</td>
+        <td>.25-caliber semiautomatic handgun</td>
+        <td>http://www.denverpost.com/news/ci_20218952/aurora-chuck-e-cheese-killers-appeal-cites-mental; http://abcnews.go.com/US/auroras-massacre-victims-20-year-wait-justice/story?id=16847013; http://www.5280.com/magazine/2008/12/politics-killing?page=0,6 </td>
+        <td>http://www.5280.com/magazine/2008/12/politics-killing?page=0,6</td>
+        <td>39.754713</td>
+        <td>-104.835869</td>
+      </tr>
+      <tr id="LC56" class="js-file-line">
+        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td>Long Island Rail Road massacre</td>
+        <td>Mass</td>
+        <td>Colin Ferguson</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Garden City</td>
+        <td> New York</td>
+        <td>1993</td>
+        <td>Colin Ferguson, 35, opened fire on an eastbound Long Island Rail Road train as it approached a Garden City station. He was later arrested.</td>
+        <td>6</td>
+        <td>19</td>
+        <td>25</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>Psychiatrists and others said he suffered from racial paranoia and was obsessed with nonexistent conspiracies. His landlord said he had &quot;delusions of grandeur.&quot;</td>
+        <td>Yes</td>
+        <td>Turner&#39;s Outdoorsman in Signal Hill, Calif. </td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Ruger P89 semiautomatic handgun</td>
+        <td>http://www.nytimes.com/1993/12/12/nyregion/tormented-life-special-report-long-slide-privilege-ends-slaughter-train.html; http://www.vpc.org/studies/wgun931207.htm</td>
+        <td>http://www.nytimes.com/1993/12/12/nyregion/tormented-life-special-report-long-slide-privilege-ends-slaughter-train.html</td>
+        <td>40.7267682</td>
+        <td>-73.6342955</td>
+      </tr>
+      <tr id="LC57" class="js-file-line">
+        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td>Luigi&#39;s shooting</td>
+        <td>Mass</td>
+        <td>Kenneth Junior French</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Fayetteville</td>
+        <td> North Carolina</td>
+        <td>1993</td>
+        <td>Army Sgt. Kenneth Junior French, 22, opened fire inside Luigi&#39;s Italian restaurant while ranting about gays in the military before he was shot and arrested by police.</td>
+        <td>4</td>
+        <td>8</td>
+        <td>12</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>He had an abusive father, who committed suicide.</td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One rifle, two shotguns</td>
+        <td>.22-caliber rifle; two 12-gauge shotguns</td>
+        <td>http://articles.latimes.com/1993-08-08/news/mn-21847_1_kills-army-french; http://news.google.com/newspapers?id=0AhPAAAAIBAJ&amp;sjid=jhUEAAAAIBAJ&amp;pg=6505,2482529&amp;dq=kenneth+junior+french&amp;hl=en</td>
+        <td>http://news.google.com/newspapers?id=0AhPAAAAIBAJ&amp;sjid=jhUEAAAAIBAJ&amp;pg=6505,2482529&amp;dq=kenneth+junior+french&amp;hl=en</td>
+        <td>35.0529931</td>
+        <td>-78.8787058</td>
+      </tr>
+      <tr id="LC58" class="js-file-line">
+        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td>101 California Street shootings</td>
+        <td>Mass</td>
+        <td>Gian Luigi Ferri</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>San Francisco</td>
+        <td> California</td>
+        <td>1993</td>
+        <td>Failed businessman Gian Luigi Ferri, 55, opened fire throughout an office building before he committed suicide inside as police pursued him.</td>
+        <td>9</td>
+        <td>6</td>
+        <td>15</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>He was down on his luck because of failed business decisions. One acquaintance said,&quot;He was the least likely guy you can imagine doing something like that.&quot;  His ex-wife said he &quot;hated violence.&quot;</td>
+        <td>No</td>
+        <td>Super Pawn and Pacific Tactical Weapons, both in Las Vegas, Nev.</td>
+        <td>Three semiautomatic handguns (two assault)</td>
+        <td>Two Intratec DC-9, .45-caliber Colt semiautomatic handguns</td>
+        <td>http://articles.latimes.com/1993-07-03/news/mn-10731_1_mortgage-business/2; http://www.motherjones.com/print/16316; http://www.vpc.org/studies/wgun930701.htm</td>
+        <td>http://articles.latimes.com/1993-07-03/news/mn-10731_1_mortgage-business</td>
+        <td>37.7789601</td>
+        <td>-122.419199</td>
+      </tr>
+      <tr id="LC59" class="js-file-line">
+        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td>Watkins Glen killings</td>
+        <td>Mass</td>
+        <td>John T. Miller</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Watkins Glen</td>
+        <td> New York</td>
+        <td>1992</td>
+        <td>John T. Miller, 50, killed four child-support workers in a county office building before turning the gun on himself.  Miller was upset about a court order garnishing his paycheck to cover overdue child-support payments.</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>The day before the shooting, he told child-support collection office workers that he was considering suicide. He had been convicted of felonious assault for pointing a revolver at police officers responding to a domestic violence report at this girlfriend&#39;s apartment. </td>
+        <td>Yes</td>
+        <td>Mumford Sports in Litchfield, Ohio</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Llama semiautomatic handgun</td>
+        <td>http://www.nytimes.com/1992/10/17/nyregion/shooting-followed-tougher-efforts-to-collect-child-support.html?pagewanted=2&amp;src=pm; http://www.nytimes.com/1992/10/16/nyregion/gunman-kills-4-who-collected-child-payments.html?pagewanted=all&amp;src=pm; http://www.nytimes.com/1992/10/24/nyregion/watkins-glen-killings-called-planned.html</td>
+        <td>http://www.nytimes.com/1992/10/24/nyregion/watkins-glen-killings-called-planned.html</td>
+        <td>42.3810555</td>
+        <td>-76.8705777</td>
+      </tr>
+      <tr id="LC60" class="js-file-line">
+        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td>Lindhurst High School shooting</td>
+        <td>Mass</td>
+        <td>Eric Houston</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Olivehurst</td>
+        <td> California</td>
+        <td>1992</td>
+        <td>Former Lindhurst High School student Eric Houston, 20, angry about various personal failings, killed three students and a teacher at the school before surrendering to police after an eight-hour standoff. He was later sentenced to death.</td>
+        <td>4</td>
+        <td>10</td>
+        <td>14</td>
+        <td>School</td>
+        <td>No</td>
+        <td>He suffered violent physical abuse as a child. He claimed a teacher had sexually abused him, but the truth of that allegation was contested. </td>
+        <td>Yes</td>
+        <td>Local gun retailer</td>
+        <td>One rifle, one shotgun</td>
+        <td>.22-caliber sawed-off rifle; 12-gauge pump-action shotgun</td>
+        <td>http://www.schoolshooters.info/PL/Subject-Houston_files/Nine%20Brief%20Sketches.pdf; http://www.appeal-democrat.com/news/school-47104-shooting-eckardt.html; http://nl.newsbank.com/nl-search/we/Archives?p_product=SB&amp;p_theme=sb&amp;p_action=search&amp;p_maxdocs=200&amp;p_topdoc=1&amp;p_text_direct-0=0EB0D9D91FC593A0&amp;p_field_direct-0=document_id&amp;p_perpage=10&amp;p_sort=YMD_date:D&amp;s_trackval=GooglePM; http://www.sfgate.com/crime/article/Death-verdict-OKd-for-school-slaughter-3758444.php</td>
+        <td>http://www.schoolshooters.info/PL/Subject-Houston_files/Nine%20Brief%20Sketches.pdf</td>
+        <td>39.07868761</td>
+        <td>-121.5475762</td>
+      </tr>
+      <tr id="LC61" class="js-file-line">
+        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td>Royal Oak postal shootings</td>
+        <td>Mass</td>
+        <td>Thomas McIlvane</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Royal Oak</td>
+        <td> Michigan</td>
+        <td>1991</td>
+        <td>Laid-off postal worker Thomas McIlvane, 31, opened fire at his former workplace before committing suicide.</td>
+        <td>5</td>
+        <td>5</td>
+        <td>10</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>Police revoked his CCW permit after determining he was mentally unstable.</td>
+        <td>Yes</td>
+        <td>Local gun store</td>
+        <td>One rifle</td>
+        <td>.22-caliber Ruger sawed-off semiautomatic rifle</td>
+        <td>http://www.nytimes.com/1991/11/15/us/ex-postal-worker-kills-3-and-wounds-6-in-michigan.html; http://www.mlive.com/news/detroit/index.ssf/2011/11/monday_ceremony_marks_20_years.html</td>
+        <td>http://www.nytimes.com/1991/11/15/us/ex-postal-worker-kills-3-and-wounds-6-in-michigan.html</td>
+        <td>42.4894801</td>
+        <td>-83.1446485</td>
+      </tr>
+      <tr id="LC62" class="js-file-line">
+        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td>University of Iowa shooting</td>
+        <td>Mass</td>
+        <td>Gang Lu</td>
+        <td>Male</td>
+        <td>Asian</td>
+        <td>Iowa City</td>
+        <td> Iowa</td>
+        <td>1991</td>
+        <td>Former graduate student Gang Lu, 28, went on a rampage on campus and then committed suicide at the scene.</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>He was described as darkly disturbed and isolated.</td>
+        <td>Yes</td>
+        <td>Fin &amp; Feather in Iowa City, Iowa</td>
+        <td>One revolver</td>
+        <td>.38-caliber Taurus revolver</td>
+        <td>http://www.nytimes.com/1991/11/03/us/gunman-in-iowa-wrote-of-plans-in-five-letters.html?pagewanted=all&amp;src=pm; http://thegazette.com/2011/11/01/gang-lu-shootings-at-ui-remembered-20-years-later/; http://www.nytimes.com/1991/11/04/us/iowa-gunman-was-torn-by-academic-challenge.html?pagewanted=2&amp;src=pm</td>
+        <td>http://www.nytimes.com/1991/11/03/us/gunman-in-iowa-wrote-of-plans-in-five-letters.html?pagewanted=all&amp;src=pm</td>
+        <td>41.6606893</td>
+        <td>-91.5302214</td>
+      </tr>
+      <tr id="LC63" class="js-file-line">
+        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td>Luby&#39;s massacre</td>
+        <td>Mass</td>
+        <td>George Hennard</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Killeen</td>
+        <td> Texas</td>
+        <td>1991</td>
+        <td>George Hennard, 35, drove his pickup truck into a Luby&#39;s cafeteria and opened fire before committing suicide.</td>
+        <td>24</td>
+        <td>20</td>
+        <td>44</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>Acquaintances described him as troubled, unstable, combative, and misogynistic. He made convenience store employees &quot;nervous.&quot;</td>
+        <td>Yes</td>
+        <td>Mike&#39;s Gun Shop in Henderson, Nev.</td>
+        <td>Two semiautomatic handguns</td>
+        <td>9mm Glock 17, 9mm Ruger P89 semiautomatic handguns</td>
+        <td>http://www.nytimes.com/1991/10/18/us/portrait-of-texas-killer-impatient-and-troubled.html?pagewanted=all&amp;src=pm; http://www.kwtx.com/home/headlines/7048182.html; http://www.nytimes.com/1991/10/20/weekinreview/dead-23-texans-and-1-anti-gun-measure.html; http://www.vpc.org/studies/wgun911016.htm</td>
+        <td>http://www.nytimes.com/1991/10/20/weekinreview/dead-23-texans-and-1-anti-gun-measure.html; http://www.nytimes.com/1991/10/18/us/portrait-of-texas-killer-impatient-and-troubled.html?pagewanted=all&amp;src=pm</td>
+        <td>31.1171194</td>
+        <td>-97.7277959</td>
+      </tr>
+      <tr id="LC64" class="js-file-line">
+        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td>GMAC massacre</td>
+        <td>Mass</td>
+        <td>James Edward Pough</td>
+        <td>Male</td>
+        <td>Black</td>
+        <td>Jacksonville</td>
+        <td> Florida</td>
+        <td>1990</td>
+        <td>James Edward Pough, 42, opened fire at a General Motors Acceptance Corporation office before committing suicide. (The day prior, Pough killed a pimp and prostitute and injured two others. Those victims are not included in the mass murder count.)</td>
+        <td>10</td>
+        <td>4</td>
+        <td>14</td>
+        <td>Other</td>
+        <td>No</td>
+        <td>Police speculated he had a &quot;grudge&quot; against the people he killed. </td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One rifle, one revolver</td>
+        <td>.30-caliber Universal M1 carbine rifle; .38-caliber revolver</td>
+        <td>http://www.nytimes.com/1990/06/19/us/florida-gunman-kills-8-and-wounds-6-in-office.html; http://www.nytimes.com/1990/06/20/us/hazy-records-helped-florida-gunman-buy-arms.html; http://www.vpc.org/studies/wgun900618.htm; http://www.nytimes.com/1990/06/19/us/florida-gunman-kills-8-and-wounds-6-in-office.html?pagewanted=all&amp;src=pm</td>
+        <td>http://www.nytimes.com/1990/06/20/us/hazy-records-helped-florida-gunman-buy-arms.html</td>
+        <td>30.3321838</td>
+        <td>-81.655651</td>
+      </tr>
+      <tr id="LC65" class="js-file-line">
+        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td>Standard Gravure shooting</td>
+        <td>Mass</td>
+        <td>Joseph T. Wesbecker</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Louisville</td>
+        <td> Kentucky</td>
+        <td>1989</td>
+        <td>Joseph T. Wesbecker, 47, gunned down eight people at his former workplace before committing suicide.</td>
+        <td>9</td>
+        <td>12</td>
+        <td>21</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>Prior to the shooting, he had voluntarily checked into hospitals for mental problems at least twice and attempted suicide three times. </td>
+        <td>Yes</td>
+        <td>AK-47 purchased from Tilford&#39;s Gun Sales in Louisville, Ky. </td>
+        <td>Three semiautomatic handguns (two assault), one rifle (assault), one revolver</td>
+        <td>Two Intratec MAC-11, 9mm SIG Sauer semiautomatic handguns; AK-47 Chinese variant semiautomatic rifle; .38-caliber revolver</td>
+        <td>http://nl.newsbank.com/nl-search/we/Archives?p_product=LH&amp;s_site=kentucky&amp;p_multi=LH&amp;p_theme=realcities&amp;p_action=search&amp;p_maxdocs=200&amp;p_topdoc=1&amp;p_text_direct-0=0EB73C025033DC82&amp;p_field_direct-0=document_id&amp;p_perpage=10&amp;p_sort=YMD_date:D&amp;s_trackval=GooglePM; http://www.nytimes.com/1989/09/16/us/disturbed-past-of-killer-of-7-is-unraveled.html?pagewanted=all&amp;src=pm</td>
+        <td>http://www.nytimes.com/1989/09/16/us/disturbed-past-of-killer-of-7-is-unraveled.html</td>
+        <td>38.2542376</td>
+        <td>-85.759407</td>
+      </tr>
+      <tr id="LC66" class="js-file-line">
+        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td>Stockton schoolyard shooting</td>
+        <td>Mass</td>
+        <td>Patrick Purdy</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Stockton</td>
+        <td> California</td>
+        <td>1989</td>
+        <td>Patrick Purdy, 26, an alcoholic with a police record, launched an assault at Cleveland Elementary School, where many young Southeast Asian immigrants were enrolled. Purdy killed himself with a shot to the head.</td>
+        <td>6</td>
+        <td>29</td>
+        <td>35</td>
+        <td>School</td>
+        <td>Yes</td>
+        <td>He told a mental health professional he was &quot;struggling to resist actions on thoughts which are destructive in nature.&quot; He also suffered from alcoholism. </td>
+        <td>Yes</td>
+        <td>Sandy Trading Post in Sandy, Ore.; Hunter Loan and Jewelry Co. in Stockton, Calif.</td>
+        <td>One semiautomatic handgun, one rifle (assault)</td>
+        <td>9mm Taurus semiautomatic handgun; AK-47 Chinese variant semiautomatic rifle</td>
+        <td>http://www.recordnet.com/apps/pbcs.dll/article?AID=/20090118/A_NEWS/901170304; http://news.google.com/newspapers?id=N8IzAAAAIBAJ&amp;sjid=kDIHAAAAIBAJ&amp;pg=6930,6475926&amp;dq=patrick+purdy&amp;hl=en; http://www.time.com/time/magazine/article/0,9171,151105,00.html</td>
+        <td>http://www.recordnet.com/apps/pbcs.dll/article?AID=/20090118/A_NEWS/901170304</td>
+        <td>37.9577016</td>
+        <td>-121.2907796</td>
+      </tr>
+      <tr id="LC67" class="js-file-line">
+        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td>ESL shooting</td>
+        <td>Mass</td>
+        <td>Richard Farley</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Sunnyvale</td>
+        <td> California</td>
+        <td>1988</td>
+        <td>Former ESL Incorporated employee Richard Farley, 39, gunned down seven people at his former workplace. He was later arrested and now sits on death row at San Quentin.</td>
+        <td>7</td>
+        <td>4</td>
+        <td>11</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>He stalked and harassed his colleague Laura Black for four years until she was granted a temporary restraining order aginst him. Before he was fired for his bizarre behavior, he was ordered to undergo psychological counseling. </td>
+        <td>Yes</td>
+        <td>Various sporting goods and gun stores in Northern California</td>
+        <td>Two semiautomatic handguns, one rifle, two revolvers, two shotguns</td>
+        <td>.380 ACP Browning, 9mm Smith &amp; Wesson semiautomatic handguns; Ruger M-77 .22-250 bolt-action rifle with scope; Mossberg 12-gauge pump-action, 12-gauge Benelli semiautomatic shotguns; .357 Magnum Smith &amp; Wesson, .22 Sentinel WMR revolvers</td>
+        <td>http://articles.latimes.com/1988-02-18/news/mn-43514_1_mr-farley-richard-farley-sunnyvale-public-safety-department; http://news.google.com/newspapers?id=uqxAAAAAIBAJ&amp;sjid=sDIHAAAAIBAJ&amp;pg=2425,5898911&amp;dq=richard+farley+shooting&amp;hl=en; http://news.google.com/newspapers?id=FmYzAAAAIBAJ&amp;sjid=WzIHAAAAIBAJ&amp;pg=7028,576811&amp;dq=richard+farley+shooting&amp;hl=en</td>
+        <td>http://books.google.com/books?id=JiQUkwBnzgYC&amp;pg=PA44&amp;lpg=PA44&amp;dq=richard+farley+ESL+psychological&amp;source=bl&amp;ots=PqxDlDtznK&amp;sig=K-p8vEN7M2AEdRC0KpxVHjXZN7M&amp;hl=en#v=onepage&amp;q=richard%20farley%20ESL%20psychological&amp;f=false; http://caselaw.findlaw.com/ca-supreme-court/1295931.html</td>
+        <td>37.3688301</td>
+        <td>-122.0363496</td>
+      </tr>
+      <tr id="LC68" class="js-file-line">
+        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td>Shopping centers spree killings</td>
+        <td>Spree</td>
+        <td>William Cruse</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Palm Bay</td>
+        <td> Florida</td>
+        <td>1987</td>
+        <td>Retired librarian William Cruse, 59, was paranoid neighbors gossiped that he was gay. He drove to a Publix supermarket, killing two Florida Tech students en route before opening fire outside and killing a woman. He then drove to a Winn-Dixie supermarket and killed three more, including two police officers. Cruse was arrested after taking a hostage and died on death row in 2009.</td>
+        <td>6</td>
+        <td>14</td>
+        <td>20</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>He suffered from paranoid delusions. A judge found that he suffered from &quot;extreme mental illness.&quot;</td>
+        <td>Yes</td>
+        <td>Gun store in Norwood, Ohio; The Oaks Trading Post in Melbourne, Fla.</td>
+        <td>One rifle, one revolver, one shotgun</td>
+        <td>Sturm, Ruger Mini-14 semiautomatic rifle; 20-gauge Winchester pump-action shotgun; .357 Ruger Blackhawk revolver</td>
+        <td>http://articles.latimes.com/1987-04-25/news/mn-990_1_palm-bay-police</td>
+        <td>(Supreme Court of Florida Document) http://www.murderpedia.org/male.C/images/cruse_william_b/op-74656.pdf</td>
+        <td>28.0331886</td>
+        <td>-80.6429695</td>
+      </tr>
+      <tr id="LC69" class="js-file-line">
+        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td>United States Postal Service shooting</td>
+        <td>Mass</td>
+        <td>Patrick Sherrill</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Edmond</td>
+        <td> Oklahoma</td>
+        <td>1986</td>
+        <td>Postal worker Patrick Sherrill, 44, opened fire at a post office before committing suicide.</td>
+        <td>15</td>
+        <td>6</td>
+        <td>21</td>
+        <td>Workplace</td>
+        <td>Yes</td>
+        <td>He was worried he had inherited mental problems and rebuffed a pastor&#39;s suggestion he seek psychiatric counseling. His family members denied he had a history of mental illness.</td>
+        <td>Yes</td>
+        <td>Issued by Oklahoma National Guard, where Sherrill served, for target competition  </td>
+        <td>Three semiautomatic handguns</td>
+        <td>.22-caliber, two .45-caliber Colt Model 1911-A1 semiautomatic handguns</td>
+        <td>http://news.google.com/newspapers?id=dm8aAAAAIBAJ&amp;sjid=pyoEAAAAIBAJ&amp;pg=2297,4870051&amp;dq=patrick+sherrill&amp;hl=en</td>
+        <td>http://newsok.com/sherrill-feared-mental-illness-rejected/article/2177416</td>
+        <td>35.6672015</td>
+        <td>-97.42937037</td>
+      </tr>
+      <tr id="LC70" class="js-file-line">
+        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td>San Ysidro McDonald&#39;s massacre</td>
+        <td>Mass</td>
+        <td>James Oliver Huberty</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>San Ysidro</td>
+        <td> California</td>
+        <td>1984</td>
+        <td>James Oliver Huberty, 41, opened fire in a McDonald&#39;s restaurant before he was shot dead by a police officer.</td>
+        <td>22</td>
+        <td>19</td>
+        <td>41</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>The day before the shooting, he tried to make an appointment at a mental health clinic. </td>
+        <td>Yes</td>
+        <td>Unknown</td>
+        <td>One semiautomatic handgun, one rifle (assault), one shotgun</td>
+        <td>9mm Browning P35 Hi-Power semiautomatic handgun; 9mm Israeli Military Industries Uzi Model A carbine semiautomatic rifle; 12-gauge Winchester 1200 pump-action shotgun</td>
+        <td>http://www.utsandiego.com/san-ysidro-massacre/; http://www.vpc.org/studies/wgun840718.htm</td>
+        <td>http://www.nctimes.com/news/local/article_2ba4343e-7009-54ce-98df-79a23ff8d0d7.html</td>
+        <td>32.5520013</td>
+        <td>-117.0430813</td>
+      </tr>
+      <tr id="LC71" class="js-file-line">
+        <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td>Dallas nightclub shooting</td>
+        <td>Mass</td>
+        <td>Abdelkrim Belachheb</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Dallas</td>
+        <td> Texas</td>
+        <td>1984</td>
+        <td>Abdelkrim Belachheb, 39, opened fire at an upscale nightclub after a woman rejected his advances. He was later arrested.</td>
+        <td>6</td>
+        <td>1</td>
+        <td>7</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>During his last meal with his wife, he confessed he was depressed and had visited psychiatric hospitals in Belgium.</td>
+        <td>No</td>
+        <td>Hines Boulevard Pawn Shop in Dallas, Texas</td>
+        <td>One semiautomatic handgun</td>
+        <td>9mm Smith &amp; Wesson 459 semiautomatic handgun</td>
+        <td>http://books.google.com/books?id=Hr3OBwP-lbUC&amp;pg=PA38&amp;lpg=PA38&amp;dq=Abdelkrim+Belachheb+mental&amp;source=bl&amp;ots=D56pgdNnnl&amp;sig=grAT08P9HLfPoHVgwlXt8RfPHz0&amp;hl=en&amp;; http://www.nytimes.com/1984/06/30/us/6-die-in-dallas-club-as-enraged-man-fires-wildly.html; http://news.google.com/newspapers?id=gKQyAAAAIBAJ&amp;sjid=WO8FAAAAIBAJ&amp;pg=1236,2915759&amp;dq=abdelkrim+belachheb&amp;hl=en; http://books.google.com/books?id=Hr3OBwP-lbUC&amp;pg=PA67&amp;lpg=PA67&amp;dq=%22hine+pawnshop%22+gun&amp;source=bl&amp;ots=D55vgfTsnk&amp;sig=zDxr5nohKnNQWvLrUFmZGYQ5ar4&amp;hl=en&amp;sa=X&amp;ei=9WZSUN2FN-XZigKN-oGoCA&amp;ved=0CDcQ6AEwAA#v=onepage&amp;q=%22hine%20pawnshop%22%20gun&amp;f=false</td>
+        <td>http://books.google.com/books?id=Hr3OBwP-lbUC&amp;pg=PA67&amp;lpg=PA67&amp;dq=%22hine+pawnshop%22+gun&amp;source=bl&amp;ots=D55vgfTsnk&amp;sig=zDxr5nohKnNQWvLrUFmZGYQ5ar4&amp;hl=en&amp;sa=X&amp;ei=9WZSUN2FN-XZigKN-oGoCA&amp;ved=0CDcQ6AEwAA#v=onepage&amp;q=%22hine%20pawnshop%22%20gun&amp;f=false</td>
+        <td>32.7801052</td>
+        <td>-96.8000082</td>
+      </tr>
+      <tr id="LC72" class="js-file-line">
+        <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td>Welding shop shooting</td>
+        <td>Mass</td>
+        <td>Carl Robert Brown</td>
+        <td>Male</td>
+        <td>White</td>
+        <td>Miami</td>
+        <td> Florida</td>
+        <td>1982</td>
+        <td>Junior high school teacher Carl Robert Brown, 51, opened fire inside a welding shop and was later shot dead by a witness as he fled the scene.</td>
+        <td>8</td>
+        <td>3</td>
+        <td>11</td>
+        <td>Other</td>
+        <td>Yes</td>
+        <td>His second wife left him because he refused to seek psychological help. He had become increasingly isolated. One former student said he was &quot;off his rocker.&quot;</td>
+        <td>Yes</td>
+        <td>Garcia Gun Center in Hialeah, Fla.</td>
+        <td>One shotgun</td>
+        <td>Mossberg 500 Persuader pump-action shotgun with pistol grip</td>
+        <td>http://www.nytimes.com/1982/08/21/us/gunman-in-miami-kills-8-in-rampage.html; http://www.nytimes.com/1982/08/24/us/no-charges-planned-against-miami-man-who-shot-gunman.html; http://www.nytimes.com/1982/10/14/us/florida-city-rescinds-law-on-buying-guns.html</td>
+        <td>http://news.google.com/newspapers?id=uuYLAAAAIBAJ&amp;sjid=C1kDAAAAIBAJ&amp;pg=4879,1435085&amp;dq=carl+robert+brown</td>
+        <td>25.796491</td>
+        <td>-80.226683</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+
+  </div>
+
+  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
+  <div id="jump-to-line" style="display:none">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-jump-to-line-form" action="" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+      <button type="submit" class="btn">Go</button>
+</form>  </div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2018 <span title="0.25541s from unicorn-34249106-7gcj0">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-terms-of-service/" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to blog, text:blog" href="https://github.com/blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha512-wixGrHLFrl6Tfsdu4IGan6uur8pQK8ZDAxLDBkONYJfl98HFpcI0XkvIYbZw+uCix7BqLlTChwp1RZvCVWSkRQ==" type="application/javascript" src="https://assets-cdn.github.com/assets/frameworks-4a1b6c3d0f262c2060b73023efedb0d2.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-3GwzW3OwjfT7hLyFsBDWHhxmE8yhS0uVZjgP3bzX6Myh+cgg/F6SkIyj9j3yp7KBrVMFaIbmZ+rpg7D58qGubQ==" type="application/javascript" src="https://assets-cdn.github.com/assets/github-d5b1a2e52d2742cf22282f683bddc631.js"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+  
+
+  </body>
+</html>
+
