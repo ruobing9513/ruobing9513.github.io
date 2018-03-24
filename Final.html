@@ -123,7 +123,7 @@
 
 	<script type="text/javascript">
 		d3.queue()
-			.defer(d3.json, "USA.json")
+			.defer(d3.json, "usa.json")
 			.defer(d3.csv, "Massshooting.csv")
 			.defer(d3.csv, "gunownership.csv")
 			.awaitAll(function(error,dataArray){
