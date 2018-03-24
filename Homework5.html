@@ -6,6 +6,10 @@
 	<link href= "animate.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Anton|Hammersmith+One|PT+Sans+Narrow" rel="stylesheet">
 	<style type="text/css">
+			#mybody{
+				background-color: white;
+			}
+
 			#h1 {
 				font-family: Anton, sans-serif;
 				text-align: center;
@@ -26,6 +30,15 @@
   				left: 60%;
 			}
 
+			#h3{
+				font-family: PT Sans Narrow, sans-serif;
+				text-align: center;
+				font-weight: bold;
+				font-size:40px;
+				color: black;
+
+			}
+
 			#byline{
 				font-family: PT Sans Narrow, sans-serif;
 				text-align: right;
@@ -36,13 +49,25 @@
   				left: 65%;
 			}
 
+			#source{
+				font-family: Optima, sans-serif;
+				text-align: center;
+				font-size: 15px;
+				font-style: italic;
+			}
+
 			#p {
 				font-family: Optima, sans-serif;
 				float: left;
-  				margin-left: 300px;
-				margin-right: 280px;
+  				margin-left: 200px;
+				margin-right: 200px;
 				text-align: left;
-				font-size: 15px;
+				font-size: 18px;
+			}
+			#n1{
+				font-family: Optima, sans-serif;
+				color: darkred;
+				font-weight: bold;
 			}
 
 			#coverpage{
@@ -53,12 +78,21 @@
 				text-align: center;
 				animation-duration: 2s;
 			}
+
+			#tooltip{
+				border: 1px, black;
+				padding: 15px;
+				font-family: sans-serif;
+				display: none;
+				position: absolute;
+				background-color: white;
+			}
 			
 		</style>
 
-<body>
+<body id="mybody">
 	<div id="container" class="item animated fadeIn";>
-		<img src="finalbg1.png" id="coverpage">
+		<img src="finalintro.png" id="coverpage">
 	<h1 id="h1">More Guns, More Violence?</h1>
 	<h2 id="h2">Explore U.S. major mass shooting since 1982</h2>
 	<p id="byline">By Ruobing Su</p>
@@ -71,27 +105,37 @@
 	</head>
 
 	<body>
+		<div>
+		<h2 id="h3">U.S. Major Mass Shooting since 1982</h2>
+		<p id="p">The deadly school shooting in Parkland in Feburary, has ignited national outrage and calls for action on gun reform. Since 1982, there have been <span id="n1">at least 98 </span> public mass shootings across the country, with the killings unfolding in 34 states from Massachusetts to Hawaii; <span id="n1">fifty-nine</span> of these mass shootings have occurred since 2006. </p>
+		<p id="p">Although, the definition of mass shooting varies place to place, according to FBI, <span id="n1">a wide range of gun crimes in which four or more people have been either wounded or killed can </span> be called as mass shooting. The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence. </p>
+		<br>
+		<p id="source">Data source: Mother Jones</p>
+		</div>
 		<div align="center">
-			<svg id="map" width="1200" height="800" align="center">
-				<rect width=1200 height=800 fill="white" opacity="0" align="center"></rect>
+			<svg id="map" width="1000" height="800" align="center">
+				<rect width=1000 height=800 fill="" opacity="0" align="center"></rect>
 			</svg>
 		</div>
 
 	</body>
-	<div id="map">
+	<div>
+
 	<script type="text/javascript">
 		d3.queue()
 			.defer(d3.json, "USA.json")
 			.defer(d3.csv, "Massshooting.csv")
+			.defer(d3.csv, "gunownership.csv")
 			.awaitAll(function(error,dataArray){
 				var data = dataArray[0];
 				var shooting = dataArray[1];
+				var ownership = dataArray [2];
 				console.log(dataArray);
-			
+//printing the map 
 			var geoJSON = topojson.feature(data,data.objects.states);
 			
 			var proj = d3.geoAlbersUsa()
-				.fitSize([1200,800],geoJSON); 
+				.fitSize([1000,800],geoJSON); 
 
 			var path = d3.geoPath()
 			.projection(proj); 
@@ -108,6 +152,7 @@
 				});
 
 			//load my data into the file, make sure you create a new data array and variable accordingly
+			
 			var dots = d3.select("#map").selectAll("circle")
 			.data(shooting);
 
@@ -115,26 +160,51 @@
 				.attr("transform",function(point){
 					return "translate(" + proj([point.longitude,point.latitude]) + ")"
 				})
-				.attr("fill", function(point){
-					if (point.Type == "Spree"){
-						return "crimson";
-					}
-					else{
-						return "black";
-					}
-				}) //if you want to use data in csv, make sure have point.before the column name 
+				.attr("fill","black") //if you want to use data in csv, make sure have point.before the column name 
 				.attr("stroke-width",.5)
-				.attr("opacity",.8)
+				.attr("opacity",.85)
 				.attr("r", function(point){
-					return point.Fatalities / 2;
-				});
+					return point.Fatalities/1.2;
+				})
+					//mouseover event
+				.on("mouseover", function(d) {
+			    d3.select(this)
+			      .classed("mouseover", true)
+			      .attr("r", function(d) {return d["Totalvictims"]/3 + "px"})
+			      .attr("class", "hoveredpoints")
+			      .attr("fill","Darkred")
+			      .attr("opacity",.7);
+				  })
 
+			    .on("mouseenter", function(d){
+			    d3.select("#tooltip")
+			    	.style("display","block")
+			    	.text(d.Case);
+			    })
 
-		});
+			    .on("mouseleave", function(d){
+				d3.select("#tooltip")
+				.style("display","none");
+				})
+			
+			  .on("mouseout", function(d) {
+			    d3.select(this)
+			      .attr("r", function(point){
+					return point.Fatalities / 1.5;
+				})
+			      .attr("fill", "black")
+			      .attr("class", "points")
+			      .attr("opacity",0.75)
+			      .classed("mouseover", false);
+			  });
+
+			});
+
+		
 	</script>
 	</div>
 
-	<p id="p">One strict definition used in the past by the federal government says at least four victims must be killed. Much broader criteria requires at least four victims be injured, though not necessarily killed. Other definitions land somewhere in the middle. The visualization below shows all the shooting incidents that fall in the criteria from 2016 to 2018.</p>
+	
 
 
 </html>
