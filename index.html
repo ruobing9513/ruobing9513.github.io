@@ -10,30 +10,64 @@
 		href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	</head>
 
+	<style type="text/css">
+		#body{
+			background-image: url("bg11.png");
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+
+		button {
+		font-family: "Optima", Sans-serif;
+		color:darkslategray;
+		border:grey;
+		text-align: center;
+		font-size:15px;
+		display:inline-block;
+		padding:10px 15px;
+				-webkit-transition-duration: 0.4s; /* Safari */
+    			transition-duration: 0.4s;
+		}
+
+		button:hover {
+    		background-color: grey; /* grey */
+    		color: white;
+		}
+
+		#name{
+			text-align: left;
+			font-family: Optima, Sans-serif;
+			color: white;
+			font-size: 50px;
+			margin-left: 100px;
+		}
+
+		#hw{
+			margin:100px auto;
+			padding:0 15px;
+			list-style-type: none;
+			font-family: Optima,Futura,Sans-serif;
+			color:white;
+
+		}
+
+		#nav{
+			margin-left: 100px;
+			display:inline-block;
+		}
+
+
+	</style>
+
 <!--Background-->
-<div>
-	<body style="background-image:url(bg5.jpg); background-repeat:no-repeat fixed center; background-size: cover;">
-		</body>
-</div>
+	<body id="body">
+		
+		<div>
+		<h1 id="name">RUOBING SU</h1>
+		</div>
 
-<!--headline-->
-<div>
-	<h1 align="middle" >
-		<font face ="Dosis" color="white"; size="20px">
-			RUOBING SU
-		</font>
-		<style>
-			h1{
-				color:black;
-				font-size: 30px;
-			}
-		</style>
-	</h1>
-</div>
-
-<div align = "center" >
-	<ul style="margin:0; padding:0; list-style-type: none;">
-		<font face = "Futura"; color="white"; align="center"; size=4;>
+		<div id="nav">
+			<ul id="hw">
 			<button id="aboutme" onclick="{location.href='Aboutme.html'}">ABOUT ME</button>
 			<br>
 			<br>
@@ -52,40 +86,12 @@
 			<button id="assignment4" onclick="{location.href='Homework4.html'}">ASSIGNMENT 4</button>
 			<br>
 			<br>
-			<button id="Final" onclick="{location.href='Final.html'}">ASSIGNMENT 5</button>
+			<button id="Final" onclick="{location.href='Final.html'}">FINAL PROJECT</button>
 			<br>
 			<br>
-
-		</font>	
 	</ul>
 </div>
-
-<style type="text/css">
-	button {
-		font-family: "Optima", "Noto Sans", Sans-serif;
-		color:darkslategray;
-		border:grey;
-		text-align: center;
-		font-size:15px;
-		display:inline-block;
-		padding:10px 15px;
-				-webkit-transition-duration: 0.4s; /* Safari */
-    			transition-duration: 0.4s;
-			}
-	button:hover {
-    		background-color: grey; /* grey */
-    		color: white;
-		}
-
-</style>
-
-
-<!--My photo-->
-<div align = "center">
-		<a href="Aboutme.html">
-		<img src="ruobing4.jpg" style="width: 200px; height: 200px;" />	
-		</a>
-</div>
+</body>
 
 </html>
 
