@@ -1,9 +1,9 @@
-Weapon,Cases,Amount
-Semiautomatic rifles,9,50
-Semi handgun ,73,40
-Shotgun,23,30
-Revolver,16,25
-Pistol,2,4
-Knife,2,3
-Long gun,1,1
-Modified weapons ,1,2
+Weapon,Cases
+Semiautomatic rifles,9
+Semi handgun ,73
+Shotgun,23
+Revolver,16
+Pistol,2
+Knife,2
+Long gun,1
+Modified weapons ,1

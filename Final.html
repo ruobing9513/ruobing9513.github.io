@@ -39,6 +39,14 @@
 
 			}
 
+			#h4 {
+				font-family: PT Sans Narrow, sans-serif;
+				text-align: center;
+				font-weight: bold;
+				font-size:30px;
+				color: black;
+			}
+
 			#byline{
 				font-family: PT Sans Narrow, sans-serif;
 				text-align: right;
@@ -80,14 +88,60 @@
 			}
 
 			#tooltip{
-				border: 1px, black;
-				padding: 15px;
-				font-family: sans-serif;
-				display: none;
-				position: absolute;
-				background-color: white;
+				position: absolute;           
+			  	text-align: center;           
+			  	width: 60px;                  
+			 	height: 28px;                 
+			  	padding: 2px;             
+			  	font: 12px sans-serif;        
+			  	background: lightsteelblue;   
+			  	border: 0px;                
+			  	pointer-events: none;         
 			}
-			
+
+			.arc text {
+			  font-family: Optima, sans-serif;
+			  font-size: 20px;
+			  text-anchor: middle;
+			}
+
+			#transition {
+				font-family: Anton, sans-serif;
+				text-align: center;
+				font-size:50px;
+				color: white;
+				position: absolute;
+				margin-left: 300px;
+				margin-right: 300px;
+				margin-top: 350px;
+			}
+
+			#transition1 {
+				font-family: Optima, sans-serif;
+				text-align: center;
+				font-size:30px;
+				color: white;
+				position: absolute;
+				margin-left: 300px;
+				margin-right: 300px;
+				margin-top: 600px;
+			}
+
+			#transitiontext{
+				text-align: center;
+				animation-duration: 3s;
+			}
+
+			#subhead {
+				font-family: PT Sans Narrow, sans-serif;
+				text-align: left;
+				font-size:30px;
+				color: black;
+				margin-left: 300px;
+				margin-right: 300px;
+			}
+
+
 		</style>
 
 <body id="mybody">
@@ -143,18 +197,29 @@
 			var states = d3.select("#map").selectAll("path")
 				.data(geoJSON.features);
 
-			states.enter().append("path") //passing the path to svg and setting up the "d" value to draw a path 
-				.attr("fill","gainsboro")
-				.attr("stroke","white")
-				.attr("stroke-width",1.5)
-				.attr("d",function(feature){
-					return path(feature);
-				});
+			var div = d3.select("body")
+				.append("div")
+				.attr("class","tooltip")
+				.style("opacity", 0)
+
+			var lowColor = "#f9f9f9"
+			var highColor = "#922B21"
+
+			//passing the path to svg and setting up the "d" value to draw a path 
+			states.enter().append("path") 
+					.attr("fill","gainsboro")
+					.attr("stroke","white")
+					.attr("stroke-width",1.5)
+					.attr("d",function(feature){
+						return path(feature);
+					});
+
 
 			//load my data into the file, make sure you create a new data array and variable accordingly
 			
 			var dots = d3.select("#map").selectAll("circle")
 			.data(shooting);
+
 
 			dots.enter().append("circle")
 				.attr("transform",function(point){
@@ -176,18 +241,18 @@
 			      .attr("opacity",.7);
 				  })
 
-			    .on("mouseenter", function(d){
-			    d3.select("#tooltip")
-			    	.style("display","block")
-			    	.text(d.Case);
-			    })
-
 			    .on("mouseleave", function(d){
 				d3.select("#tooltip")
 				.style("display","none");
 				})
-			
-			  .on("mouseout", function(d) {
+
+				 .on("mouseenter", function(d){
+			    d3.select("#tooltip")
+			    	.style("display","block")
+			    	.text(d.Case);
+			    })
+			    		
+			 	.on("mouseout", function(d) {
 			    d3.select(this)
 			      .attr("r", function(point){
 					return point.Fatalities / 1.5;
@@ -200,9 +265,68 @@
 
 			});
 
+
 		
 	</script>
 	</div>
+	<div id="transitiontext" class="item animated fadeIn">
+		<h1 id="transition">The U.S. makes up less than 5% of the world population, but holds 31% of global mass shooters.</h1>
+		<h2 id="transition1">What are some causes and effects behind the horrifying number?</h2>
+		<img src="transition1.png" id="coverpage">
+		
+	</div>
+
+	<div>
+		<h4 id="subhead">The numbers are staggering: U.S. has the most public mass shooters in the world, study shows.</h4>
+		<p id="p">Among 97 cases that have been recorded by Mother Jones, all the mass shooting happened in public. Among which, working place is where a great amount of mass shooting happened; secondly schools and millitary; streets, restaurants, airports, public parties, clubs and other places are included as "others." 
+		<br>Adam Lankford of University of Alabama studied mass shootings in 171 countries from the years 1966-2012 and found that the United States has the most public mass shooters and more than 240 million more guns than the second highest country, India.</p>
+
+	<script type="text/javascript">
+		//pie chart of venue 	
+		var data = [16, 28, 5, 43];
+
+		var width = 960,
+		    height = 500,
+		    radius = Math.min(width, height) / 2;
+
+		var color = d3.scaleOrdinal()
+		    .range(["#F2D7D5", "#D98880", "#C0392B", "#641E16"]);
+
+		var arc = d3.arc()
+		    .outerRadius(radius - 10)
+		    .innerRadius(0);
+
+		var labelArc = d3.arc()
+		    .outerRadius(radius - 40)
+		    .innerRadius(radius - 40);
+
+		var pie = d3.pie()
+		    .sort(null)
+		    .value(function(d) { return d; });
+
+		var svg = d3.select("body").append("svg")
+		    .attr("width", width)
+		    .attr("height", height)
+		  	.append("g")
+		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+		  var g = svg.selectAll(".arc")
+		      .data(pie(data))
+		    .enter().append("g")
+		      .attr("class", "arc");
+
+		  g.append("path")
+		      .attr("d", arc)
+		      .style("fill", function(d) { return color(d.data); });
+
+		  g.append("text")
+		      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+		      .attr("dy", ".35em")
+		      .text(function(d) { return d.data; });
+			</script>
+		</div>
+
+
 
 	
 
