@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<title>How to make maps</title>
+<meta charset="UTF-8">
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+	</head>
+
+	<style type="text/css"></style>
+
+	<body>
+		<svg id="map" width=800 height=800 >
+			<rect width=800 height=800 fill="lightgrey"></rect>
+		</svg>
+
+	</body>
+	<script type="text/javascript">
+		var countryMapping = {
+			"AL" : "Alabama",
+			"AK" : "Alaska",
+			"AR" : "Arizona",
+			"CA" : "California",
+		}
+
+
+		d3.queue()
+			.defer(d3.json, "USA.json")
+			.defer(d3.csv, "dancing.csv")
+			.awaitAll(function(error,dataArray){
+				var data = dataArray[0];
+				var dancingData = dataArray[1];
+				dancingData.forEach(function(state){
+					state.ranking = parseFloat(state.ranking);  
+				});
+				console.log(dataArray);
+			//loading multiple data at the same time 
+
+			//do after parsefloat 
+			var dataExtent = d3.extent(dancingData, function(d){
+						return d.ranking;
+					})
+			console.log(dataExtent);
+
+			var colorScale = d3.scaleLinear()
+				.domain(dataExtent)
+				.range(["green","red"]);
+
+			
+			var geoJSON = topojson.feature(data,data.objects.states);
+			
+
+			//setting up a projection 
+			var proj = d3.geoAlbersUsa()
+				.fitSize([800,800],geoJSON); //pass rhe geoJSON data to a SVG
+
+			var path = d3.geoPath()
+			.projection(proj); // creating a path
+
+			//geoJSON.features = geoJSON.features.filter(function(feature){
+				//return feature.id != "NV";
+				//});
+
+			var states = d3.select("#map").selectAll("path")
+				.data(geoJSON.features);
+
+			states.enter().append("path") //passing the path to svg and setting up the "d" value to draw a path 
+				.attr("fill",function(feature){
+					var stateName = countryMapping[feature.id];
+					
+					var stateData = dancingData.filter(function(state){
+						return state.name == stateName;
+					})
+					console.log(stateData);
+					//grab the data in the filter and apply the first number to the map 
+					if (stateData.length > 0){
+						var ranking = stateData[0].ranking;
+						return colorScale(ranking);
+					}
+					else{
+						return "gray"
+					}
+					
+				})
+				.attr("stroke","white")
+				.attr("stroke-width",1)
+				.attr("d",function(feature){
+					return path(feature);
+				});
+
+
+
+		});
+	</script>
+</html>
+
+	
