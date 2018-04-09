@@ -138,6 +138,9 @@
 			  stroke: #000;
 			  shape-rendering: crispEdges;
 			}
+			#piechart{
+				font-family: Optima, Sans-serif;
+			}
 
 			svg{
 			  padding-left: 50px;
@@ -200,7 +203,7 @@
 
 			.legend{
 				font-family: optima,Sans-serif;
-				font-size: 12px;
+				font-size: 15px;
 			}
 		
 		</style>
@@ -262,6 +265,8 @@
 	<script type="text/javascript">
 //map projection with gunownership 
 		var layer = false 
+		var gunrate = false
+		var ownership = false
 
 		d3.queue()
 			.defer(d3.json, "usa.json")
@@ -324,6 +329,19 @@
 					})
 					.attr("stroke","white")
 					.attr("stroke-width",1.5)
+					.on("mouseover", function(d){
+						d3.select(this)
+				     	.classed("mouseover", true)
+						.attr("stroke-width",1,5)
+						.attr("stroke","black")
+						.html("Legal gunownership rate: " + d.gunownership)
+					})
+					.on("mouseout",function(d){
+						d3.select(this)
+						.classed("mouseout",true)
+						.attr("stroke-width",1.5)
+						.attr("stroke","white")
+					})
 					.attr("d",function(feature){
 						return path(feature);
 					});
@@ -398,11 +416,11 @@
 						})
 				      .attr("fill", "black")
 				      .attr("class", "points")
-				      .attr("opacity",0.75)
-				d3.select("#tooltip")
-						.transition()
-						.duration(500)
-						.style("opacity",0);
+				      .attr("opacity",0.75);
+				//d3.select("#tooltip")
+						//.transition()
+						//.duration(500)
+						//.style("opacity",0);
 			  	});
 			 	
 			});
@@ -475,13 +493,13 @@
 		<h4 id="subhead">Why AR-15 keeps appearing in U.S. mass shootings? It is too easy to purchase guns without background check.</h4>
 		<p id="p"> AR-15-style rifles have increasingly appeared in American mass shootings, including the deadliest high school shooting in the nation's history at Marjory Stoneman Douglas High School in Parkland, Florida. 
 		<br>
-		The chart below shows weapons being used in the major mass shooting cases from 1982 up to date.   
+		The chart below shows types and numbers of weapons being used in the major mass shooting cases from 1982 up to date. A  
 		<br>
-		<span id="n2">Note:Knieves are excluded from weapons categorized below.</span>
+		<span id="n2">Note: Knieves are excluded from weapons categorized below.</span>
 		</p>
 	</div>
 
-	<div>
+	<div id="piechart">
 	<script type="text/javascript">
 //pie chart of venue 	
 		var weapondata = d3.csv("weapons.csv", function(error, data){
@@ -504,7 +522,7 @@
 		    radius = Math.min(width, height) / 2;
 
 		var color = d3.scaleOrdinal()
-		    .range(["#F2D7D5", "#E6B0AA", "#D98880", "#C0392B", "#641E16"]);
+		    .range(["#7c0000", "#ff7d7d", "#763c3c", "#33262a", "#45373c"]);
 
 		var arc = d3.arc()
 		    .outerRadius(radius - 10)
@@ -519,7 +537,7 @@
 		    .value(function(d) { return d; });
 
 		var svg = d3.select("body").append("svg")
-		    .attr("width", width)
+		    .attr("width", width + 200)
 		    .attr("height", height)
 		  	.append("g")
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
@@ -532,13 +550,29 @@
 
 		  	g.append("path")
 		      .attr("d", arc)
-		      .style("fill", function(d) { return color(d.data); });
+		      .style("fill", function(d) { return color(d.data); })
+		      .on("mouseover", function(d) {
+				    d3.select(this)
+				      .classed("mouseover", true)
+				      .attr("stroke","white")
+				      .attr("stroke-width",2)
+				  })
+		      .on("mouseleave",function(d){
+		      		d3.select(this)
+		      			.classed("mouseleave",true)
+		      			.attr("stroke-width",1)
+		      		});
 
 		  	g.append("text")
 		      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
 		      .attr("dy", ".35em")
-		      .text(function(d) { return d.data; });
+		      .text(function(d) { return d.data; })
+		      .attr("fill","white");
+		</script>
+	</div>
 
+		<div id="legend">
+			<script type="text/javascript">
 		  //legend 
 			 	var g = svg.append("g")
 				 	.attr("class", "legendThreshold")
@@ -547,8 +581,8 @@
 	    			.attr("class","caption")
 	    			.attr("x",0)
 	    			.attr("y",-6)
-	    			.text("Numbers of mass shooting take place in different");
-	    		var labels = ["","Public","Others","Workplace"] 
+	    			.text("Types of weapons used in mass shooting cases");
+	    		var labels = ["Semi-automatic rifles","Semi-automatic handgun","Shot gun/long gun","Revolver/pistol", "Modified weapons"] 
 	    		var legend = d3.legendColor()
 	    			.labels(function (d) { return labels[d.i]; })
 				    .shapePadding(4)
@@ -628,26 +662,6 @@
 				};
 
 		bars(numberofweapon)
-
-	</script>
-
-
-	<script type="text/javascript">
-		var margin = {top:20, right:20, bottom: 30, left:40},
-		width = 960 - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
-
-		var y = d3.scaleBand()
-					.range([height,0])
-					.padding(0.1);
-		var x = d3.scaleLinear()
-					.range([0,width]);
-		var barchart = d3.select("body").append("svg")
-			.attr("width", width + margin.left + margin.right)
-			.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-			.attr("transform",
-				"translate(" + margin.left + "," + margin.top + ")");
 
 	</script>
 

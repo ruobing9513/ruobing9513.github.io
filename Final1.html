@@ -229,12 +229,6 @@
 		<br><br>The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence. Hover for more detail.</p>
 		<p id="source">Data source: Mother Jones</p>
 
-		<div align="middle";>
-			<button id = "click1" onclick = "layer(ownership)">1</button>
-			<button id = "click2" onclick = "layer(gunrate)">2</button>
-
-		</div>
-
 		<!--tooltip for the map-->
 		<div align="center">
 			<div id="tooltip">
@@ -402,7 +396,7 @@
 				d3.select("#tooltip")
 						.transition()
 						.duration(500)
-						.style("opacity",0);
+						.style("opacity", 0);
 			  	});
 			 	
 			});
