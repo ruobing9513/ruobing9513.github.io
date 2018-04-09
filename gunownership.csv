@@ -1,52 +1,52 @@
 state,id,gunownership
-Delaware,DE,5%
-Rhode Island,RI,6%
-New York,NY,10%
-New Jersey,NJ,11%
-New Hampshire,NH,14%
-Connecticut,CT,17%
-Ohio,OH,20%
-Nebraska,NE,20%
-California,CA,20%
-Maryland,MD,21%
-Maine,ME,23%
-Massachusetts,MA,23%
-District of Columbia,DC,26%
-Illinois,IL,26%
-Oregon,OR,27%
-Washington,WA,27%
-Missouri,MO,27%
-Pennsylvania,PA,27%
-North Carolina,NC,29%
-Michigan,MI,29%
-Vermont,VT,29%
-Virginia,VA,29%
-Oklahoma,OK,31%
-Georgia,GA,32%
-Utah,UT,32%
+Alabama,AL,49%
+Alaska,AK,62%
 Arizona,AZ,32%
-Kansas,KS,32%
+Arkansas,AR,58%
+California,CA,20%
+Colorado,CO,34%
+Connecticut,CT,17%
+Delaware,DE,5%
+District of Columbia,DC,26%
 Florida,FL,33%
+Georgia,GA,32%
+Hawaii,HI,45%
+Idaho,ID,57%
+Illinois,IL,26%
 Indiana,IN,34%
 Iowa,IA,34%
-Colorado,CO,34%
-Wisconsin,WI,35%
-South Dakota,SD,35%
-Texas,TX,36%
-Minnesota,MN,37%
-Nevada,NV,38%
-Tennessee,TN,39%
+Kansas,KS,32%
 Kentucky,KY,42%
-Mississippi,MS,43%
-South Carolina,SC,44%
 Louisiana,LA,45%
-Hawaii,HI,45%
-North Dakota,ND,48%
-Alabama,AL,49%
-New Mexico,NM,50%
+Maine,ME,23%
+Maryland,MD,21%
+Massachusetts,MA,23%
+Michigan,MI,29%
+Minnesota,MN,37%
+Mississippi,MS,43%
+Missouri,MO,27%
 Montana,MT,52%
-Wyoming,WY,54%
+Nebraska,NE,20%
+Nevada,NV,38%
+New Hampshire,NH,14%
+New Jersey,NJ,11%
+New Mexico,NM,50%
+New York,NY,10%
+North Carolina,NC,29%
+North Dakota,ND,48%
+Ohio,OH,20%
+Oklahoma,OK,31%
+Oregon,OR,27%
+Pennsylvania,PA,27%
+Rhode Island,RI,6%
+South Carolina,SC,44%
+South Dakota,SD,35%
+Tennessee,TN,39%
+Texas,TX,36%
+Utah,UT,32%
+Vermont,VT,29%
+Virginia,VA,29%
+Washington,WA,27%
 West Virginia,WV,54%
-Idaho,ID,57%
-Arkansas,AR,58%
-Alaska,AK,62%
+Wisconsin,WI,35%
+Wyoming,WY,54%
