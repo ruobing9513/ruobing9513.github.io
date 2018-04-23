@@ -29,8 +29,18 @@
 				font-family: Optima,Sans-Serif;
 				font-size: 10px;
 				margin-top: 20px;
+				margin-left: 20px;
 				color: black;
 			}
+
+			p {
+		        font-family: "Optima",sans-serif;
+		        font-weight: bold;
+		        font-size: 20px;
+		        margin-left: 100px;
+		        text-align: left;
+
+		    }
 
 			.toolTip {
 				position: absolute;
@@ -42,11 +52,16 @@
 				text-align: left;
 				font-family: Optima,Sans-Serif;
 				font-size: 12px;
+				display: none;
 
 			</style>
+
+
 <body>
-		</style>
-		<svg width="900" height="960"></svg>
+	<div>
+		<p>Top ten most deadly mass shooting in U.S. history</p>
+	</div>
+		<svg width="1000" height="400"></svg>
 		<script>
 		var svg = d3.select("svg"),
 		    margin = {top: 20, right: 20, bottom: 30, left: 200},
@@ -59,8 +74,6 @@
 			.range([0, width]);
 		var y = d3.scaleBand()
 			.range([height, 0]);
-		var z = d3.scaleOrdinal()
-          .range(["darkgrey", "Rosybrown", "darkred"]);
 
 		var g = svg.append("g")
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -70,44 +83,41 @@
 
 			data.forEach(function(d) {
 			d.Fatalities = parseFloat(d.Fatalities);
-			d.Total = parseFloat(d.Total);
 			d.Injured = parseFloat(d.Injured);
-			d.DeathRate = parseFloat(d.DeathRate);
 			
-			data.sort(function(a, b) { return b.Strength - a.Strength; })
+			data.sort(function(a, b) { return a.Fatalities - b.Fatalities; })
 			});
 
-		  	x.domain([0, d3.max(data, function(d) { return d.DeathRate; })]);
-		    y.domain(data.map(function(d) { return d.State; })).padding(0.1);
+		  	x.domain([0, d3.max(data, function(d) { return d.Fatalities; })]);
+		    y.domain(data.map(function(d) { return d.Case; })).padding(0.1);
 
-		var keys = data.columns.slice(1);
 
 		    g.append("g")
 		        .attr("class", "x axis")
 		       	.attr("transform", "translate(0," + height + ")")
 		      	.call(d3.axisBottom(x).ticks(5).tickFormat(function(d) { return parseInt(d); }).tickSizeInner([-height]))
 		      	.append("text")
-			      .attr("x", width)
-			      .attr("y", 28)
+			      .attr("x", width + 20)
+			      .attr("y", 25)
 			      .attr("text-anchor", "end")
 			      .attr("fill", "black")
 			      .attr("font-weight", "bold")
 			      .attr("font-family","Optima")
-			      .attr("font-size",15)
-			      .text("Gun death rate per 100k");
+			      .attr("font-size",12)
+			      .text("Number of fatality");
 
 		    g.append("g")
 		        .attr("class", "y axis")
 		        .call(d3.axisLeft(y))
 		        .append("text")
-			      .attr("x",250)
-			      .attr("y", -20)
+			      .attr("x",-10)
+			      .attr("y", -15)
 			      .attr("dy", "0.71em")
 			      .attr("fill", "black")
 			      .attr("font-weight", "bold")
 			      .attr("font-family","Optima")
-			      .attr("font-size",15)
-			      .text("Gun law strength ranking by States(1 to 50)");
+			      .attr("font-size",12)
+			      .text("Cases");
 
 
 		    g.selectAll(".bar")
@@ -116,31 +126,22 @@
 		        .attr("class", "bar")
 		        .attr("x", 0)
 		        .attr("height", y.bandwidth())
-		        .attr("y", function(d) { return y(d.State); })
-		        .attr("width", function(d) { return x(d.DeathRate); })
+		        .attr("y", function(d) { return y(d.Case); })
+		        .attr("width", function(d) { return x(d.Fatalities); })
 		        .attr("font-family","Optima")
 		        .style("opacity",0.8)
-		        .attr("fill", function(d) {
-			        if (d.Law == "0") {
-				        return "darkgrey";
-			        }
-			        else if (d.Law == "1"){
-			        	return "Rosybrown";
-			        }
-		        	else {
-		          		return "darkred";
-		        	}
-			      })
-		        .on("mouseover", function(d){
+		        .attr("fill", "darkred")
+		        .on("mouseenter", function(d){
 		            d3.select(this)
 		            	.style("opacity",1);
 		            tooltip
 		              .style("left", d3.event.pageX + "px")
 		              .style("top", d3.event.pageY + "px")
 		              .style("display", "block")
-		              .html("<strong>" + d.State + "</strong>" +"</br>"
-		                      + "2017 Gun law enforcement score: " + d.Score + "</br>"
-		                      + "Amount of major mass shooting cases: " + d.Cases + "</br>");
+		              .html("<strong>" + d.Case + "</strong>" +"</br>"
+		                      + "Place: " + d.Place + "</br>"
+		                      + "Year: " + d.Year + "</br>"
+		                      + "Total victims:" + d.Total + "<br>");
 		        })
 
 		    	.on("mouseout", function(d){ 
@@ -154,49 +155,18 @@
 		        .data(data)
 		      .enter().append("text")
 		        .attr("class", "text")
-		        .attr("y", function(d) { return y(d.State) + y.bandwidth(); })
-		        .attr("x", function(d) { return x(d.DeathRate); })
+		        .attr("y", function(d) { return y(d.Case) + y.bandwidth(); })
+		        .attr("x", function(d) { return x(d.Fatalities); })
 		        .html(function(d){
-		        		return d.DeathRate;
+		        		return d.Fatalities;
 		        })
 		        .attr("font-family","Optima")
 		        .style("opacity",0.8)
-		        .style("padding", 10)
-		        .attr("fill", function(d) {
-			        if (d.Law == "0") {
-				        return "darkgrey";
-			        }
-			        else if (d.Law == "1"){
-			        	return "Rosybrown";
-			        }
-		        	else {
-		          		return "darkred";
-		        	}
-			      })
+		        .attr("text-anchor","top")
+		        .style("padding-left", 10)
+		        .attr("fill", "darkred")
 
-		    var legend = g.append("g")
-	            .attr("font-family", "Optima")
-	            .attr("font-size", 12)
-	            .attr("text-anchor", "end")
-		    .selectAll("g")
-	          .data(["No law","Partial law","Strong law"])
-	          .enter().append("g")
-	          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-		        legend.append("rect")
-		            .attr("x", width - 19)
-		            .attr("width", 19)
-		            .attr("height", 19)
-		            .attr("fill", z);
-
-		        legend.append("text")
-		            .attr("x", width - 24)
-		            .attr("y", 9.5)
-		            .attr("dy", "0.32em")
-		            .text(function(d) { return d; });
 		});
-		</script>
-
 		</script>
 </body>
 </html>

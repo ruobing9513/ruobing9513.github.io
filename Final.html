@@ -49,9 +49,10 @@
 
 			#source{
 				font-family: Optima, sans-serif;
-				text-align: center;
+				text-align: left;
 				font-size: 15px;
 				font-style: italic;
+				margin-left: 200px;
 			}
 
 			#p {
@@ -64,6 +65,12 @@
 				font-size: 18px;
 			}
 
+			#n1{
+				font-family: Optima, sans-serif;
+				font-size: 18px;
+				color: darkred;	
+				font-weight:bold;
+			}
 			#transition {
 				font-family: Crimson Text, lora,serif;
 				text-align: left;
@@ -77,7 +84,7 @@
 
 			#sub{
 				font-family: Crimson Text, Lora,serif;
-				font-size:18px;
+				font-size:15px;
 				text-align: left;
 				margin-left: 300px;
 				margin-right: 300px;
@@ -116,7 +123,7 @@
 				}
 
 			.parallax1{
-				background-image: url("../parallax1.jpg");
+				background-image: url("../parallax1.png");
 				height: 800px;
 				background-attachment: fixed;
 				background-position: center;
@@ -125,7 +132,7 @@
 				}
 
 			.parallax2{
-				background-image: url("../parallax2.jpg");
+				background-image: url("../parallax2.png");
 				height: 800px;
 				background-attachment: fixed;
 				background-position: center;
@@ -144,6 +151,21 @@
 				overflow: hidden;
 
 			}
+
+			#buttonBox {
+
+	            height: 60px;
+	            text-align: center;
+	            font-family: "Optima",sans-serif;
+	            background-color: white;
+	            padding: 10px;
+	            margin-top: -10px;
+        	}
+
+	        #D3 {
+	            margin-right: auto;
+	            margin-left: auto;
+        	}
 			
 			#map{
 				border-color:white;
@@ -154,6 +176,15 @@
 
 			}
 
+			#topten{
+				border-color:white;
+				border-width:0;
+				margin-left: 300px;
+				width:600px;
+				height:400px;
+				overflow: hidden;
+				align-content: center;
+			}
 			#weapon{
 				border-color:white;
 				border-width:0;
@@ -168,11 +199,10 @@
 			#stategun{
 				border-color:white;
 				border-width:0;
-				width:15000px;
+				width:1500px;
 				height:700px;
 				text-align: center;
-				margin-left: 200px;
-
+				margin-left: 100px;
 			}
 
 
@@ -189,7 +219,7 @@
 				font-family: Optima,sans-serif;
 				font-size:15px;
 				color: darkred;
-				height: 50px;
+				height: 30px;
 				text-align: center;
 			}
 			
@@ -208,11 +238,15 @@
 
 	<body>
 		<div>
-		<h2 id="h3">U.S. Major Mass Shooting since 1982</h2>
-		<p id="p">The deadly school shooting in Parkland in Feburary, has ignited national outrage and calls for action on gun reform. Since 1982, there have been <span id="n1">at least 98 </span> public mass shootings across the country, with the killings unfolding in 34 states from Massachusetts to Hawaii; <span id="n1">fifty-nine</span> of these mass shootings have occurred since 2006.
-		<br><br>Although, the definition of mass shooting varies place to place, according to FBI, <span id="n1">a wide range of gun crimes in which four or more people have been either wounded or killed can </span> be called as mass shooting. 
-		<br><br>The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence. Hover on the circles for more detail. <strong>Hover for more details. The size of hovered cricles varies as the numbers of total victims in one case.</strong></p>
+		<h2 id="h3">U.S. Major mass shooting since 1982</h2>
+
+		<p id="p">The deadly school shooting in Parkland in Feburary, has ignited national outrage and calls for action on gun reform. Since 1982, there have been <span id="n1">at least 98 </span> public mass shootings across the country, with the killings unfolding in 34 states from Massachusetts to Hawaii; <span id="n1">fifty-nine</span> of these mass shootings have occurred since 2006. Although, the definition of mass shooting varies place to place, according to FBI, <span id="n1">mass shooting is a wide range of gun crimes in which four or more people have been either wounded or killed</span>. </p>
+
+		<p id="p">The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence.
+		<br><strong>Hover for more details. The size of cricles varies as the numbers of total victims change.</strong></p>
+
 		<p id="source">Data source: Mother Jones</p>
+
 		<iframe id="map" src="map.html" width="1500" height="900"></iframe>
 		</div>
 	
@@ -225,24 +259,51 @@
 
 	<div>
 		<h4 id="subhead">The numbers are starggering.</h4>
-		<p id="p">	Even though, mass shooting can be differently defined based on fatalities and injuries, the numbers of mass shooting are starggering as years go by, in particular after 2010. Since Sandy Hook, there have been 1,518 mass shootings (4+ people shot) in America over 1,753 days. Over 48% of mass shooting recorded by Mother Jones took place after 2010. The chart below shows numbers of major mass shooting in terms of year. 
+		<p id="p">Even though, mass shooting can be differently defined based on fatalities and injuries, the number of mass shooting is starggering as year goes by, in particular after 2010. Over 48% of mass shooting recorded by Mother Jones took place after 2010. 
 		</p>
-		<p id="source">Note: Data for 2018 is up to March.</p>
+		<p id="p">However, it is not the number of mass shooting cases increasing exponetially in recent years - people who are involved in mass shooting, namely, the number of people fatalities and injuries, is also increasing. The 2017 Las Vegas shooting is considered as the deadliest mass shooting committed by an individual in U.S. history, leaving 58 dead and over 600 people injured.</p>
+		<p id="p">By clicking the buttons, the first two bar charts below take a look at the number of mass shooting and people involved in the shooting by year since 1982. The third bar chart shows the top ten deadliest mass shootings in U.S. history. 
+		<br><strong>Hover for more detail.</strong></p> 
+		<p id="source">Note: Data for 2018 is up to date.</p>
+
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+	    <script>
+	      function cases(){
+	        document.getElementById("barchart").src = "bar-chart.html";
+	      }
+
+	      function people(){
+	        document.getElementById("barchart").src = "Injuries.html";
+	      }
+
+	      function topten(){
+	        document.getElementById("barchart").src = "topten.html";
+	      }
+	    </script>
+
+
+		<div id="buttonBox">
+	       <input type="button" value="Number of mass shooting cases" onclick="cases();">
+	       <input type="button" value="Number of people involved" onclick="people();">
+	       <input type="button" value="Most deadly mass shooting" onclick="topten();">
+     	</div>
+
 		<iframe id="barchart" src="bar-chart.html"></iframe>
 	</div>
 	
 		<div id="transitiontext" class="item animated fadeIn">
 		<div class="parallax1"></div>
-		<h1 id="transition">With AR-15s, Mass Shooters Attack With the Rifle Firepower Typically Used by Infantry Troops</h1>
+		<h1 id="transition">With AR-15s, mass shooters attack with the rifle firepower typically used by infantry troops</h1>
 		<p id="sub"><a href="https://www.nytimes.com/interactive/2018/02/28/us/ar-15-rifle-mass-shootings.html">The New York Times: <br>With AR-15s, Mass Shooters Attack With the Rifle Firepower Typically Used by Infantry Troops</a></p>		
 		</div>
 
 	<div>
 		<h4 id="subhead">Why AR-15 keeps appearing in U.S. mass shootings?</h4>
 		<p id="p"> AR-15-style rifles have increasingly appeared in American mass shootings, including the deadliest high school shooting in the nation's history at Marjory Stoneman Douglas High School in Parkland, Florida. 
+		<br><br>
+		Semi-automatic weapons are most frequently used in mass shooting by the killers. More than often, the killers have multiple weapons for planned or unplanned shootings. Modified weapons, such as automatic rifles which are being used in Las Vegas shooting, are relatively rare while more deadly. 
+		<br><br>The chart below shows types and numbers of weapons being used in the major mass shooting cases from 1982 up to date.</p>
 		<br>
-		The chart below shows types and numbers of weapons being used in the major mass shooting cases from 1982 up to date. 
-		<br></p>
 		<p id="source">Note: Knieves are excluded from weapons categorized below.</p>
 		<iframe id="weapon" src="weapon.html"></iframe>
 	</div>
@@ -253,7 +314,7 @@
 
 	<div id="transitiontext" class="item animated fadeIn">
 		<div class="parallax2"></div>
-		<h1 id="transition">In Florida: You don't need a permit or license to buy a gun, nor do you have to register a firearm; and gun sellers don't have to get a state license to sell firearms.</h1>
+		<h1 id="transition">You don't need a permit or license to buy a gun, nor do you have to register a firearm in Sunshine State.</h1>
 		<p id="sub"><a href="https://www.cnn.com/2018/02/15/us/florida-gun-laws-trnd/index.html">CNN: <br>You don't need a permit or license to buy a gun in Florida. (And you don't have to register your gun either)</a></p>		
 		</div>
 
@@ -263,14 +324,14 @@
 		<br>
 		The chart below shows gun death rate per state and gun law strength ranked from 1 to 50 on the Y-axis by state. <strong> Click for more state gun law detail</strong>. 
 		<br></p>
-		<p id="source">Data source: Gifford Law Center</p>
-		<p id="source">Note: Washington D.C. is excluded from rankings in the dataset.</p>
+		<p id="source">Data source: Gifford Law Center
+		<br>Note: Washington D.C. is excluded from rankings in the dataset.</p>
 		<iframe id="stategun" src="stategun.html"></iframe>
 	</div>
 
 	<body id="mybody">
 		<div class="container" class="item animated fadeIn";>
-			<img src="back.jpg" id="coverpage">
+			<img src="back.png" id="coverpage">
 		</div>
 	</body>
 

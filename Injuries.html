@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+    <style>
+        .axis {
+          font-family: Optima,sans-serif; 
+          font-size:12px;        
+        }
+
+        .domain {
+          display: none;
+        }
+
+        p {
+        font-family: "Optima",sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: -40px;
+        margin-left: 100px;
+        text-align: left;
+
+        }
+
+        .g:hover{
+          fill:
+        }
+
+        .axis path,
+        .axis line {
+        fill: none;
+        stroke: #D4D8DA;
+        stroke-width: 1px;
+        opacity: 0.7
+        }
+
+        .toolTip {
+          position:absolute;
+          text-align: left;
+          font-family: Optima, sans-serif;
+          font-size: 15px;
+          background-color: white;
+          padding:10px;
+          pointer-events: none;
+          border: 1px solid darkred;
+          border-radius: 5px;
+          display: none;
+        }
+
+</style>
+<body>
+
+<div>
+<p>People involved by year since 1982</p>
+</div>
+
+<svg width="1400" height="600"></svg>
+
+<script>
+       var svg = d3.select("svg"),
+            margin = {top: 80, right: 20, bottom: 30, left: 100},
+            width = 1200 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var x0 = d3.scaleBand()
+          .rangeRound([0, width])
+          .paddingInner(0.1);
+
+      var x1 = d3.scaleBand()
+          .padding(0.05);
+
+      var y = d3.scaleLinear()
+          .rangeRound([height, 0]);
+
+      var z = d3.scaleOrdinal()
+          .range(["#BC8F8F","#8B0000","black"]);
+
+      d3.csv("shooting-by-year copy.csv", function(error, data){
+            if (error){
+              console.log(error)
+            }
+            else{
+              console.log("array")
+              console.log(data);
+              data.forEach(function(d){
+                d.Fatalities = parseFloat(d.Fatalities)
+                d.Injured = parseFloat (d.Injured)
+                d.Total = parseFloat (d.Total)
+              });
+            }
+
+        var keys = data.columns.slice(1);
+
+        var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+        x0.domain(data.map(function(d) { return d.Year; }));
+        x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+        y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+
+        g.append("g")
+          .selectAll("g")
+          .data(data)
+          .enter().append("g")
+            .attr("transform", function(d) { return "translate(" + x0(d.Year) + ",0)"; })
+          .selectAll("rect")
+          .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+          .enter().append("rect")
+            .attr("x", function(d) { return x1(d.key); })
+            .attr("y", function(d) { return y(d.value); })
+            .attr("width", x1.bandwidth())
+            .attr("height", function(d) { return height - y(d.value); })
+            .attr("fill", function(d) { return z(d.key); })
+            .style("Opacity",.8)
+            
+            .on("mouseenter", function(d,i){
+            d3.select(this)
+              .style("Opacity",1)
+              .attr("fill", function(d) { return z(d.key); });
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 100 + "px")
+              .style("display", "inline-block")
+              .html(d.key + ":" + "<br>" + d.value);
+            })
+
+          .on("mouseout", function(d,i){
+            d3.select(this)
+              .style("Opacity",0.8)
+              .attr("fill", function(d) { return z(d.key); });
+            tooltip
+            .style("display", "none");}
+            );
+
+
+        g.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x0))
+          .append("text")
+            .attr("x", width - 10)
+            .attr("y", 40)
+            .attr("text-anchor", "end")
+            .attr("fill", "black")
+            .attr("font-family","Optima")
+            .attr("font-size",12)
+            .text("Year");
+
+        g.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y).ticks(null, "s"))
+            .attr("class", "axis axis--y")
+            .call(d3.axisLeft(y).ticks(10).tickFormat(function(d) { return parseInt(d); }).tickSizeInner([-width]))
+          .append("text")
+            .attr("x", 2)
+            .attr("y", y(y.ticks().pop()) - 10)
+            .attr("dy", "0.32em")
+            .attr("fill", "black")
+            .attr("font-family","Optima")
+            .attr("font-size",12)
+            .attr("text-anchor", "start")
+            .text("Number of people");
+          
+
+        var legend = g.append("g")
+            .attr("font-family", "Optima")
+            .attr("font-size", 12)
+            .attr("text-anchor", "end")
+          .selectAll("g")
+          .data(keys.slice().reverse())
+          .enter().append("g")
+            .attr("transform", function(d, i) { return "translate(50," + i * 30 + ")"; });
+
+        legend.append("rect")
+            .attr("x", width - 19)
+            .attr("width", 19)
+            .attr("height", 19)
+            .attr("fill", z);
+
+        legend.append("text")
+            .attr("x", width - 24)
+            .attr("y", 9.5)
+            .attr("dy", "0.32em")
+            .text(function(d) { return d; });
+      });
+
+</script>
+
+</script>
+</body>
+</html>
+
+

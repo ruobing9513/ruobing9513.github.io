@@ -22,7 +22,7 @@
 				margin-left: 30px;
 				margin-top: 100px;
 				width: 230px;
-				height: 500px;
+				height: 400px;
 				font-family:Optima,Sans-serif;
 				font-size: 15px;
 				background-color:white;
@@ -61,8 +61,8 @@
 				<div><a id="story-link" href=""></a></div>
 				
 			</div>
-			<svg id="map" width="900" height="600" align="center">
-				<rect width=900 height=600 opacity="0" align="center"></rect>
+			<svg id="map" width="1000" height="700" align="center">
+				<rect width=1000 height=700 opacity="0" align="center"></rect>
 			</svg>
 	</div>
 
@@ -127,64 +127,60 @@
 			var div = d3.select("#tooltip");
 
 //passing the path to svg and setting up the "d" value to draw a path 
-			layer = function(data){
-					states.enter().append("path") 
-					.attr("fill", function(feature){
+			states.enter().append("path") 
+				.attr("fill", function(feature){
 
-						var stateData = ownership.filter(function(d){
-							return d.id == feature.id
-						})
-						if (stateData.length == 0) {
-							return "grey";
-						}
-						var number = stateData[0].gunownership;
-						return colorScale(number);
+					var stateData = ownership.filter(function(d){
+						return d.id == feature.id
 					})
+					if (stateData.length == 0) {
+						return "grey";
+					}
+					var number = stateData[0].gunownership;
+					return colorScale(number);
+				})
+				.attr("stroke","white")
+				.attr("stroke-width",1)
+				.on("mouseenter", function(d){
+					d3.select(this)
+			     	.classed("mouseenter", true)
+					.attr("stroke-width",2.5)
 					.attr("stroke","white")
+					.html(d.ownership)
+				})
+				.on("mouseout",function(d){
+					d3.select(this)
+					.classed("mouseout",true)
 					.attr("stroke-width",1)
-					.on("mouseover", function(d){
-						d3.select(this)
-				     	.classed("mouseover", true)
-						.attr("stroke-width",2.5)
-						.attr("stroke","white")
-						.text(d.ownership)
-					})
-					.on("mouseout",function(d){
-						d3.select(this)
-						.classed("mouseout",true)
-						.attr("stroke-width",1)
-						.attr("stroke","white")
-					})
-					.attr("d",function(feature){
-						return path(feature);
-					});
-
-					states
-					.transition()
-
-					.duration(1000)
-					.attr("fill",function(feature){
-						var stateRank = data.filter(function(d){
-							return d.id == feature.id
-						})
-						if (stateRank.length == 0){
-							return "grey";
-						}
-						if (stateRank[0].Law) {
-						  	return colorScale(stateRank[0].Law);
-						}
-						if (stateRank[0].gunownership) {
-						  	return colorScale(stateRank[0].gunownership);
-						}
-					})
 					.attr("stroke","white")
-					.attr("stroke-width",1.5)
-					.attr("d",function(feature){
-						return path(feature);
-					});
-				};
-				
-			layer(ownership)
+				})
+				.attr("d",function(feature){
+					return path(feature);
+				});
+
+				states
+				.transition()
+
+				.duration(1000)
+				.attr("fill",function(feature){
+					var stateRank = data.filter(function(d){
+						return d.id == feature.id
+					})
+					if (stateRank.length == 0){
+						return "grey";
+					}
+					if (stateRank[0].Law) {
+					  	return colorScale(stateRank[0].Law);
+					}
+					if (stateRank[0].gunownership) {
+					  	return colorScale(stateRank[0].gunownership);
+					}
+				})
+				.attr("stroke","white")
+				.attr("stroke-width",1.5)
+				.attr("d",function(feature){
+					return path(feature);
+				});
 
 //load my data into the file, make sure you create a new data array and variable accordingly
 			
@@ -206,9 +202,9 @@
 				.attr("opacity",0.75)
 
 					//mouseover event and tooltips 
-				.on("mouseover", function(d) {
+				.on("mouseenter", function(d) {
 				    d3.select(this)
-				      .classed("mouseover", true)
+				      .classed("mouseenter", true)
 				      .attr("r", function(point){
 				      	return point.Total/3.5;
 				      })

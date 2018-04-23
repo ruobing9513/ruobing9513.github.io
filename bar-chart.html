@@ -10,6 +10,16 @@
         stroke: #D4D8DA;
         stroke-width: 1px;
       }
+
+      p {
+        font-family: "Optima",sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: -40px;
+        margin-left: 100px;
+        text-align: left;
+
+      }
       .toolTip {
         position: absolute;
         display: none;
@@ -20,13 +30,17 @@
         padding: 14px;
         font-size:15px;
         font-family: Optima,sans-serif;
-        text-align: center;
+        text-align: left;
       }
 </style>
+<div>
+<p>Number of mass shooting by year since 1982</p>
+</div>
 <svg width="1200" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
+  var drawbars;
         var svg = d3.select("svg"),
             margin = {top: 80, right: 20, bottom: 30, left: 100},
             width = 1200 - margin.left - margin.right,
