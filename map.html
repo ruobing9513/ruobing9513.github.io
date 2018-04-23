@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mass shooting map since 1982</title>
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://unpkg.com/topojson@3"></script>
+</head>
+<body>
+	<style type="text/css">
+		#tooltip{
+				position: absolute;           
+			  	text-align: center;           
+			  	width: 60px;                  
+			 	height: 28px;                 
+			  	padding: 2px;             
+			  	font: 12px sans-serif;        
+			  	background: white;   
+			  	border: 0px; 
+			  	margin-top: -10%;                 
+			}
+		#tooltip{
+				margin-left: 30px;
+				margin-top: 100px;
+				width: 230px;
+				height: 500px;
+				font-family:Optima,Sans-serif;
+				font-size: 15px;
+				background-color:white;
+				color:black;
+				text-align: left;
+				stroke: 1px;
+			}
+		#legend1{
+				font-family: optima,Sans-serif;
+				font-size: 15px;
+				margin-top: -10px;
+				margin-left: 30px;
+			}
+		#legend2{
+				font-family: optima,Sans-serif;
+				font-size: 15px;
+				margin-top: -40px;
+				margin-left: 30px;
+			}
+		#cases{
+				font-weight: bold;
+				color:#641E16;
+				font-size:18px;
+			}
+	</style>
+<div align="center">
+			<div id="tooltip">
+				<div id="cases"></div>
+				<br>
+				<div id="place"></div>
+				<div id="year"></div>
+				<div id="victim"></div>
+				<div id="fatalities"></div>
+				<br>
+				<div id="summary"></div>
+				<div><a id="story-link" href=""></a></div>
+				
+			</div>
+			<svg id="map" width="900" height="600" align="center">
+				<rect width=900 height=600 opacity="0" align="center"></rect>
+			</svg>
+	</div>
+
+		</div>
+
+	</body>
+
+	<div>
+	<script type="text/javascript">
+//map projection with gunownership 
+		var layer = false 
+		var gunrate = false
+		var ownership = false
+
+		d3.queue()
+			.defer(d3.json, "usa.json")
+			.defer(d3.csv, "Mass-shooting.csv")
+			.defer(d3.csv, "gunownership.csv")
+			.defer(d3.csv, "lawenforcement.csv")
+			.awaitAll(function(error,dataArray){
+				var data = dataArray[0];
+				var shooting = dataArray[1]
+				//.sort(function(a, b) {
+					//return b.Fatalities - a.Fatalities;
+				//})
+				;
+				var ownership = dataArray [2];
+				var gunrate = dataArray [3];
+				ownership.forEach(function(state){
+					state.gunownership = parseFloat(state.gunownership);
+					});
+				gunrate.forEach(function(rate){
+					rate.Law = parseFloat(rate.Law)
+				});
+
+				console.log(dataArray);
+
+			var dataExtent = d3.extent(ownership, function(d){
+						return d.gunownership;
+					})
+			console.log(dataExtent);
+
+			var colorScale = d3.scaleLinear()
+				.domain(dataExtent)
+				.range(["#f9f9f9","#922B21"]);
+			var colorScale1 = d3.scaleLinear()
+				.domain(dataExtent)
+				.range(["#707B7C","#17202A"]);
+
+//printing the map 
+			var geoJSON = topojson.feature(data,data.objects.states);
+			
+			var proj = d3.geoAlbersUsa()
+				.fitSize([1000,700],geoJSON); 
+
+			var path = d3.geoPath()
+			.projection(proj); 
+
+			var states = d3.select("#map").selectAll("path")
+				.data(geoJSON.features);
+
+			var div = d3.select("#tooltip");
+
+//passing the path to svg and setting up the "d" value to draw a path 
+			layer = function(data){
+					states.enter().append("path") 
+					.attr("fill", function(feature){
+
+						var stateData = ownership.filter(function(d){
+							return d.id == feature.id
+						})
+						if (stateData.length == 0) {
+							return "grey";
+						}
+						var number = stateData[0].gunownership;
+						return colorScale(number);
+					})
+					.attr("stroke","white")
+					.attr("stroke-width",1)
+					.on("mouseover", function(d){
+						d3.select(this)
+				     	.classed("mouseover", true)
+						.attr("stroke-width",2.5)
+						.attr("stroke","white")
+						.text(d.ownership)
+					})
+					.on("mouseout",function(d){
+						d3.select(this)
+						.classed("mouseout",true)
+						.attr("stroke-width",1)
+						.attr("stroke","white")
+					})
+					.attr("d",function(feature){
+						return path(feature);
+					});
+
+					states
+					.transition()
+
+					.duration(1000)
+					.attr("fill",function(feature){
+						var stateRank = data.filter(function(d){
+							return d.id == feature.id
+						})
+						if (stateRank.length == 0){
+							return "grey";
+						}
+						if (stateRank[0].Law) {
+						  	return colorScale(stateRank[0].Law);
+						}
+						if (stateRank[0].gunownership) {
+						  	return colorScale(stateRank[0].gunownership);
+						}
+					})
+					.attr("stroke","white")
+					.attr("stroke-width",1.5)
+					.attr("d",function(feature){
+						return path(feature);
+					});
+				};
+				
+			layer(ownership)
+
+//load my data into the file, make sure you create a new data array and variable accordingly
+			
+			var dots = d3.select("#map").selectAll("circle")
+			.data(shooting);
+
+
+			dots.enter().append("circle")
+				.attr("transform",function(point){
+					return "translate(" + proj([point.longitude,point.latitude]) + ")"
+				})
+				.attr("fill",d=>colorScale1(d.Total)) //if you want to use data in csv, make sure have point.before the column name 
+				.attr("stroke-width",.3)
+				.attr("r",4.5)
+				
+				//.attr("r", function(point){
+					//return point.Fatalities/1.2;
+				//..})
+				.attr("opacity",0.75)
+
+					//mouseover event and tooltips 
+				.on("mouseover", function(d) {
+				    d3.select(this)
+				      .classed("mouseover", true)
+				      .attr("r", function(point){
+				      	return point.Total/3.5;
+				      })
+				      .attr("class", "hoveredpoints")
+				      .attr("fill","black");
+
+				    d3.select("#tooltip")
+						.transition()
+						.style("opacity",1);
+
+				    d3.select("#cases").text(d.Case);
+				    d3.select("#year").text("Year: " + d.Year)
+				    d3.select("#place").text("Place: " + d.Place);
+				    d3.select("#fatalities").text("Fatalities: " + d.Fatalities);
+				    d3.select("#victim").text("Total victims: " + d.Total);
+				    d3.select("#summary").text(d.Summary);
+				    d3.select("#story-link").attr("href", d.Sources).html("Click here to view story.");
+				    
+				})
+				
+			 	.on("mouseleave", function(d) {
+			    d3.select(this)
+				      .attr("r", 4.5)
+				      .attr("fill", d=>colorScale1(d.Fatalities))
+				      .attr("class", "points")
+				      .attr("opacity",0.75);
+				//d3.select("#tooltip")
+						//.transition()
+						//.duration(200)
+						//.style("opacity",0);
+			  	});
+			 	
+			});
+	</script>
+	</div>
+
+	<div id="legend1" height="80px"></div>
+	<div id="legend2" height="80px"></div>
+	<script type="text/javascript">
+//legend of the map 
+			    var w = 300, h = 60;
+
+			    var key = d3.select("#legend1")
+			      .append("svg")
+			      .attr("width", w + 100)
+			      .attr("height", 100);
+
+			    var legend = key.append("defs")
+			      .append("svg:linearGradient")
+			      .attr("id", "gradient")
+			      .attr("x1", "0")
+			      .attr("y1", "100%")
+			      .attr("x2", "100%")
+			      .attr("y2", "100%")
+			      .attr("spreadMethod", "pad");
+
+			    legend.append("stop")
+			      .attr("offset", "0%")
+			      .attr("stop-color", "#f9f9f9")
+			      .attr("stop-opacity", 1);
+
+			    legend.append("stop")
+			      .attr("offset", "100%")
+			      .attr("stop-color", "#922B21")
+			      .attr("stop-opacity", 1);
+
+			    key.append("rect")
+			      .attr("width", w)
+			      .attr("height", h - 40)
+			      .style("fill", "url(#gradient)")
+			      .attr("transform", "translate(20,20)");
+
+			    var y = d3.scaleLinear()
+			      .range([300, 0])
+			      .domain([61.7, 5.2]);
+
+			    var yAxis = d3.axisBottom()
+			      .scale(y)
+			      .ticks (4);
+
+			    key.append("g")
+			      .attr("class", "y axis")
+			      .attr("transform", "translate(20,40)")
+			      .call(yAxis);
+
+			    key.append("text")
+			      .attr("transform", "rotate(0)")
+			      .attr("class","legend")
+			      .attr("y", 0)
+			      .attr("dy", "1em")
+			      .text("Percetage of legal gun ownership by state");
+
+				var w = 300, h = 60;
+
+			    var key = d3.select("#legend2")
+			      .append("svg")
+			      .attr("width", w + 100)
+			      .attr("height", 100);
+
+			    var legend = key.append("defs")
+			      .append("svg:linearGradient")
+			      .attr("id", "gradient2")
+			      .attr("x1", "0")
+			      .attr("y1", "100%")
+			      .attr("x2", "100%")
+			      .attr("y2", "100%")
+			      .attr("spreadMethod", "pad");
+
+			    legend.append("stop")
+			      .attr("offset", "0%")
+			      .attr("stop-color", "#707B7C")
+			      .attr("stop-opacity", 1);
+
+			    legend.append("stop")
+			      .attr("offset", "100%")
+			      .attr("stop-color","#17202A")
+			      .attr("stop-opacity", 1);
+
+			    key.append("rect")
+			      .attr("width", w)
+			      .attr("height", h - 40)
+			      .style("fill", "url(#gradient2)")
+			      .attr("transform", "translate(20,20)");
+
+			    var y = d3.scaleLinear()
+			      .range([300, 0])
+			      .domain([58, 3]);
+
+			    var yAxis = d3.axisBottom()
+			      .scale(y)
+			      .ticks (5);
+
+			    key.append("g")
+			      .attr("class", "y axis")
+			      .attr("transform", "translate(20,40)")
+			      .call(yAxis);
+
+			    key.append("text")
+			      .attr("transform", "rotate(0)")
+			      .attr("class","legend")
+			      .attr("y", 0)
+			      .attr("dy", "1em")
+			      .text("Fatalities");
+	</script>
+</body>
+</html>

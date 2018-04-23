@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<style>
+		body {
+		  font: 10px sans-serif;
+		}
+
+		.axis path,
+		.axis line {
+		  fill: none;
+		  stroke: #000;
+		  shape-rendering: crispEdges;
+		}
+
+		.dot {
+		  stroke: #000;
+		  stroke-width: 0;
+		}
+
+		.toolTip {
+		position: absolute;
+		height: auto;
+		padding: 10px;
+		background-color: white;
+		border: 1px solid black;
+		text-align: center;
+		font-family: Optima,Sans-Serif;
+		font-size: 14px;
+		border-radius: 5px;
+		display: none;
+		}
+
+		#tooltip1{
+		width: 500px;
+		margin-left: 50px;
+		border-radius:1px;
+		}
+
+		#state{
+		margin-left: 30px;
+		font-family:Optima,Sans-serif;
+		font-size: 19px;
+		font-weight: bold;
+		background-color:white;
+		color:white;
+		text-align: left;
+		padding-top: 10px;
+
+		}
+
+		#score,#cases,#deathrate,#lawtext{
+		margin-left: 30px;
+		font-family:Optima,Sans-serif;
+		font-size: 15px;
+		background-color:white;
+		color:white;
+		text-align: left;
+		stroke: 1px;
+		padding-bottom: 10px;
+		}
+</style>
+
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var margin = {top: 50, right: 100, bottom: 50, left: 100},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var z = d3.scaleOrdinal()
+          .range(["#C0392B", "#A93226", "7B241C", "641E16","Black"]);
+
+var xAxis = d3.axisBottom(x);
+
+var yAxis = d3.axisLeft(y);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("gunrank.csv", function(error, data) {
+		  	if (error) throw error;
+
+			data.forEach(function(d) {
+			d.Strength = parseFloat(d.Strength);
+			d.Cases = parseFloat(d.Cases);
+			d.Law = parseFloat(d.Law);
+			d.DeathRate = parseFloat(d.DeathRate);
+			});
+
+  x.domain(d3.extent(data, function(d) { return d.Strength; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.DeathRate; })).nice();
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("x", width)
+      .attr("y", 40)
+      .attr("text-anchor", "end")
+      .attr("fill", "black")
+      .attr("font-weight", "bold")
+      .attr("font-family","Optima")
+      .attr("font-size",15)
+      .text("Gun law strength ranking by States(1 to 50)");
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("x",200)
+      .attr("y", -30)
+      .attr("dy", "0.71em")
+      .attr("fill", "black")
+      .attr("font-weight", "bold")
+      .attr("font-family","Optima")
+      .attr("font-size",15)
+      .text("Gun death rate per state in 2017");
+
+	svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("cx", function(d) { return x(d.Strength); })
+      .attr("cy", function(d) { return y(d.DeathRate); })
+      .attr("r", function(d){
+      	if (d.State == "California"){
+      		return 15;
+      	}
+      	else if (d.State == "Florida"){
+      		return 15;
+      	}
+      	else if (d.State == "Texas"){
+      		return 10;
+      	}
+      	else if (d.State == "Pennsylvania"){
+      		return 10;
+      	}
+      	else if (d.State == "Nevada"){
+      		return 10;
+      	}
+      	else if (d.State == "Colorado"){
+      		return 10;
+      	}
+      	else if (d.State == "Ohio"){
+      		return 10;
+      	}
+      	else {
+      		return 5;
+      	}
+      })
+      
+      .style("Opacity",0.8)
+      .attr("fill", function(d) { 
+      	if (d.Score == "A") {
+	        return "#C0392B";
+        }
+        else if (d.Score == "A-"){
+        	return "#C0392B";
+        }
+        else if (d.Score == "B"){
+        	return "#A93226";
+        }
+        else if (d.Score == "B+"){
+        	return "#A93226";
+        }
+        else if (d.Score == "B-"){
+        	return "#A93226";
+        }
+        else if (d.Score == "C"){
+        	return "#7B241C";
+        }
+        else if (d.Score == "C-"){
+        	return "#7B241C";
+        }
+        else if (d.Score == "C+"){
+        	return "#7B241C";
+        }
+        else if (d.Score == "D-"){
+        	return "#641E16";
+        }
+        else if (d.Score == "D"){
+        	return "#641E16";
+        }
+    	else {
+      		return "Black";
+    	}
+
+      })
+
+      .on("mouseover", function(d){
+        d3.select(this)
+        	.style("opacity",1)
+        	.attr("r", function(d){
+	      	if (d.State == "California"){
+	      		return 17;
+	      	}
+	      	else if (d.State == "Florida"){
+	      		return 17;
+	      	}
+	      	else if (d.State == "Texas"){
+	      		return 12;
+	      	}
+	      	else if (d.State == "Pennsylvania"){
+	      		return 12;
+	      	}
+	      	else if (d.State == "Nevada"){
+	      		return 12;
+	      	}
+	      	else if (d.State == "Colorado"){
+	      		return 12;
+	      	}
+	      	else if (d.State == "Ohio"){
+	      		return 12;
+	      	}
+	      	else {
+	      		return 7;
+	      	}
+	      });
+        
+        tooltip
+          .style("left", d3.event.pageX + "px")
+          .style("top", d3.event.pageY + "px")
+          .style("display", "block")
+          .html("<strong>" + d.State + "</strong>");
+    })
+
+    .on("click",function(d){
+    	d3.select("#tooltip1")
+    		.transition()
+    		.style("Opacity",.9)
+    		.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+    	d3.select("#state")
+    		.text(d.State)
+    		.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+	    d3.select("#score")
+	    	.text("Gun law enforcement score: " + d.Score)
+	    	.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+	    d3.select("#deathrate")
+	    	.text("Gun death rate (per 100k): " + d.DeathRate + "%")
+	    	.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+	    d3.select("#cases")
+	    	.text("Mass shooting cases in 2007: " + d.Cases)
+	    	.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+	    d3.select("#lawtext")
+	    	.text("Gun purchase background check: " + d.Lawtext)
+	    	.style("background-color",function(){
+	    		if (d.Score == "A") {
+		        return "#C0392B";
+	        }
+	        else if (d.Score == "A-"){
+	        	return "#C0392B";
+	        }
+	        else if (d.Score == "B"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B+"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "B-"){
+	        	return "#A93226";
+	        }
+	        else if (d.Score == "C"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C-"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "C+"){
+	        	return "#7B241C";
+	        }
+	        else if (d.Score == "D-"){
+	        	return "#641E16";
+	        }
+	        else if (d.Score == "D"){
+	        	return "#641E16";
+	        }
+	    	else {
+	      		return "Black";
+	    	}
+    		});
+    })
+
+	.on("mouseout", function(d){ 
+		d3.select(this)
+			.style("opacity",0.8)
+			.attr("r", function(d){
+	      	if (d.State == "California"){
+	      		return 15;
+	      	}
+	      	else if (d.State == "Florida"){
+	      		return 15;
+	      	}
+	      	else if (d.State == "Texas"){
+	      		return 10;
+	      	}
+	      	else if (d.State == "Pennsylvania"){
+	      		return 10;
+	      	}
+	      	else if (d.State == "Nevada"){
+	      		return 10;
+	      	}
+	      	else if (d.State == "Colorado"){
+	      		return 10;
+	      	}
+	      	else if (d.State == "Ohio"){
+	      		return 10;
+	      	}
+	      	else {
+	      		return 5;
+	      	}
+	      });
+
+		tooltip
+		.style("display", "none");
+	});
+      		
+
+
+  var legend = svg.selectAll(".legend")
+      .data(["A range","B range","C range", "D range","F range"])
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("font-family", "Optima")
+	  .attr("font-size", 12)
+      .attr("transform", function(d, i) { return "translate(80," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", z);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .html("Gun law rank scores")
+      .text(function(d) { return d; });
+
+});
+
+</script>
+<div id="tooltip1">
+		<div id="state"></div>
+		<br>
+		<div id="score"></div>
+		<div id="deathrate"></div>
+		<div id="cases"></div>
+		<div id="lawtext"></div>
+	</div>
+</body>
+</html>

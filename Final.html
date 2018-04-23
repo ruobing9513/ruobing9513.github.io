@@ -2,50 +2,49 @@
 <html>
 <title>Explore U.S. Mass Shooting - More guns,more violence?</title>
 <meta charset="UTF-8">
-	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-	<link href= "animate.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Anton|PT+Sans+Narrow" rel="stylesheet">
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+		<link href= "animate.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Crimson+Text|PT+Sans+Narrow|Playfair+Display|Lora" rel="stylesheet">
+	</head>
+
 	<style type="text/css">
 			#mybody{
 				background-color: white;
 			}
 
-			.text{
+			#h1{
 				position: absolute;
-			    bottom: 100px;
-			    right: 20px;
-			    font-family: Anton,PT Sans Narrow, sans-serif;
-			   	font-size: 40px;
+			    font-family: "Crimson Text",Lora, serif;
+			   	font-size: 80px;
 			    color: white;
+			    margin-top: -40%;
+			    margin-left: 20%;
 			    padding-left: 20px;
 			    padding-right: 20px;
 			}
 
+			#name{
+				position: absolute;
+			    font-family: "Crimson Text",Lora, serif;
+			   	font-size: 30px;
+			    color: white;
+			    margin-top: -30%;
+			    margin-left: 60%;
+			    padding-left: 20px;
+			    padding-right: 20px;
+			}
+
+
 			#h3{
-				font-family: PT Sans Narrow, sans-serif;
+				font-family: Lora, sans-serif;
 				text-align: center;
 				font-weight: bold;
 				font-size:40px;
 				color: black;
 
-			}
-
-			#h4 {
-				font-family: PT Sans Narrow, sans-serif;
-				text-align: center;
-				font-weight: bold;
-				font-size:30px;
-				color: black;
-			}
-
-			#byline{
-				font-family: PT Sans Narrow, sans-serif;
-				text-align: right;
-				font-size:15px;
-				color: white;
-				position: absolute;
- 				top: 75%;
-  				left: 75%;
 			}
 
 			#source{
@@ -60,22 +59,122 @@
 				float: left;
   				margin-left: 200px;
 				margin-right: 200px;
+				margin-top: -10px;
 				text-align: left;
 				font-size: 18px;
 			}
 
-			#n1{
-				font-family: Optima, sans-serif;
-				color: darkred;
-				font-weight: bold;
+			#transition {
+				font-family: Crimson Text, lora,serif;
+				text-align: left;
+				font-size:50px;
+				color: white;
+				position: absolute;
+				margin-left: 300px;
+				margin-right: 300px;
+				margin-top: -35%;
 			}
 
-			#n2{
-				font-family: Optima,Sans-serif;
-				color:darkred;
+			#sub{
+				font-family: Crimson Text, Lora,serif;
+				font-size:18px;
+				text-align: left;
+				margin-left: 300px;
+				margin-right: 300px;
+				color: white;
 				font-style: italic;
-				font-size: 15px;
+				position: absolute;
+				margin-top: -15%;
 			}
+
+			a{
+				font-family: Crimson Text, Lora,serif;
+				color: white;
+			}
+
+			#transitiontext{
+				text-align: center;
+				animation-duration: 3s;
+			}
+
+			#subhead {
+				font-family: Lora, sans-serif;
+				text-align: left;
+				font-size:30px;
+				color: darkred;
+				margin-left: 200px;
+				margin-right: 300px;
+			}
+
+			.parallax{
+				background-image: url("../transition1.png");
+				height: 800px;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size:cover;
+				}
+
+			.parallax1{
+				background-image: url("../parallax1.jpg");
+				height: 800px;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size:cover;
+				}
+
+			.parallax2{
+				background-image: url("../parallax2.jpg");
+				height: 800px;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size:cover;
+				}
+
+/*viz attr*/
+			#barchart{
+				border-color: white;
+				border-width: 0;
+				width:1500px;
+				height:600px;
+				margin-left:100px;
+				margin-top: -50px;
+				overflow: hidden;
+
+			}
+			
+			#map{
+				border-color:white;
+				border-width:0;
+				width:1500px;
+				height:900px;
+				overflow: hidden;
+
+			}
+
+			#weapon{
+				border-color:white;
+				border-width:0;
+				width:1500px;
+				height:550px;
+				overflow: hidden;
+				text-align: center;
+				margin-left: 200px;
+
+			}
+
+			#stategun{
+				border-color:white;
+				border-width:0;
+				width:15000px;
+				height:700px;
+				text-align: center;
+				margin-left: 200px;
+
+			}
+
 
 			#coverpage{
 				width:100%;
@@ -86,583 +185,99 @@
 				animation-duration: 2s;
 			}
 
-			#tooltip{
-				position: absolute;           
-			  	text-align: center;           
-			  	width: 60px;                  
-			 	height: 28px;                 
-			  	padding: 2px;             
-			  	font: 12px sans-serif;        
-			  	background: white;   
-			  	border: 0px;                
-			  	pointer-events: none;         
-			}
-
-			.arc text {
-			  font-family: Optima, sans-serif;
-			  font-size: 15px;
-			  text-anchor: middle;
-			}
-
-			#transition {
-				font-family: Anton, sans-serif;
-				text-align: center;
-				font-size:40px;
-				color: white;
-				position: absolute;
-				margin-left: 400px;
-				margin-right: 400px;
-				margin-top: 450px;
-			}
-
-			#transitiontext{
-				text-align: center;
-				animation-duration: 3s;
-			}
-
-			#subhead {
-				font-family: PT Sans Narrow, sans-serif;
-				text-align: left;
-				font-size:30px;
-				color: black;
-				margin-left: 200px;
-				margin-right: 300px;
-			}
-
-			.axis text {
-			  font: 10px sans-serif;
-			}
-
-			.axis line, .axis path {
-			  fill: none;
-			  stroke: #000;
-			  shape-rendering: crispEdges;
-			}
-			#piechart{
-				font-family: Optima, Sans-serif;
-			}
-
-			svg{
-			  padding-left: 50px;
-			}
-
-			.caption{
-				font-family:Optima,sans-serif;
-				font-size:18px;
-				padding-bottom: 10%;
-			}
-
-			#weaponsection{
-				margin-left: 200px;
-				width: 400px;
-
-			}
-
-			button{
-				background: white;
-				font-family: "Optima","Noto Sans", Sans-serif;
-				color:darkslategray;
-				border-color:black;
-				text-align: center;
+			#footer{
+				font-family: Optima,sans-serif;
 				font-size:15px;
-				border-color: black;
-				display:inline-block;
-				padding:10px 15px;
-				-webkit-transition-duration: 0.4s; /* Safari */
-		    			transition-duration: 0.4s;
+				color: darkred;
+				height: 50px;
+				text-align: center;
 			}
-
-			button:hover {
-	    		background-color: grey; 
-	    		color: white;
-			}
-
-			#viz{
-				align-items: center;
-				margin-left: 200px;
-
-			}
-
-			#tooltip{
-				margin-left: 30px;
-				margin-top: 100px;
-				width: 230px;
-				height: 500px;
-				font-family:Optima,Sans-serif;
-				font-size: 15px;
-				background-color:white;
-				color:black;
-				text-align: left;
-				stroke: 1px;
-			}
-			#cases{
-				font-weight: bold;
-				color:#641E16;
-				font-size:18px;
-			}
-
-			.legend{
-				font-family: optima,Sans-serif;
-				font-size: 15px;
-			}
-		
+			
+			
 		</style>
 
-<body id="mybody">
-	<div class="container" class="item animated fadeIn";>
-		<img src="finalintro.png" id="coverpage">
-		<div class="text" class="item animated fadeIn";>
-			<h1 id="h1">More Guns, More Violence?</h1>
-			<p style="size:20px">By Ruobing Su</p>
+	<body id="mybody">
+		<div class="container" class="item animated fadeIn";>
+			<img src="finalintro.png" id="coverpage">
+			<div class="text" class="item animated fadeIn";>
+				<h1 id="h1">More Guns, More Violence?</h1>
+				<p id="name">By Ruobing Su</p>
+			</div>
 		</div>
-	</div>
-</body>
-
-	<head>
-		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="https://unpkg.com/topojson@3"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
-	</head>
+	</body>
 
 	<body>
 		<div>
 		<h2 id="h3">U.S. Major Mass Shooting since 1982</h2>
 		<p id="p">The deadly school shooting in Parkland in Feburary, has ignited national outrage and calls for action on gun reform. Since 1982, there have been <span id="n1">at least 98 </span> public mass shootings across the country, with the killings unfolding in 34 states from Massachusetts to Hawaii; <span id="n1">fifty-nine</span> of these mass shootings have occurred since 2006.
 		<br><br>Although, the definition of mass shooting varies place to place, according to FBI, <span id="n1">a wide range of gun crimes in which four or more people have been either wounded or killed can </span> be called as mass shooting. 
-		<br><br>The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence. Hover for more detail.</p>
+		<br><br>The following data on U.S. major mass shooting since 1982 is collected by Mother Jones, a progressive American magazine. The data set has excluded shootings stemming from more conventional crimes such as armed robbery or gang violence. Hover on the circles for more detail. <strong>Hover for more details. The size of hovered cricles varies as the numbers of total victims in one case.</strong></p>
 		<p id="source">Data source: Mother Jones</p>
-
-		<div align="middle";>
-			<button id = "click1" onclick = "layer(ownership)">1</button>
-			<button id = "click2" onclick = "layer(gunrate)">2</button>
-
+		<iframe id="map" src="map.html" width="1500" height="900"></iframe>
 		</div>
-
-		<!--tooltip for the map-->
-		<div align="center">
-			<div id="tooltip">
-				<div id="cases"></div>
-				<br>
-				<div id="place"></div>
-				<div id="year"></div>
-				<div id="victim"></div>
-				<div id="fatalities"></div>
-				<div id="injury>"></div>
-				<br>
-				<div id="summary"></div>
-				
-			</div>
-			<svg id="map" width="1000" height="700" align="center">
-				<rect width=1000 height=700 opacity="0" align="center"></rect>
-			</svg>
-	</div>
-
-		</div>
-
-	</body>
-
-	<div>
-	<script type="text/javascript">
-//map projection with gunownership 
-		var layer = false 
-		var gunrate = false
-		var ownership = false
-
-		d3.queue()
-			.defer(d3.json, "usa.json")
-			.defer(d3.csv, "Mass-shooting.csv")
-			.defer(d3.csv, "gunownership.csv")
-			.defer(d3.csv, "lawenforcement.csv")
-			.awaitAll(function(error,dataArray){
-				var data = dataArray[0];
-				var shooting = dataArray[1];
-				var ownership = dataArray [2];
-				var gunrate = dataArray [3];
-				ownership.forEach(function(state){
-					state.gunownership = parseFloat(state.gunownership);
-					});
-				gunrate.forEach(function(rate){
-					rate.Law = parseFloat(rate.Law)
-				});
-
-				console.log(dataArray);
-
-			var dataExtent = d3.extent(ownership, function(d){
-						return d.gunownership;
-					})
-			console.log(dataExtent);
-
-			var colorScale = d3.scaleLinear()
-				.domain(dataExtent)
-				.range(["#f9f9f9","#922B21"]);
-			var colorScale1 = d3.scaleLinear()
-				.domain(dataExtent)
-				.range(["#F5EEF8","#512E5F"]);
-
-//printing the map 
-			var geoJSON = topojson.feature(data,data.objects.states);
-			
-			var proj = d3.geoAlbersUsa()
-				.fitSize([1000,700],geoJSON); 
-
-			var path = d3.geoPath()
-			.projection(proj); 
-
-			var states = d3.select("#map").selectAll("path")
-				.data(geoJSON.features);
-
-			var div = d3.select("#tooltip");
-
-//passing the path to svg and setting up the "d" value to draw a path 
-			layer = function(data){
-					states.enter().append("path") 
-					.attr("fill", function(feature){
-
-						var stateData = ownership.filter(function(d){
-							return d.id == feature.id
-						})
-						if (stateData.length == 0) {
-							return "grey";
-						}
-						var number = stateData[0].gunownership;
-						return colorScale(number);
-					})
-					.attr("stroke","white")
-					.attr("stroke-width",1.5)
-					.on("mouseover", function(d){
-						d3.select(this)
-				     	.classed("mouseover", true)
-						.attr("stroke-width",1,5)
-						.attr("stroke","black")
-						.html("Legal gunownership rate: " + d.gunownership)
-					})
-					.on("mouseout",function(d){
-						d3.select(this)
-						.classed("mouseout",true)
-						.attr("stroke-width",1.5)
-						.attr("stroke","white")
-					})
-					.attr("d",function(feature){
-						return path(feature);
-					});
-
-					states
-					.transition()
-
-					.duration(1000)
-					.attr("fill",function(feature){
-						var stateRank = data.filter(function(d){
-							return d.id == feature.id
-						})
-						if (stateRank.length == 0){
-							return "grey";
-						}
-						if (stateRank[0].Law) {
-						  	return colorScale(stateRank[0].Law);
-						}
-						if (stateRank[0].gunownership) {
-						  	return colorScale(stateRank[0].gunownership);
-						}
-					})
-					.attr("stroke","white")
-					.attr("stroke-width",1.5)
-					.attr("d",function(feature){
-						return path(feature);
-					});
-				};
-				
-			layer(ownership)
-
-//load my data into the file, make sure you create a new data array and variable accordingly
-			
-			var dots = d3.select("#map").selectAll("circle")
-			.data(shooting);
-
-
-			dots.enter().append("circle")
-				.attr("transform",function(point){
-					return "translate(" + proj([point.longitude,point.latitude]) + ")"
-				})
-				.attr("fill","black") //if you want to use data in csv, make sure have point.before the column name 
-				.attr("stroke-width",.3)
-				
-				.attr("r", function(point){
-					return point.Fatalities/1.2;
-				})
-				.attr("opacity",0.75)
-
-					//mouseover event and tooltips 
-				.on("mouseover", function(d) {
-				    d3.select(this)
-				      .classed("mouseover", true)
-				      .attr("r", function(point){
-						return point.Fatalities/1.2;
-						})
-				      .attr("class", "hoveredpoints")
-				      .attr("fill","#2F4F4F");
-				    d3.select("#cases").text(d.Case);
-				    d3.select("#year").text("Year: " + d.Year)
-				    d3.select("#place").text("Place: " + d.Place);
-				    d3.select("#fatalities").text("Fatalities: " + d.Fatalities)
-				    d3.select("#victim").text("Total victims: " + d.Total)
-				    d3.select("#summary").text(d.Summary);
-				    
-				})
-				
-			 	.on("mouseleave", function(d) {
-			    d3.select(this)
-				      .attr("r", function(point){
-						return point.Fatalities/1.2 ;
-						})
-				      .attr("fill", "black")
-				      .attr("class", "points")
-				      .attr("opacity",0.75);
-				//d3.select("#tooltip")
-						//.transition()
-						//.duration(500)
-						//.style("opacity",0);
-			  	});
-			 	
-			});
-	</script>
-	</div>
-
-	<div id="legend1" height="100px"></div>
-	<script type="text/javascript">
-//legend of the map 
-			    var w = 300, h = 60;
-
-			    var key = d3.select("#legend1")
-			      .append("svg")
-			      .attr("width", w + 100)
-			      .attr("height", 100);
-
-			    var legend = key.append("defs")
-			      .append("svg:linearGradient")
-			      .attr("id", "gradient")
-			      .attr("x1", "0")
-			      .attr("y1", "100%")
-			      .attr("x2", "100%")
-			      .attr("y2", "100%")
-			      .attr("spreadMethod", "pad");
-
-			    legend.append("stop")
-			      .attr("offset", "0%")
-			      .attr("stop-color", "#f9f9f9")
-			      .attr("stop-opacity", 1);
-
-			    legend.append("stop")
-			      .attr("offset", "100%")
-			      .attr("stop-color", "#922B21")
-			      .attr("stop-opacity", 1);
-
-			    key.append("rect")
-			      .attr("width", w)
-			      .attr("height", h - 40)
-			      .style("fill", "url(#gradient)")
-			      .attr("transform", "translate(20,20)");
-
-			    var y = d3.scaleLinear()
-			      .range([300, 0])
-			      .domain([61.7, 5.2]);
-
-			    var yAxis = d3.axisBottom()
-			      .scale(y)
-			      .ticks (4);
-
-			    key.append("g")
-			      .attr("class", "y axis")
-			      .attr("transform", "translate(20,40)")
-			      .call(yAxis);
-
-			    key.append("text")
-			      .attr("transform", "rotate(0)")
-			      .attr("class","legend")
-			      .attr("y", 0)
-			      .attr("dy", "1em")
-			      .text("Percetage of legal gun ownership by state");
-	</script>
 	
-	<div id="transitiontext" class="item animated fadeIn">
-		<h1 id="transition">The U.S. makes up less than 5% of the world population, but holds 31% of global mass shooters.</h1>
-		<img src="transition1.png" id="coverpage">
 		
-	</div>
+		<div id="transitiontext" class="item animated fadeIn">
+		<div class="parallax"></div>
+		<h1 id="transition">The U.S. makes up less than 5% of the world population, but holds 31% of global mass shooters.</h1>
+		<p id="sub">CNN:<br><a href="https://www.cnn.com/2017/10/03/americas/us-gun-statistics/index.html">How US gun culture compares with the world in five charts"</a></p>		
+		</div>
 
 	<div>
-		<h4 id="subhead">Why AR-15 keeps appearing in U.S. mass shootings? It is too easy to purchase guns without background check.</h4>
+		<h4 id="subhead">The numbers are starggering.</h4>
+		<p id="p">	Even though, mass shooting can be differently defined based on fatalities and injuries, the numbers of mass shooting are starggering as years go by, in particular after 2010. Since Sandy Hook, there have been 1,518 mass shootings (4+ people shot) in America over 1,753 days. Over 48% of mass shooting recorded by Mother Jones took place after 2010. The chart below shows numbers of major mass shooting in terms of year. 
+		</p>
+		<p id="source">Note: Data for 2018 is up to March.</p>
+		<iframe id="barchart" src="bar-chart.html"></iframe>
+	</div>
+	
+		<div id="transitiontext" class="item animated fadeIn">
+		<div class="parallax1"></div>
+		<h1 id="transition">With AR-15s, Mass Shooters Attack With the Rifle Firepower Typically Used by Infantry Troops</h1>
+		<p id="sub"><a href="https://www.nytimes.com/interactive/2018/02/28/us/ar-15-rifle-mass-shootings.html">The New York Times: <br>With AR-15s, Mass Shooters Attack With the Rifle Firepower Typically Used by Infantry Troops</a></p>		
+		</div>
+
+	<div>
+		<h4 id="subhead">Why AR-15 keeps appearing in U.S. mass shootings?</h4>
 		<p id="p"> AR-15-style rifles have increasingly appeared in American mass shootings, including the deadliest high school shooting in the nation's history at Marjory Stoneman Douglas High School in Parkland, Florida. 
 		<br>
-		The chart below shows types and numbers of weapons being used in the major mass shooting cases from 1982 up to date. A  
-		<br>
-		<span id="n2">Note: Knieves are excluded from weapons categorized below.</span>
-		</p>
+		The chart below shows types and numbers of weapons being used in the major mass shooting cases from 1982 up to date. 
+		<br></p>
+		<p id="source">Note: Knieves are excluded from weapons categorized below.</p>
+		<iframe id="weapon" src="weapon.html"></iframe>
 	</div>
 
-	<div id="piechart">
 	<script type="text/javascript">
-//pie chart of venue 	
-		var weapondata = d3.csv("weapons.csv", function(error, data){
-			if (error){
-				console.log(error)
-			}
-			else{
-				console.log("array")
-				console.log(data);
-				data.forEach(function(d){
-				d.numbers = parseFloat(d.numbers)
-				})
-				}
-			});
-		var data = [46,100,30,23,1]
-		var data2 = [38,68,24,18,1];
-
-		var width = 960,
-		    height = 400,
-		    radius = Math.min(width, height) / 2;
-
-		var color = d3.scaleOrdinal()
-		    .range(["#7c0000", "#ff7d7d", "#763c3c", "#33262a", "#45373c"]);
-
-		var arc = d3.arc()
-		    .outerRadius(radius - 10)
-		    .innerRadius(0);
-
-		var labelArc = d3.arc()
-		    .outerRadius(radius - 40)
-		    .innerRadius(radius - 40);
-
-		var pie = d3.pie()
-		    .sort(null)
-		    .value(function(d) { return d; });
-
-		var svg = d3.select("body").append("svg")
-		    .attr("width", width + 200)
-		    .attr("height", height)
-		  	.append("g")
-		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
 		
+	</script>
 
-		  var g = svg.selectAll(".arc")
-		      .data(pie(data))
-		      .enter().append("g")
-		      .attr("class", "arc");
-
-		  	g.append("path")
-		      .attr("d", arc)
-		      .style("fill", function(d) { return color(d.data); })
-		      .on("mouseover", function(d) {
-				    d3.select(this)
-				      .classed("mouseover", true)
-				      .attr("stroke","white")
-				      .attr("stroke-width",2)
-				  })
-		      .on("mouseleave",function(d){
-		      		d3.select(this)
-		      			.classed("mouseleave",true)
-		      			.attr("stroke-width",1)
-		      		});
-
-		  	g.append("text")
-		      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-		      .attr("dy", ".35em")
-		      .text(function(d) { return d.data; })
-		      .attr("fill","white");
-		</script>
-	</div>
-
-		<div id="legend">
-			<script type="text/javascript">
-		  //legend 
-			 	var g = svg.append("g")
-				 	.attr("class", "legendThreshold")
-	    			.attr("transform", "translate(300,-10)");
-	    		g.append("text")
-	    			.attr("class","caption")
-	    			.attr("x",0)
-	    			.attr("y",-6)
-	    			.text("Types of weapons used in mass shooting cases");
-	    		var labels = ["Semi-automatic rifles","Semi-automatic handgun","Shot gun/long gun","Revolver/pistol", "Modified weapons"] 
-	    		var legend = d3.legendColor()
-	    			.labels(function (d) { return labels[d.i]; })
-				    .shapePadding(4)
-				    .scale(color);
-				svg.select(".legendThreshold")
-				    .call(legend);
-			</script>
+	<div id="transitiontext" class="item animated fadeIn">
+		<div class="parallax2"></div>
+		<h1 id="transition">In Florida: You don't need a permit or license to buy a gun, nor do you have to register a firearm; and gun sellers don't have to get a state license to sell firearms.</h1>
+		<p id="sub"><a href="https://www.cnn.com/2018/02/15/us/florida-gun-laws-trnd/index.html">CNN: <br>You don't need a permit or license to buy a gun in Florida. (And you don't have to register your gun either)</a></p>		
 		</div>
 
-	
-
-	<svg id=viz width="800" height="200" align="center" ></svg>
-
-	<div align="middle";>
-			<button id = "click1" onclick = "bars(numberofweapon)">Number of weapons in mass shooting cases</button>
-			<button id = "click2" onclick = "bars(numberofcases)">Number of cases the weapons are being used</button>
+	<div>
+		<h4 id="subhead">It is too easy to purchase guns without background check.</h4>
+		<p id="p">Fewer people die from gun violence in states with stronger gun law enforcement. While looking at mass shooting cases, it cannot be the case where sticker gun laws play out effectively. California, of which, is one of the states with strict gun law enforcement, as well as background check; however, it is also the state with most mass shooting cases take place. 
+		<br>
+		The chart below shows gun death rate per state and gun law strength ranked from 1 to 50 on the Y-axis by state. <strong> Click for more state gun law detail</strong>. 
+		<br></p>
+		<p id="source">Data source: Gifford Law Center</p>
+		<p id="source">Note: Washington D.C. is excluded from rankings in the dataset.</p>
+		<iframe id="stategun" src="stategun.html"></iframe>
 	</div>
 
-	<script type="text/javascript">
-//bar chart of weapons used in mass shooting cases 	 
-		var numberofweapon = [46,100,30,23,1]
-		    numberofcases = [38,68,24,18,1];
+	<body id="mybody">
+		<div class="container" class="item animated fadeIn";>
+			<img src="back.jpg" id="coverpage">
+		</div>
+	</body>
 
-		var height = 20;
-
-		var bars = function(dataArray){
-			var svg = d3.select("#viz");
-
-				var dots = svg.selectAll(".rect")
-					.data(dataArray);
-	
-				dots.enter().append("rect")
-					.attr("class","rect")
-
-					.attr("width",0)
-					.attr("height",height)
-					.attr("x", "0")
-					.attr("y", function(d,index){
-						return index * height * 1.2 + 20 ;
-					})
-					.attr("fill", "black")
-
-					.transition()
-					.duration (1000)
-					
-
-					.attr("width", function(d,i){
-						return(d*5)
-					})
-					.attr("height",height)
-					.attr("fill", "black")
-					.attr("x","0")
-					.attr("y", function(d,index){
-						return index * height * 1.2 + 20 ;
-					})
-
-					.attr("fill", "#641E16");
-
-								
-				dots
-					.transition()
-			
-					.duration(1000)
-					.attr("width", function(d,i){
-						return(d*5)
-					})
-					.attr("height",height)
-					.attr("fill", "#641E16");
-				
-				dots.exit()
-					.transition()
-					.duration(1000)
-					.attr("width",0)
-					.attr("height",height)
-					.remove();
-
-				};
-
-		bars(numberofweapon)
-
-	</script>
+	<div id="footer">
+       <div>
+       	<p>Copyright | Ruobing Su | Northeastern University School of Journalism | Spring 2018</p>
+       </div>
+    </div>
 
 </html>
