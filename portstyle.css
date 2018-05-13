@@ -28,11 +28,15 @@ a.link:visited {
 
 a.link:hover {
     color: white;
-    border-bottom: 1px black solid;
-    background-color: #b27f7f;
-    padding: 1px;
+    border-bottom: 1px white solid;
     }
 
 a.link:active {
-    color: #961F27;
+    color: white;
     }
+
+#homepage {
+	font-size: 20px;
+	font-family: sans-serif;
+	margin-top: 5%;
+}
