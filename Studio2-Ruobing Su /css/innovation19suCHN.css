@@ -240,7 +240,7 @@ h1 {
 }
 #missing{
   animation-duration: 10s;
-  animation-delay: 6s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
 }
 #title{
@@ -423,6 +423,9 @@ img.mySlides  {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.img{
+  display: none;
+}
 
 /*data viz*/
 
@@ -557,6 +560,20 @@ h2 {
 /*  background-color: rgba(255,255,255,0.5);*/
 /*  width: 600px;
   height: 100px;*/
+}
+
+#parallax1,#parallax2,#parallax3,#parallax4,#parallax5 { 
+   display: none;
+}
+.img{
+  display: block;
+}
+#timeline{
+  display:none;
+}
+
+#timeline1{
+  display:block;
 }
 
 
