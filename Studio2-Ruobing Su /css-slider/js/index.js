@@ -95,14 +95,14 @@ rightBtn.addEventListener('mouseleave', stopMovement);
 //Start this baby up
 (function init() {
 	var images = [
-		'img/lib1-1.JPG',
-		'img/lib2-1.JPG',
-		'img/lib3-1.JPG',
-		'img/lib4-1.JPG',
-		'img/lib5-1.JPG',
-		'img/lib6-1.JPG',
-		'img/lib7-1.JPG',
-		'img/lib8-1.JPG'
+		'img/lib1-1.jpg',
+		'img/lib2-1.jpg',
+		'img/lib3-1.jpg',
+		'img/lib4-1.jpg',
+		'img/lib5-1.jpg',
+		'img/lib6-1.jpg',
+		'img/lib7-1.jpg',
+		'img/lib8-1.jpg'
 	];
 	
 	//Set Initial Featured Image
