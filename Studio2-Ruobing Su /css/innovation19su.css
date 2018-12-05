@@ -515,7 +515,7 @@ h1 {
  }
 
  #timeline1{
-   display:block;
+   display:inline-block;
  }
 
   }
