@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title></title>
+    <style>
+    	#chinatown{
+    		display: inline-block;
+    		max-width: 200px;
+    	}
+    	#small{
+    		display:inline-block;
+    		max-width: 240px;
+    	}
+    	#mid{
+    		display: inline-block;
+    		max-width: 260px;
+    	}
+    	#large{
+    		display: inline-block;
+    	}
+    	#last {
+    		max-width: 300px;
+    		text-align: center;
+    	}
+    	p{
+    		font-family: Metric-Regular, sans-serif;
+    		font-size: 14px;
+    		text-align: center;
+    	}
+    	h1{
+    		font-family: Metric-Regular, sans-serif;
+    		font-size: 30px;
+    		text-align: center;
+        /*color:#b22222;*/
+    	}
+    	@font-face {
+    	 font-family: "TrimPoster-Average";
+    	  src: url(https://camd.northeastern.edu/mediainnovation19/fonts/TrimPoster-Average.otf);
+    	}   
+
+    	@font-face {
+    	 font-family: "Metric-Regular";
+    	  src: url(https://camd.northeastern.edu/mediainnovation19/fonts/Metric-Regular.otf);
+    	}  
+    </style>
+</head>
+<body>
+<h1>波士顿公共图书馆分馆场地对比大小</h1>
+<p>数据来源：波士顿公共图书馆</p>
+<div width="800" height="280" style="text-align: center;">
+	<div id="chinatown">
+	<svg width="50" height="50">
+  <rect x="20" y="20" width="15" height="15"
+  style="fill:black;stroke:black;stroke-width:1" />
+  <p><span style="color:#b22222">华埠临时图书馆</span>占地面积为<strong>1500平方英尺（约140平方米）</strong></p> 
+	</svg>
+	</div>
+
+	<div id="small">
+	<svg width="160" height="115">
+	<!-- small size -->
+  <rect x="50" y="20" width="80" height="80"
+  style="fill:black;stroke:black;stroke-width:1" />
+  	<!-- chinatown branch -->
+  <rect x="115" y="85" width="15" height="15"
+  style="fill:white;stroke:black;stroke-width:1" />
+  <p>共有9间<span style="color:#b22222">小型分馆</span>，<br>平均占地面积为<strong>8100平方英尺</strong>。</p> 
+	</svg>
+	</div>
+
+	<div id="mid">
+	<svg width="200" height="155" id="mid">	
+	<!-- mid size -->
+  <rect x="50" y="20" width="120" height="120"
+  style="fill:black;stroke:black;stroke-width:1" />
+  <!-- small size -->
+  <rect x="91" y="61" width="80" height="80"
+  style="fill:black;stroke:white;stroke-width:1" />
+  	<!-- chinatown branch -->
+  <rect x="155" y="125" width="15" height="15"
+  style="fill:white;stroke:black;stroke-width:1" />
+  <p>共有7间<span style="color:#b22222">中型分馆</span>，<br>平均占地面积为<strong>12000平方英尺</strong>。</p> 
+	</svg>
+	</div>
+
+	<div id="large">
+	<svg width="305" height="255" id="large">	
+	<!-- large size -->
+  <rect x="50" y="20" width="220" height="220"
+  style="fill:black;stroke:black;stroke-width:1" />
+  <!-- mid size -->
+  <rect x="151" y="121" width="120" height="120"
+  style="fill:black;stroke:white;stroke-width:1" />
+  <!-- small size -->
+  <rect x="191" y="161" width="80" height="80"
+  style="fill:black;stroke:white;stroke-width:1" />
+  	<!-- chinatown branch -->
+  <rect x="255" y="225" width="15" height="15"
+  style="fill:white;stroke:black;stroke-width:1" />
+  <p>共有8间<span style="color:#b22222">大型分馆</span>，<br>平均占地面积为<strong>21825平方英尺</strong>。</p> 
+	</svg>
+</div>
+</div>
+</body>
+</html>
